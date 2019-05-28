@@ -1,0 +1,47 @@
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #000;
+    font-family: 'Lato', sans-serif;
+}
+
+.container {  
+    height: 800px;
+    display: flex;
+    position: relative;
+    justify-items: center;
+
+    perspective: 400px;
+
+    align-items: center;
+    color: #f1ad1d;
+
+    font-size: 400%;
+    font-weight: 700;
+}
+
+.slide-up {
+    position: relative;
+    top: 3900px;
+    transform-origin: 50% 100%;
+    animation: slideUp 60s linear;
+}
+
+.title {
+    text-align: center;
+}
+
+@keyframes slideUp {
+    0% {
+        top: 3200px;
+        transform: rotateX(18deg) translateZ(0);
+    }
+    100% {
+        top: -5000px;
+        transform: rotateX(26deg) translateZ(-2500px);
+    }
+}
+
+
+
