@@ -1,0 +1,40 @@
+body {
+    background-color: lightblue;
+    background-image: url(../img/rangerover.jpg);
+    background-repeat: no-repeat;
+}
+
+h1{
+    text-align: center;
+}
+
+#header2 {
+    text-align: center;
+    color: gray;
+}
+
+p{
+    margin-left: 400px;
+}
+
+.rigth{
+    text-align: right;
+    margin-right: 400px;
+}
+
+#header3{
+    border: 2px solid opacity;
+    width: 370px;
+    margin: auto;
+    color: red;
+}
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,78 @@
+.header1 {
+     margin-top: 20px;
+     width: 100%;
+}
+
+.key {
+    text-align: center;
+    margin-top: 20px;
+    word-spacing: 80px;
+    font-size: 18pt;
+}
+
+.menu a{
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #16a085;
+    font-family: 'Courier';
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.conteiner {
+    
+    background-color: #f5f6f7;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 94px;
+}
+
+.title h1 {
+    font-family: 'Courier';
+    font-size: 22pt;
+}
+
+.general-text {
+    text-align: center;
+    font-family: 'Courier';
+    font-size: 16pt;
+    padding: 34px 110px;;
+    
+}
+
+.text-info {
+    
+    padding-bottom: 35px;
+}
+
+.button {
+    
+    width: 200px;
+    height: 60px;
+    margin: 0 auto;  
+    
+    line-height: 60px;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    
+    border-radius: 5px;
+    background-color: #16a085;
+    
+    display: block;
+}
+
+.footer {
+    background-color: #ffffff;
+}
+
+.copyright p {
+    
+    text-align: right;
+    margin: 47px;
+    margin-right: 104px;
+    font-size: 16pt;
+    font-family: 'Courier';
+}
+
+

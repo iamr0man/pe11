@@ -1,0 +1,25 @@
+header {
+    
+    width: 200px;
+    
+    padding: 15px 250px 15px 15px;
+    margin-bottom: 10px;
+    
+    border: 10px solid aqua;
+    background-color: darkblue;
+}
+
+main {
+    
+    width: 100px;
+    
+    padding: 10px 150px 10px 10px;
+    margin-bottom: 20px;
+    
+    border: 30px solid yellow;
+    background-color: burlywood;
+}
+
+footer {
+    
+}

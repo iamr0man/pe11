@@ -1,0 +1,155 @@
+body {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6) ), url(../img/background.png);
+    background-size: cover;
+}
+
+.container {
+    width: 1366px;
+    margin: 0 auto;
+    font-family: 'Poppins' , sans-serif; 
+}
+
+.holidays {
+    padding: 0 153px;    
+    color: white;
+}
+
+.header {
+    padding: 49px 0;
+    
+}
+
+.castle {
+    display: inline-block;
+    width: 147px;
+}
+
+.logo {
+    width: 46px;
+    height: 44px;
+    float: left;
+    background-image: url(/img/logo.png);
+}
+
+.title {
+    width: 86px;
+    display: inline-block;
+    font-size: 26px;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    font-family: 'Ubuntu' , sans-serif;
+    font-weight: bold;
+    margin-left: 15px;
+    line-height: 18px;
+    padding-top: 8px;
+}
+
+.small-text {
+    font-size: 17px;
+    display: inline-block;
+}
+
+.contact {
+    float: right;
+    padding-top: 8px;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.number {
+    padding-left: 90px;
+}
+
+
+
+.items-tour {
+    float: left;
+    margin-right: 63px;
+    margin-bottom: 60px;
+}
+
+.photo-tour {
+    position: relative;
+    overflow: hidden;
+}
+
+.photo-tour > img {
+    border: 2px solid black;
+    border-image: linear-gradient(to top, black 0%, #adf2f7 100%);
+    border-image-slice: 1;
+}
+
+.items-tour a > p {
+    padding-top: 16px;
+    text-align: center;
+}
+
+.items-tour:nth-child(3n) {
+    margin-right: 0;
+}
+
+.block-hover {
+    position: absolute;
+    width: 100%;
+    padding: 30px 18px 17px 10px;
+    right: -1px;
+    background-color: #f26522;
+    box-sizing: border-box;
+    color: white;
+    transition: all 2s ease;
+}
+
+.tour-info:before {
+    content: "from";
+    position: absolute;
+    font-size: 10px;
+    top: 17px;
+}
+
+.tour-info span {
+    float: right;
+    font-size: 12px;
+    padding-right: 20px;
+}
+
+.photo-tour:hover .block-hover {
+    transform: translateY(-70px);
+}
+
+i {
+    position: absolute;
+    font-size: 12px;
+    top: 30px;
+    right: 22px;
+}
+
+.footer p {
+    text-align: center;
+    font-size: 12px;
+    padding-bottom: 20px;
+    font-weight: 600;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    color: #f26522;
+}
+
+
+.castle:hover .logo {
+    background: url(../img/logo-hover.png);
+}
+
+.castle:hover .title {
+    color: #f26522;
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}

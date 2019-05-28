@@ -1,0 +1,133 @@
+.rambda {
+    width: 1280px;
+    margin: 0 auto;
+    font-family: sans-serif;
+}
+
+.text-logo {
+    text-decoration: none;
+    color: black;
+    font-size: 60px;
+    font-weight: 100;
+}
+
+.blue-text {
+    color: aqua;
+}
+
+.nav-bar {
+    text-align: center;
+}
+
+.block-link {
+    font-size: 19px;
+    background-color: #35444f;
+    margin: 48px 0px;
+    padding: 20px;
+}
+
+.block-link > a{
+    padding: 20px 40px;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+
+    text-decoration: none;
+    color: white;
+}
+
+.block-link > a:hover {
+    background-color: #222f3a;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+}
+
+
+.block-leftside {
+    width: 344px; 
+    display: inline-block;
+    vertical-align: top;
+}
+
+.block-menu {
+    border: 1px solid #495863;
+    display: inline-block;
+    box-sizing: content-box;
+}
+
+.block-menu > li{
+    list-style-type: none;
+}
+
+.block-menu a {
+    padding: 28px 129px 28px 44px;
+    font-size: 23px;
+    text-decoration: none;
+    display: inline-block;
+    color: #495863;
+}
+
+.block-menu > li a:hover {
+    padding-left: 69px;
+    color: black;
+    background-color: #dbdbdb;
+    display: block;
+}
+
+.block-rightside {
+    display: inline-block;
+    width: 66%;
+}
+
+
+.block-logo-photo {
+    width: 885px;
+    margin-left: 44px;
+    border: 0.1px solid #495863;
+    margin-bottom: 50px;
+}
+
+
+.logo {
+    margin: 0 auto;
+    padding: 74px;
+    display: block;
+    transition: all 3s;
+    display: block;
+}
+
+.logo:hover {
+    -webkit-transform: scale(1.35);
+}
+
+.block-text {
+    width: 827px;
+    font-size: 18px;
+    margin:  50px 30px 50px 70px;
+    text-align: left;
+}
+
+footer {
+    background-color: #b4b7ba;
+}
+
+.footer-menu {
+    padding: 20px 44px;
+}
+
+.footer-menu a{
+    font-size: 28px;
+    margin: 0 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.footer-menu > a:hover {
+    text-decoration: underline;
+    color: #3181a6;
+}
+
+.copy {
+    margin-left: 209px;
+    font-size: 24px;
+    
+}

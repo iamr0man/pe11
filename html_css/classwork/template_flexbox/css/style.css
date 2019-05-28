@@ -1,0 +1,25 @@
+body {
+    background-color: #c2c;
+    font-family: 'Ubuntu' , sans-serif;
+}
+
+h1 {
+    color: blueviolet;
+    font-size: 104px;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+/*    align-items: flex-end;*/
+
+}
+
+.flex-element {
+    margin: 20px;
+    padding: 110px;
+    background-color: bisque;
+}

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sertiz</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="head-block">
+    <div class="container">
+        <h1 class="head-block-title">sertiz</h1>
+        <h2 class="head-block-subtitle">Awesome One Page HTML Template</h2>
+        <h3 class="head-block-slogan"><span class="yellow-text slogan-margin">we</span>make smart design</h3>
+    </div>
+</div>
+<div class="container">
+    <!--
+    СОКРАЩЕННАЯ ЗАПИСЬ РАЗМЕТКИ СЕКЦИИ ПРИ ПОМОЩИ EMMET'а
+    .basic-block>h2.basic-block-title{what they say about us}+h3.basic-block-subtitle+.basic-block-line-->
+    <div class="basic-block"> <!--так как секция повторяющаяся, то это следует отметить в названии. В нашем случае слово basic значит что это какая-то базовая штука, которая будет использована в документе несколько раз-->
+        <h2 class="basic-block-title">what they say about us</h2> <!--в названиях классов привязываемся к РОЛИ елемента на странице, но никак не к содержанию. По этому заголовок секции так и называем-->
+        <h3 class="basic-block-subtitle">We are an award winning creative agency based in Wisconsin with a passion for
+            helping our clients grow.</h3> <!--у секции есть подзаголовок, пляшем оптому же правилу-->
+        <div class="basic-block-line"></div> <!--этот блок отвечает за оранжевую линию. Позже мы научимся ее делать так, чтобы в разметке кода не было. сейчас это мера вынужденная. Класс в стилях понадобится в любом случае, по этому объявляем его в соответствии с правилос "название соответствует роли"-->
+        <img src="img/web-award.png" alt="web-img NOT FOUND"> <!--картинка в состав базовой секции не входит, но на уроке исключительно в целях экономии времени была помещена сюда просто для того чтобы отцентрировалась-->
+    </div>
+
+
+    <!------------- К О Д  З А Н Я Т И Я  № 3 -------------->
+    <!--section.nav-bar>h1.nav-bar-logo+nav>a.nav-bar-link[href=#]*6-->
+    <section class="nav-bar">
+        <h1 class="nav-bar-logo yellow-text">SERTIZ</h1>
+        <nav class="nav-bar-menu">
+            <a href="#" class="nav-bar-link yellow-text">HELLO<span class="arrow yellow-top-border"></span></a>
+            <a href="#" class="nav-bar-link">TEAM</a>
+            <a href="#" class="nav-bar-link">SERVICES</a>
+            <a href="#" class="nav-bar-link">PORTFOLIO<span class="arrow"></span></a>
+            <a href="#" class="nav-bar-link">BLOG</a>
+            <a href="#" class="nav-bar-link mr0">CONTACT</a>
+        </nav>
+    </section>
+
+    <!------------- К О Д  З А Н Я Т И Я  № 4 -------------->
+    <div class="basic-block">
+        <h2 class="basic-block-title">what they say about us
+        </h2>
+        <h3 class="basic-block-subtitle">We are an award winning creative agency based in Wisconsin with a passion for
+            helping our clients grow.
+        </h3>
+        <div class="basic-block-line"></div>
+    </div>
+
+    <div class="businesses">
+        <div class="businesses-img">
+            <div class="businesses-img-item consulting-bg"><span>Consulting</span> </div>
+            <div class="businesses-img-item web-design-bg"><span>Web Design</span></div>
+            <div class="businesses-img-item photography-bg"><span>Photography</span></div>
+            <div class="businesses-img-item advertising-bg"><span>Advertising</span></div>
+        </div>
+        <div class="businesses-text">
+            <h3 class="businesses-text-title">Business <span class="yellow-text">Consulting</span></h3>
+            <p class="businesses-text-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p class="businesses-text-description">Sed ut perspiciatis unde Sorcimenia omnis iste natus irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat cotessa primastera nulla error sit voluptatem accusantium doloremque laudantium.</p>
+            <a class="businesses-text-button" href="#">Check Our Projects</a>
+        </div>
+    </div>
+
+    <!------------- К О Д  З А Н Я Т И Я  № 5 -------------->
+    <!--Так как выстраивать елементы внутри этого блока мы будем с помощью свойства float, сразу даем ему класс clearfix,
+    код которого отработает ГАРАНТИРОВАННО ПОСЛЕ ПОСЛЕДНЕГО ДОЧЕРНЕГО ЕЛЕМЕНТА, тем самым подведя черту после float'ов-->
+    <section class="products clearfix">
+        <!--Каждый "продукт" выглядит одинаково с точки зрения стилей по этому мы сверстали сначала один и потом его клониовали
+        ПОЗИЦИОНИРОВАНИЕ осуществляется float'ами. Все елементы мы сдвигаем влево, таким образом они примкнуть друг к другу
+        и выстроятся в одну строку, все что останется - подобрать отступы.
+        ЭТО НЕ ЛУЧШИЙ СПОСОБ, т.к. тот же display: inline-block даст нам такой же в сущности эффект без заморочек с очисткой потока.
+        Флоаты хороши когда нужно разместить елементы по двум сторонам -->
+        <div class="products-item">
+            <h3 class="products-item-title">Web <span class="yellow-text">Design</span></h3>
+            <!--Это код иконки скопированный с сайта font awesome. Она отобразится, ТОЛЬКО при условии, что мы подключили
+            font awesome шрифтом к документу-->
+            <i class="far fa-lightbulb products-item-icon"></i>
+
+            <p class="product-item-decription">Developing websites has always been our passion and main goal since we started
+                the company. Putent laoreet et ius utroque dissentias ut.</p>
+            <div class="products-line"></div>
+            <p class="products-title-text">What we offer you</p>
+            <p class="product-title-decription products-text-container">Business Card Design
+                infographic Design
+                Website Design
+                Logo Design</p>
+        </div>
+        <div class="products-item">
+            <h3 class="products-item-title">Web <span class="yellow-text">Design</span></h3>
+            <i class="far fa-lightbulb products-item-icon"></i>
+            <p class="product-item-decription">Developing websites has always been our passion and main goal since we started
+                the company. Putent laoreet et ius utroque dissentias ut.</p>
+            <div class="products-line"></div>
+            <p class="products-title-text">What we offer you</p>
+            <p class="product-title-decription products-text-container">Business Card Design
+                infographic Design
+                Website Design
+                Logo Design</p>
+        </div>
+        <div class="products-item">
+            <h3 class="products-item-title">Web <span class="yellow-text">Design</span></h3>
+            <i class="far fa-lightbulb products-item-icon"></i>
+            <p class="product-item-decription">Developing websites has always been our passion and main goal since we started
+                the company. Putent laoreet et ius utroque dissentias ut.</p>
+            <div class="products-line"></div>
+            <p class="products-title-text">What we offer you</p>
+            <p class="product-title-decription products-text-container">Business Card Design
+                infographic Design
+                Website Design
+                Logo Design</p>
+        </div>
+        <div class="products-item mr0">
+            <h3 class="products-item-title">Web <span class="yellow-text">Design</span></h3>
+            <i class="far fa-lightbulb products-item-icon"></i>
+            <p class="product-item-decription">Developing websites has always been our passion and main goal since we started
+                the company. Putent laoreet et ius utroque dissentias ut.</p>
+            <div class="products-line"></div>
+            <p class="products-title-text">What we offer you</p>
+            <p class="product-title-decription products-text-container">Business Card Design
+                infographic Design
+                Website Design
+                Logo Design</p>
+        </div>
+    </section>
+    <!------------- К О Д  З А Н Я Т И Я  № 6 -------------->'
+    <section class="feedback">
+        <!--p.feedback-text+div.feedback-person>img.person-img+p.person-position-->
+        <div class="feedback-item">
+
+            <p class="feedback-text">The best one page html template I have ever seen. I used it for many prjects and many clients recommended every time this template. You purshase it for $14 but you win more this price.</p>
+            <div class="feedback-person">
+                <img src="img/feedback-person1.png" alt="feedback-person1 NOT FOUND" class="person-img">
+                <div class="person-info">
+                    <p class="person-name">Thomas Cuadra</p>
+                    <p class="person-position">Founder, PICN</p>
+                </div>
+            </div>
+        </div>
+        <div class="feedback-item">
+
+            <p class="feedback-text">The best one page html template I have ever seen. I used it for many prjects and many clients recommended every time this template. You purshase it for $14 but you win more this price.</p>
+            <div class="feedback-person">
+                <img src="img/feedback-person1.png" alt="feedback-person1 NOT FOUND" class="person-img">
+                <div class="person-info">
+                    <p class="person-name">Thomas Cuadra</p>
+                    <p class="person-position">Founder, PICN</p>
+                </div>
+            </div>
+        </div>
+        <div class="feedback-item">
+
+            <p class="feedback-text">The best one page html template I have ever seen. I used it for many prjects and many clients recommended every time this template. You purshase it for $14 but you win more this price.</p>
+            <div class="feedback-person">
+                <img src="img/feedback-person1.png" alt="feedback-person1 NOT FOUND" class="person-img">
+                <div class="person-info">
+                    <p class="person-name">Thomas Cuadra</p>
+                    <p class="person-position">Founder, PICN</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!--  К О Д  З А Н Я Т И Я  № 7  -->
+    <section class="send-message clearfix">
+        <section class="contact">
+            <h3 class="contact-title">Get in <span class="yellow-text">touch</span></h3>
+            <p class="contact-subtitle">You can also contact us at</p>
+            <ul class="contact-list">
+                <li>
+                    <p class="contact-item contact-location">4952 Woodland Drive, Sioux City, IA 51106</p>
+                </li>
+                <li>
+                    <p class="contact-item contact-number">712-274-6481</p>
+                </li>
+                <li>
+                    <p class="contact-item contact-email">DonnaJKoch@jourrapide.com</p>
+                </li>
+                <li>
+                    <p class="contact-item contact-website">www.website.com</p>
+                </li>
+            </ul>
+            <h3 class="contact-title">Follow <span class="yellow-text">Us</span></h3>
+        </section>
+
+
+    <!--  К О Д  З А Н Я Т И Я  № 8  -->
+
+        <section class="message-form">
+            <input type="text" class="message-input input-size" placeholder="Name">
+            <input type="email" class="message-input input-size" placeholder="Email">
+            <textarea class="textarea-size " placeholder="Message"></textarea>
+            <input type="reset" class="message-btn">
+            <input type="submit" class="message-btn">
+        </section>
+    </section>
+
+
+    <form action="" class="subscription">
+        <input type="email" class="subscription-field" placeholder="Your email here...">
+        <input type="sumbit" class="subscription-send" value="Subscribe">
+    </form>
+
+</div>
+</body>
+</html>

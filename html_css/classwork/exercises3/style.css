@@ -1,0 +1,47 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  width: 450px;
+  height: 335px;
+  margin: 0 auto;
+
+  font-size: 10px;
+  font-family: "Arial", sans-serif;
+  color: white;
+  background-color: #34495e;
+}
+
+.general {
+    width: 350px;
+    margin: 0 auto;
+}
+
+.layount-header {
+    padding-top: 10px;
+}
+
+.header{
+    padding: 10px 10px;
+    background-color: #c0392b;
+}
+
+.layount-menu {
+    background-color: #3498db;
+}
+
+.menu {
+    padding: 10px 0 20px 10px;
+}
+
+
+
+/*
+  Используемые цвета:
+  #34495e – мокрый асфальт
+  #c0392b – красный
+  #3498db – синий
+*/

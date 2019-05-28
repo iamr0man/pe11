@@ -1,0 +1,272 @@
+body {
+    background-image: url(../img/background.png);
+    background-size: cover;
+    font-family: 'Lato', sans-serif;
+}
+
+header {
+    padding: 20px 85px;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.title {
+    font-size: 21px;
+    float: left;
+    text-transform: uppercase;
+    color: #fff;
+    font-family: 'Muli', sans-serif;
+}
+
+.title:hover {
+    color: #3cb878;
+}
+
+.nav-menu {
+    float: right;
+}
+
+
+.bg-caledar {
+    width: 19px;
+    height: 19px;
+    background: url('../img/css_sprites.png') -106px -10px;
+    display: inline-block;
+    margin-right: 26px;
+}
+
+.bg-caledar:hover {
+    width: 19px;
+    height: 19px;
+    background: url('../img/css_sprites.png') -106px -49px;
+    display: inline-block;
+    margin-right: 26px;
+}
+
+.bg-forum {
+    width: 28px;
+    height: 20px;
+    background: url('../img/css_sprites.png') -10px -10px;
+    display: inline-block;
+    margin-right: 26px;
+}
+
+.bg-forum:hover {
+    width: 28px;
+    height: 20px;
+    background: url('../img/css_sprites.png') -58px -10px;
+    display: inline-block;
+    margin-right: 26px;
+}
+
+.bg-journey {
+    width: 20px;
+    height: 20px;
+    background: url('../img/css_sprites.png') -50px -50px;
+    display: inline-block;
+    margin-right: 26px;
+}
+
+.bg-journey:hover {
+    width: 20px;
+    height: 20px;
+    background: url('../img/css_sprites.png') -10px -50px;
+    display: inline-block;
+    margin-right: 26px;
+}
+
+.greeting {
+    float: right;
+    text-transform: capitalize;
+    text-decoration: none;
+    color: #fff;
+    border-left: 1px solid #312f2f;
+    padding-left: 25px;
+}
+
+.block-registration {
+    margin: 60px auto;
+    width: 444px;
+    background-color: white;
+    border-radius: 12px;
+    padding: 30px 61px;
+    box-sizing: border-box;
+}
+
+
+.registration-box {
+    width: 322px;
+    margin: 0 auto;
+}
+
+.sign-up {
+    font-size: 20px;
+    float: left;
+    position: relative;
+    text-transform: capitalize;
+}
+
+.sign-up::before {
+    content: url(../img/shape.png);
+    position: absolute;
+    left: -61px;
+}
+
+.log-in {
+    float: right;
+    text-transform: capitalize;
+}
+
+.header-registration-box {
+    margin-bottom: 16px;
+}
+
+.sign-up-socials {
+    color: #fff;
+    font-size: 17px;
+    margin-bottom: 30px;
+}
+
+.social-name {
+    display: inline-block;
+    padding: 16px 0px 16px 30px;
+}
+
+.socials-items {
+    display: inline-block;
+    font-size: 20px;
+    margin-left: 17px
+}
+
+.facebook {
+    width: 48%;
+    float: left;
+    background-color: #305db8;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: white;
+    text-decoration: none;
+}
+
+.facebook::before {
+    content: url("../img/line.png");
+    position: relative;
+    left: 50px;
+    top: 4px;
+}
+
+.facebook:hover {
+    background-color: #264b96;
+    text-decoration: none;
+}
+
+.google {
+    width: 48%;
+    float: right;
+    background-color: #df4a32;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: white;
+    text-decoration: none;
+}
+
+.google::before {
+    content: url("../img/line.png");
+    position: relative;
+    left: 61px;
+    top: 4px;
+}
+
+.google:hover {
+    background-color: #c3412c;
+    text-decoration: none;
+}
+
+.fields-full-name {
+}
+
+.decoration {
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    white-space: nowrap;
+    margin-bottom: 17px;
+}
+
+.decoration::before,
+.decoration::after {
+    content: '';
+    display: inline-block;
+    position: relative;
+    width: 50%;
+    top: -1px;
+    height: 1px;
+    vertical-align: middle;
+    background: rgba(0,0,0,0.2);
+}
+
+.decoration::before {
+    left: -10px;
+    margin-left: -50%;
+}
+
+.decoration::after {
+    left: 10px;
+    margin-right: -50%;
+}
+
+.block-field {
+    width: 100%;
+    font-size: 16px;
+    padding: 19px 0 17px 17px;
+    box-sizing: border-box;
+    margin-bottom: 9px;
+    border: 1px solid #eaeaea
+}
+
+input[placeholder="First Name"] {
+    margin-bottom: 18px;
+}
+
+.block-field:hover {
+    box-shadow: 0px 10px 10px -9px rgba(0,0,0,0.5);
+}
+.confirm { 
+    margin-top: 20px;
+}
+
+#license,
+label {
+    cursor: pointer;
+}
+
+.btn-create {
+    width: 100%;
+    margin-top: 28px;
+    padding: 17px 100px;
+    text-align: center;
+    border: none;
+    background-color: #3cb878;
+    font-size: 17px;
+    color: white;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.btn-create:hover {
+    background-color: #329a65;
+}
+
+.green-link {
+    color: #3cb878;
+    text-decoration: none;
+}
+
+.green-link:hover {
+    text-decoration: underline;
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}

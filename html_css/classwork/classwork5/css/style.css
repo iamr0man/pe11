@@ -1,0 +1,191 @@
+
+/*Класс, отвечающий за "рамку", в которой находится весь контент*/
+.container {
+  font-family: sans-serif;
+  width: 1280px;
+  margin: 0 auto; /*верхний и нижний отступ будет нулевыми, боковые - автоматически подберутся одинаковыми*/
+}
+
+/*самый верхний блок страницы*/
+.head-block {
+  /*Присваиваем блоку фон*/
+  background-image: url("../img/top-bg.png"); /*путь к картинке*/
+  background-repeat: no-repeat; /*для того, чтобы картинка не вставлялась рядом повторно, если ее не хватит на всю ширину или высоту*/
+  background-size: cover; /*растянет картинку по всему блоку сохраняя пропорции*/
+  /*созаем некую рамку из отступов, внутри которой будет помещатся контент. Это делается ВНУТРЕННИМИ ОТСТУПАМИ для универсонализации секции, чтобы контент в ней помещался по строго определенному правилу*/
+  padding-top: 600px;
+  padding-bottom: 100px;
+  /*так как дочерние елементы наследуют текстовые свойства, а у нас весь текст белый внутри секции, задаем это свойство родителю*/
+  color: white;
+}
+
+.head-block-title {
+  font-size: 48px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.head-block-subtitle {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.head-block-slogan {
+  display: inline-block;
+  font-size: 54px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 45px 35px;
+  border: 1px solid white;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.slogan-margin {
+  margin-right: 50px;
+}
+
+.basic-block {
+  text-align: center;
+  color: #333;
+  padding: 70px 0;
+}
+
+.basic-block-title {
+  text-transform: uppercase;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.basic-block-subtitle {
+  font-weight: normal;
+  font-size: 17px;
+  margin-top: 35px;
+}
+
+.basic-block-line {
+  border-top: 3px solid #f1ad1d; /*так как блок должен представлять из себя горизонтальную линию, имитируем ее при помощи стилизированной верхней границы елемента*/
+  width: 60px;
+  margin: 50px auto; /*запись с тремя цифрами разцифровуется так: верхний | боковые | нижний*/
+}
+
+.nav-bar {
+  border-bottom: 2px solid #f1ad1d;
+  padding-bottom: 15px;
+}
+
+.nav-bar-logo{
+  display: inline-block;
+  font-size: 36px;
+  font-weight: 700;
+  margin-right: 250px;
+  vertical-align: middle;
+}
+
+.nav-bar-menu{
+  display: inline-block;
+  text-align: right;
+}
+
+.nav-bar-link {
+  font-size: 18px;
+  margin: 0 30px;
+  color: #646464;
+}
+
+.nav-bar-link:hover {
+  color: #f1ad1d;
+}
+
+.nav-bar-link:hover > .arrow{
+  border-top-color: #f1ad1d;
+}
+
+.arrow {
+  display: inline-block;
+  border: 5px solid transparent;
+  border-top: 5px solid black;
+  margin-left: 5px;
+}
+
+.businesses-img {
+  display: inline-block;
+  width: 49%;
+  vertical-align: top;
+}
+
+.businesses-img > div {
+  display: inline-block;
+  width: 270px;
+  height: 150px;
+  margin-bottom: 20px;
+  margin-right: 30px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.consulting-bg {
+  background-image: url("../img/consulting-bg.png");
+}
+
+.web-design-bg {
+  background-image: url("../img/web-design-bg.png");
+}
+
+.photography-bg {
+  background-image: url("../img/photography-bg.png");
+}
+
+.advertising-bg {
+  background-image: url("../img/advertising-bg.png");
+}
+
+.businesses-img span {
+  display: inline-block;
+  width: 115px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 15px;
+  background-color: black;
+  margin-top: 95px;
+  margin-left: 15px;
+  color: white;
+}
+
+.businesses-text {
+  display: inline-block;
+  width: 49%;
+}
+
+.businesses-text-title {
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+}
+
+.businesses-text > p {
+  line-height: 1.5;
+  font-size: 14px;
+  margin-bottom: 35px;
+}
+
+.businesses-text > p ~ a {
+  font-size: 14px;
+  color: white;
+  text-transform: capitalize;
+  padding: 20px 25px;
+  background: #f1ad1d;
+}
+
+.yellow-top-border {
+  border-top-color: #f1ad1d;
+}
+
+.yellow-text {
+  color: #f1ad1d;
+}
+.mr0{
+  margin-right: 0;
+}
+

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sertiz</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="head-block">
+    <div class="container">
+        <h1 class="head-block-title">sertiz</h1>
+        <h2 class="head-block-subtitle">Awesome One Page HTML Template</h2>
+        <h3 class="head-block-slogan"><span class="yellow-text slogan-margin">we</span>make smart design</h3>
+    </div>
+</div>
+<div class="container">
+    <!--
+    СОКРАЩЕННАЯ ЗАПИСЬ РАЗМЕТКИ СЕКЦИИ ПРИ ПОМОЩИ EMMET'а
+    .basic-block>h2.basic-block-title{what they say about us}+h3.basic-block-subtitle+.basic-block-line-->
+    <div class="basic-block"> <!--так как секция повторяющаяся, то это следует отметить в названии. В нашем случае слово basic значит что это какая-то базовая штука, которая будет использована в документе несколько раз-->
+        <h2 class="basic-block-title">what they say about us</h2> <!--в названиях классов привязываемся к РОЛИ елемента на странице, но никак не к содержанию. По этому заголовок секции так и называем-->
+        <h3 class="basic-block-subtitle">We are an award winning creative agency based in Wisconsin with a passion for
+            helping our clients grow.</h3> <!--у секции есть подзаголовок, пляшем оптому же правилу-->
+        <div class="basic-block-line"></div> <!--этот блок отвечает за оранжевую линию. Позже мы научимся ее делать так, чтобы в разметке кода не было. сейчас это мера вынужденная. Класс в стилях понадобится в любом случае, по этому объявляем его в соответствии с правилос "название соответствует роли"-->
+        <img src="img/web-award.png" alt="web-img NOT FOUND">
+    </div>
+
+
+    <!------------- К О Д  З А Н Я Т И Я  № 3 -------------->
+    <!--section.nav-bar>h1.nav-bar-logo+nav>a.nav-bar-link[href=#]*6-->
+    <section class="nav-bar">
+        <h1 class="nav-bar-logo yellow-text">SERTIZ</h1>
+        <nav class="nav-bar-menu">
+            <a href="#" class="nav-bar-link yellow-text">HELLO<span class="arrow yellow-top-border"></span></a>
+            <a href="#" class="nav-bar-link">TEAM</a>
+            <a href="#" class="nav-bar-link">SERVICES</a>
+            <a href="#" class="nav-bar-link">PORTFOLIO<span class="arrow"></span></a>
+            <a href="#" class="nav-bar-link">BLOG</a>
+            <a href="#" class="nav-bar-link mr0">CONTACT</a>
+        </nav>
+    </section>
+</div>
+</body>
+</html>

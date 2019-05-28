@@ -1,0 +1,90 @@
+body {
+    font-size: 1.6rem;
+}
+
+.bgimg-1 {
+    background: url(https://images.unsplash.com/photo-1558427335-f61b2473dde7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1483&q=80);
+    min-height: 100vh;
+}
+
+.bgimg-2 {
+    background: url(https://images.unsplash.com/photo-1558328592-c073a4b95365?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80);
+    min-height: 40vh;
+}
+
+.bgimg-3 {
+    background: url(https://images.unsplash.com/photo-1558304970-abd589baebe5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80);
+    min-height: 80vh; 
+}
+
+.bgimg-1, .bgimg-2,
+.bgimg-3 {
+    position: relative;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.centred-block {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+}
+
+.square {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background: #333;
+    margin: 30px;
+    animation-name: spin;
+    animation-duration: 2s; /*time animation*/
+    animation-iteration-count: linear;
+    animation-iteration-count: infinite; /*infinity animation*/
+}
+
+.square:hover {
+    animation-play-state: paused;
+}
+
+.parallax-info-block {
+    color: #333;
+    background-color: #fff;
+    text-align: center;
+    padding: 50px;
+    text-align: justify;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#wrapper {
+    display: grid;
+    grid-template-columns: minmax(40px, 100px) minmax(400px, 1fr) 200px;
+    grid-template-rows: 100px 1fr 80px;
+    height: 100%;
+    grid-gap: 20px;
+  }
+
+  .item {
+      background-color: #f1ad1d;
+  }
+  
+  .item1 {
+    grid-column: 1 / span 3;
+    grid-row: 1 / span 1;
+  }
+  
+  .item5 {
+    grid-column: 1 / span 3;
+    grid-row: 3 / span 1;
+  }

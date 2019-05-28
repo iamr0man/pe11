@@ -1,0 +1,14 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.main {
+    height: 100vh;
+    min-height: 600px;
+    background-image: url(img/top-bg.png) center;
+    background-size: cover;
+}
