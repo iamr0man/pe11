@@ -1,11 +1,12 @@
 const getFactorial = number => {
 
-    let result = 1;
-    while(number > 0){
-        result*=number;
-        number--;
+    if(number===1){
+        return number;
     }
-    return result;
+
+    number *= (getFactorial(number-1));
+
+    return number;
 };
 
 let number = 0;
