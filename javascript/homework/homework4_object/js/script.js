@@ -1,4 +1,5 @@
 const createNewUser = () => {
+
     let name = prompt("Insert your name: "),
     surname = prompt("Insert your surname: ");
 
@@ -14,39 +15,35 @@ const createNewUser = () => {
         getLogin: function() {
             return this.firstName[0].toLowerCase() + this.lastName.toLowerCase(); 
         },
-        // get getFirstName(){
-        //     return firstName;
-        // },
-        // get getLastName(){
-        //     return lastName;
-        // },
-        set setFirstName(newFirstName) {
-            this.firstName = newFirstName;
-        },
-        set setLastName(newLastName) {
-            this.lastName = newLastName;
-        }
     };
 
         Object.defineProperties(newUser, {
             firstName: {
-                writable: false 
+                writable: false,
+                configurable: true 
             },
             lastName: {
-                writable: false
+                writable: false,
+                configurable: true
             }
         });
+
+        Object.defineProperties(newUser, {
+            setFirstName: {
+                value = 'Roman'
+            },
+            setLastName: {
+                value: 'Abramovich'
+            }
+        });
+
         return newUser;           
     }
 let newUser = createNewUser();
 console.log(newUser.getLogin());
 
-// newUser.firstName = "Roman";
-// newUser.lastName = "Abramovich";
+newUser.setFirstName("Roman");
+newUser.setLastName("Abramovich");
 
-newUser.setFirstName = "Roman";
-newUser.setLastName = "Abramovich";
 
-console.log(newUser.firstName);
-console.log(newUser.lastName);
 console.log(newUser);
