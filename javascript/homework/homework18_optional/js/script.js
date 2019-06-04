@@ -14,7 +14,7 @@ do {
     if (subject) {
         const mark = +prompt(`Insert mark of ${subject}: `);
         certificate[subject] = mark;
-        if(mark < 4){
+        if (mark < 4) {
             awfulMark++;
         }
         sumOfSubject++;
