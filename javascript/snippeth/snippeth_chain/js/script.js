@@ -7,8 +7,8 @@ const foo = () => {
         // let i = 26;
         console.log(i);
     }
-
     boo();
+    
 };
 
 foo();
