@@ -75,25 +75,27 @@ function getElements(classname, tagname, root) {
 
 //Example 15.5
 
-function sortkids(e){
-    if(typeof e == 'string') e = document.getElementById(e);
+function sortkids(e) {
+    debugger;
+    if (typeof e === 'string') e = document.getElementById(e);
 
-    let kids = []
-    for(let i = e.firstChild; i !== null; i = e.nextSibling){
-        if(i.nodeType === 1) // Node.ELEMENT_NODE
-            kids.push(i);
+    let kids = [],
+        childrens = e.children;
+    for (let i = 0; i < childrens.length; i++) {
+        if (childrens[i].nodeType === 1) // Node.ELEMENT_NODE
+            kids.push(childrens[i]);
     }
 
-    kids.sort(function(a, b) {
-        const f = a.firstChild.textContent;        
-        const s = b.firstChild.textContent;        
+    kids.sort(function (a, b) {
+        const f = a.firstChild.textContent;
+        const s = b.firstChild.textContent;
 
-        if(f < s) return -1;
-        else if(s < t) return 1;
+        if (f < s) return -1;
+        else if (s < f) return 1;
         return 0;
     });
 
-    for(let i = 0; i < kids.length; i++){
+    for (let i = 0; i < kids.length; i++) {
         e.appendChild(kids[i]);
     }
 }
@@ -102,11 +104,70 @@ function sortkids(e){
 
 function upcase(n) {
 
-    if(n.nodeType === 3) {
+    if (n.nodeType === 3) {
         n.textContent = n.textContent.toUpperCase();
-    }
-    else {
+    } else {
         const nChildren = n.childNodes;
-        for(let i = 0; i < nChildren.length; i++) upcase(nChildren[i])
+        for (let i = 0; i < nChildren.length; i++) upcase(nChildren[i])
     }
 }
+
+//Example 15.7
+
+function embolden(n) {
+
+    if (typeof n === 'string') n = document.getElementById(n);
+
+    let square = document.createElement('div')
+    square.style.cssText = `margin: 30px; width: 50px; height: 50px; background-color: gold`;
+    let parent_node = n.parentNode;
+    parent_node.replaceChild(square, n);
+    square.appendChild(n);
+}
+
+//Example 15.8
+function animationBlocks(classOfBlocks) {
+    debugger;
+    classOfBlocks = document.querySelectorAll(classOfBlocks);
+    for (let i = 0; i < classOfBlocks.length; i++) {
+        classOfBlocks[i].className = 'animationInlineBlock';
+    }
+}
+
+// Example 15.9
+function reverse(n) {
+    debugger;
+    n = document.getElementById(n);
+    var f = document.createDocumentFragment();
+    while (n.lastChild) f.appendChild(n.lastChild);
+    n.appendChild(f);
+}
+
+
+//Example 15.11
+function getSelectedText() {
+    debugger;
+    if (window.getSelection) {
+        alert(window.getSelection().toString());
+    } else if (document.getSelection) {
+        return document.getSelection();
+    }
+}
+
+// Example
+function getTextFieldSelection(e) {
+    if (e.selectionStart != undefined && e.selectionEnd != undefined) {
+        var start = e.selectionStart;
+        var end = e.selectionEnd;
+        return e.value.substring(start, end);
+    } else return ""; // Не поддерживается данным броузером
+}
+
+function methodAll() {
+    debugger;
+    var lists = document.all["ingo-block"]; // Ищет все теги <ul> в документе
+    // var items = lists.all['P']; // Ищет все теги <li> внутри первого <ul>
+    return lists;
+}
+
+console.log(methodAll());

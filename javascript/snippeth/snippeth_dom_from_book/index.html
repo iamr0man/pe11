@@ -1,21 +1,36 @@
 <html lang="en">
+
 <head>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="wrap">
-        <p class="info">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic, vel iste. Porro temporibus, ipsam asperiores, corporis in cumque doloribus minima sequi numquam soluta, ratione odio? Aliquid voluptatem laboriosam beatae animi!</p>
+        <p class="info">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic, vel iste. Porro temporibus, ipsam
+            asperiores, corporis in cumque doloribus minima sequi numquam soluta, ratione odio? Aliquid voluptatem
+            laboriosam beatae animi!</p>
         <button onclick="sortkids('list')">Sort</button>
         <ul id="list">
             <li>зарахування</li>
             <li>рахування</li>
+            Этот элемент не будет сортирован
             <li>ахування</li>
             <li>хування</li>
         </ul>
-        <nav class="nav-menu">
-            <!-- <a href="#" class="nav-link nav-joke"></a> -->
-            <!-- <a href="#" class="nav-link"></a> -->
-            <!-- <a href="#" class="nav-link"></a> -->
+        <nav id="nav-menu">
+            <a href="#" class="nav-link nav-joke"></a>
+            <a href="#" class="nav-link"></a>
+            <a href="#" class="nav-link"></a>
         </nav>
+        <div id="ingo-block">
+            <p class="p1"><i>Это </i>реал</p>
+            <p class="p1"><i>Это </i>джеес.</p>
+            <p class="p1"><i>Это </i>детка.</p>
+        </div>
+        <button onclick="animationBlocks('.p1');">Top animation</button>
+        <button onclick="reverse('ingo-block');">Reverse mod</button>
+        <button onclick="getSelectedText();">Selected txt</button>
+
     </div>
     <script src="script.js"></script>
 </body>
