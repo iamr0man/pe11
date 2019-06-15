@@ -342,8 +342,36 @@
 //     return array.reduce((a,b) => a+b , 0) % 2 === 0 ? 'even' : 'odd';
 // }
 
-function reverseWords(str) {
-    return str.split("")
+// function reverseWords(str) {
+//     let result = '';
+//     str.split(' ').map(val => {
+//         result += val.split('').reverse().join('') + ' ';
+//     })
+//     return result.substring(0, result.length -1);
+// }
+
+// function reverseWords(str) {
+
+//     return str.split(' ').map(function(word){
+//         return word.split('').reverse().join('');
+//     }).join(' ')
+// }
+
+// console.log(reverseWords('Roma D1ana'))
+
+// function removeSmallest(array) {
+//     array.splice(array.indexOf(Math.min(...array)), 1);
+//     return array;
+// }
+
+// function reverseWords(array) {
+//     const indexOfMin = Math.min(...array);
+//     return [...array.slice(0, indexOfMin), ...array.slice(indexOfMin + 1)]
+// }
+
+function removeSmallest(array){
+    const min = Math.min(...array);
+    return array.filter((val, ind, array) => ind !== array.indexOf(min));
 }
 
-console.log(reverseWords('Roma Diana'))
+console.log(removeSmallest([1,2,3,4,1,5,6]))
