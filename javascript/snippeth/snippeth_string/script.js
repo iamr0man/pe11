@@ -283,3 +283,67 @@
 // function validatePIN(pin) {
 //   return /^(\d{4}|\d{6})$/.test(pin)
 // }
+
+// function removeSmallest(numbers) {
+//     debugger;
+//     const min = Math.min.apply(0, numbers);
+//     return numbers.filter(e => e > min);
+// }
+
+// function removeSmallest(numbers) {
+//     const min = Math.min.apply(0, numbers), newArr = [];
+//     let flag = false;
+//     debugger;
+//     for(let i = 0; i < numbers.length; i++){
+//         if(numbers[i] !== min) newArr[i] = numbers[i];
+//         else if(numbers[i] === min && !flag) {
+//             flag = true;
+//             newArr[i] = numbers[++i]; 
+//         }
+//         else if(flag) {
+//             newArr[i] = numbers[i];
+//         }
+//     }
+//     return newArr;
+// }
+
+// console.log(removeSmallest([9, 4,  6, 4 ,8, 4, 4]));
+
+// function dontGiveMeFive(start, end){
+    
+//     let arr = [];
+//     for(let i = start; i <= end; i++){
+//         arr.push(i);
+//     }
+//     arr = arr.map(val => val+'');
+//     arr = arr.filter(val => {
+//         for(let i = 0; i < val.length; i++){
+//             if(!val.includes('5')){
+//                 return val;
+//             }
+//         }
+//     });
+//     return arr.length;
+// }
+
+// console.log(dontGiveMeFive(1,16))
+
+// function dontGiveMeFive(start, end) {
+//     let count = 0
+//     for (let i = start; i <= end; i++) {
+//       if (!/5/.test(i)) {
+//         count++
+//       }
+//     }
+//     return count
+// }
+
+// function oddOrEven(array) {
+//     return array.reduce((a,b) => a+b , 0) % 2 === 0 ? 'even' : 'odd';
+// }
+
+function reverseWords(str) {
+    return str.split("")
+}
+
+console.log(reverseWords('Roma Diana'))
