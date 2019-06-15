@@ -41,4 +41,30 @@ const selectionSort = arr => {
     return arr;
 };
 
-console.log(selectionSort([5, 3, 6, 2, 10]))
+// console.log(selectionSort([5, 3, 6, 2, 10]))
+
+//print list
+
+function printList(list) {
+    debugger;
+    let currentNode = list;
+    while(currentNode !== null){
+        console.log(currentNode.value);
+        currentNode = currentNode.next;
+    }
+}
+
+const list = {
+    value: 1,
+    next: {
+        value: 2,
+        next: {
+            value: 3,
+            next: {
+                value: 4,
+                next: null
+            }
+        }
+    }
+};
+printList(list);

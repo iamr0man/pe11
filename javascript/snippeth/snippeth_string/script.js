@@ -343,7 +343,7 @@
 // }
 
 // function reverseWords(str) {
-//     let result = '';
+//     let result = ''; 
 //     str.split(' ').map(val => {
 //         result += val.split('').reverse().join('') + ' ';
 //     })
@@ -369,9 +369,9 @@
 //     return [...array.slice(0, indexOfMin), ...array.slice(indexOfMin + 1)]
 // }
 
-function removeSmallest(array){
-    const min = Math.min(...array);
-    return array.filter((val, ind, array) => ind !== array.indexOf(min));
-}
+// function removeSmallest(array){
+//     const min = Math.min(...array);
+//     return array.filter((val, ind, array) => ind !== array.indexOf(min));
+// }
 
 console.log(removeSmallest([1,2,3,4,1,5,6]))
