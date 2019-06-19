@@ -1,4 +1,6 @@
-<style> .error { border-color: red; } </style>
+<!-- EXAMPLE 15.1 -->
+
+<!-- <style> .error { border-color: red; } </style>
 
 Введите ваш возраст: <input type="text" id="input">
 
@@ -19,4 +21,66 @@ input.onfocus = function() {
     error.innerHTML = "";
   }
 };
-</script>
+</script> -->
+
+
+<!-- EXAMPLE 15.2 -->
+
+<!-- <style>
+    .error {
+      background: red;
+    }
+</style>
+  
+  <div>Возраст:
+    <input type="text" id="age">
+  </div>
+  
+  <div>Имя:
+    <input type="text">
+  </div>
+  
+<script>
+    age.onblur = function() {
+      if (isNaN(this.value)) { // введено не число
+        // показать ошибку
+        this.classList.add("error");
+        //... и вернуть фокус обратно
+        age.focus();
+      } else {
+        this.classList.remove("error");
+      }
+    };
+</script> -->
+
+
+<!-- EXAMPLE 15.3 -->
+
+
+<!-- <input type="text" onchange="alert(this.value)">
+<input type="button" value="Кнопка"> -->
+
+
+<!--  EXAMPLE 15.4 -->
+
+
+<!-- var script = document.createElement('script');
+script.src = "https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.3.0/lodash.js"
+document.body.appendChild(script);
+
+script.onload = function() {
+    // после выполнения скрипта становится доступна функция _
+    alert( _ ); // её код
+} -->
+
+
+<!-- EXAMPLE 15.5  -->
+
+<!-- var script = document.createElement('script');
+script.src = "https://example.com/404.js"
+document.body.appendChild(script);
+
+script.onerror = function() {
+  alert( "Ошибка: " + this.src );
+}; -->
+
