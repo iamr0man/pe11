@@ -374,4 +374,13 @@
 //     return array.filter((val, ind, array) => ind !== array.indexOf(min));
 // }
 
-console.log(removeSmallest([1,2,3,4,1,5,6]))
+// console.log(removeSmallest([1,2,3,4,1,5,6]))
+
+const sequenceSum = (begin, end, step) => {
+    if(begin > end) return 0;
+    return sequenceSum(begin + step, end, step);
+        
+};
+
+let res = sequenceSum(1,5,3);
+console.log(res);

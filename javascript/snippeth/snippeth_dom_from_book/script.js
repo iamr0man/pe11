@@ -112,10 +112,12 @@ function upcase(n) {
     }
 }
 
+
+
 //Example 15.7
 
 function embolden(n) {
-
+    debugger;
     if (typeof n === 'string') n = document.getElementById(n);
 
     let square = document.createElement('div')
@@ -169,5 +171,3 @@ function methodAll() {
     // var items = lists.all['P']; // Ищет все теги <li> внутри первого <ul>
     return lists;
 }
-
-console.log(methodAll());
