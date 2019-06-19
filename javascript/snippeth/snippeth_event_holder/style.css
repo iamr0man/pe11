@@ -1,0 +1,6 @@
+.animationInlineBlock {
+    height: 50px;
+    width: 50px;
+    background-color: #f1ad1d;
+    display: inline-block;
+}
