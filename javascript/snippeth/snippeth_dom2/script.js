@@ -23,3 +23,31 @@
 // вставить elem после первого элемента
 // insertAfter(elem, body.firstElementChild); // <--- должно работать
 
+// const list = document.querySelectorAll('#ol > li');
+
+// for(let i = 0; i < list.length; i++){
+//     // list[i].onclick = function emphesize(){
+//     //     debugger;
+//     //     this.classList.add('emph');
+//     //     console.log(this.className);
+//     //     console.log(this)
+//     //     console.log(this.style)
+//     //     // this.style.fontSize = '22px';
+//     //     console.log(this.style);
+//     }
+// }
+
+let list = document.getElementById('ol');
+let next = document.getElementById('next');
+
+
+list.onclick = function(event){
+    let target = event.target;
+    target.classList.add('emph');
+};
+
+let current = list.firstElementChild;
+
+next.onclick = function() {
+    
+}
