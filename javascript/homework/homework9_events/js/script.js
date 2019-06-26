@@ -9,7 +9,8 @@ function showContent(headerTab){
     tabsContent.children[indexOfHead].style.display = 'none';
 
     const nodes = Array.prototype.slice.call(headerTabs.children);
-    
+    // let arr = Array.from(tabsContent);
+
     indexOfHead = nodes.indexOf(headerTab.target);
     headerTab.target.classList.add('active')
     tabsContent.children[indexOfHead].style.display = 'block';

@@ -6,6 +6,11 @@ const wraper = document.createElement('div');
 btn.addEventListener('click', drawCircle);
 
 function drawCircle(){
+    if(document.body.children[2] === wraper){
+        while(wraper.firstChild){
+            wraper.removeChild(wraper.firstChild);
+        }
+    }
     document.body.insertBefore(wraper, script);
     for(let i = 0; i < 100; i++){
         const current = document.createElement('div');
@@ -24,6 +29,5 @@ function randomColor(){
 wraper.addEventListener('click', deleteCircle);
 
 function deleteCircle(event) {
-    console.dir(event)
-    event.target.style.display = 'none';
+    this.removeChild(event.target)
 }
