@@ -27,13 +27,12 @@ if(classList.contains('fa-eye')) {
 
 document.querySelector('.btn').addEventListener('click', isEqual);
 
+const p = document.createElement('p');
 function isEqual(event) {
     event.preventDefault();
-    debugger;
-    if(f_pass.value === s_pass.value) 
+    if(f_pass.value === s_pass.value && f_pass.value.length > 0) 
         alert('You are welcome!');
     else {
-        const p = document.createElement('p');
         p.style.color = 'red';
         p.innerText = 'Need to input equal value';
         s_pass.parentNode.appendChild(p);
