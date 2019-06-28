@@ -17,8 +17,6 @@ function carousel() {
     }
 }
 
-
-
 const pause = document.createElement('button')
 pause.innerText = 'Pause'
 document.body.appendChild(pause);
