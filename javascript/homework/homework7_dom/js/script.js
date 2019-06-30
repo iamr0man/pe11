@@ -3,9 +3,8 @@ function createListOfElement(array) {
 }
 
 function addElementFromArray(array) {
-    debugger;
     const list = document.createElement('ul')
-    array.map(value => {
+    array.forEach(value => {
         const node = document.createElement('li')
         if (typeof value !== 'object') {
             node.innerText = value;

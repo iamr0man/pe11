@@ -1,0 +1,24 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.wrap {
+    padding: 20px;
+}
+
+.text {
+    width: 700px;
+}
+
+.active{
+    background-color: teal;
+    
+}
+
+.active {
+    font-size: 18px;
+    border-bottom: 1px solid teal;    
+}

@@ -1,0 +1,27 @@
+.wrap {
+    width: 140px;
+    margin-top: 5px;
+    padding: 20px;
+    background-color: #ff2d2dde;
+}
+
+.inputPrice {
+    color: white;
+    margin-right: 10px;
+}
+
+.input-price {
+    width: 80px;
+    outline-color: rgb(2, 158, 2);
+}
+
+.current-price-wrap {
+    display: inline;
+    padding: 2px;
+    border-radius: 25px;
+    border: 1.5px solid #f1f1f1b4;
+}
+
+.fa-times-circle {
+    cursor: pointer;
+}
