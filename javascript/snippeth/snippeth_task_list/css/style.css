@@ -1,0 +1,28 @@
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+margin: 0;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    background-color: #f1ad1d;
+    justify-content: space-around; /* что бы они расстянулись, чтобы они расспредилились */
+    align-items: center;
+}
+
+.card {
+    perspective: 1000px; /*глубина - расстаяние внутри*/
+    transform-style: preserve-3d; /*прокучивание 3Д*/
+}
+
+.card-item {
+    background-color: #fff;
+    width: 250px;
+    height: 400px;
+    transition: transform 0.2s;
+}
