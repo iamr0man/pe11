@@ -1,0 +1,19 @@
+.wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.flex-child {
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+    background-color: #18cfad;
+}
+
+@media screen and (max-width: 768px){
+    .wrap {
+        flex-direction: column;
+    }
+}

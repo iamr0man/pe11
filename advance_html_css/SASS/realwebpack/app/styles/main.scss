@@ -1,0 +1,60 @@
+// Variables
+
+$temp: 20px;
+
+// Nested
+
+ul {
+  li {
+    a {
+      color: #18cfab;
+      font-size: $temp;
+    }
+  }
+}
+
+@mixin decorationLi {
+  list-style: none;
+  background-color: #12ad1d;
+  border: 1px solid #333;
+}
+
+// Mixin
+ul {
+  li:hover {
+    @include decorationLi;
+
+    a {
+      text-decoration: none;
+    }
+  }
+}
+
+// Placeholder
+
+%improve-p {
+  font-size: 36px/3;
+  background-color: #18d;
+}
+
+div {
+  p {
+    @extend %improve-p;
+  }
+}
+
+//function
+
+@function changeColor($color) {
+  @return $color+#00ff00;
+}
+
+div {
+  margin: 0 auto;
+}
+
+p {
+  width: 300px;
+  color: changeColor(#18cfad);
+  @extend %improve-p;
+}
