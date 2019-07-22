@@ -1,0 +1,576 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,400,500,600,700&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #fff;
+    min-width: 320px;
+}
+
+.header-nav {
+    background-color: #373c3f;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-nav-menu {
+    display: none;
+}
+
+.header-nav-title {
+    padding: 13px 0 13px 19px;
+    color: #fff;
+    font-size: 12px;
+}
+
+.nav-logo {
+    display: none;
+}
+
+.burger-menu {
+    cursor: pointer;
+    background-color: #373c3f;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+}
+
+.burget-menu:hover {
+    background-color: #202529
+}
+
+.burger-line {
+    width: 15px;
+    height: 2px;
+    margin: 1px 13px;
+    background-color: #fff;
+    transition: transform .3s ease, opacity 0.3s ease;
+}
+
+.burger-active {
+    background-color: #202529;
+}
+
+.burger-active .burger-line:first-child {
+    transform: rotate(45deg) translate(4px, 2px);
+    ;
+}
+
+.burger-active .burger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-active .burger-line:last-child {
+    transform: rotate(-45deg) translate(3px, -2px);
+    transform-origin: 20% 40%;
+}
+
+.burger-list {
+    display: none;
+    position: absolute;
+    min-width: 182px;
+    min-height: 161px;
+    top: 40px;
+    right: 0;
+}
+
+.burger-menu:hover .burger-list {
+    display: block;
+}
+
+.burger-list>li {
+    padding: 8px 0 6px 12px;
+    list-style: none;
+    background-color: #fff;
+}
+
+.burger-list>li>a {
+    text-decoration: none;
+    font-size: 10px;
+    color: #5c5c5c;
+}
+
+.header-main-photo {
+    background-image: url(../img/header-bg.png);
+    background-position: 0 90%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-bottom: 5px;
+}
+
+.header-main-headlines {
+    width: 169px;
+    min-height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 14px 0 0 20px;
+}
+
+.header-main-headline {
+    font-size: 14px;
+    color: #fff;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+.header-main-url {
+    color: #a6d6e0;
+    font-size: 12px;
+    line-height: 30px;
+    font-weight: 600;
+    padding-bottom: 94px;
+}
+
+.food-nav-item {
+    display: flex;
+    margin-bottom: 2px;
+    text-decoration: none;
+}
+
+
+.food-nav-item div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.food-nav-item div:first-child {
+    min-width: 100%;
+    height: 75px;
+}
+
+.nav-item-background {
+    background-size: cover;
+}
+
+.pizza-bg {
+    background-image: url(../img/Pizza.png);
+    background-position: 0% -43%;
+}
+
+.salad-bg {
+    background-image: url(../img/Salads.png);
+    background-position: 0% -49%;
+}
+
+.dessert-bg {
+    background-image: url(../img/Desserts.png);
+    background-position: 0% -129%;
+}
+
+.food-nav-item>div>h2 {
+    color: #fff;
+    font-size: 19px;
+    font-weight: 500;
+}
+
+.arrow-right {
+    width: 71px;
+    height: 75px;
+    background-color: #acd8ad;
+}
+
+.fa-chevron-right {
+    color: #fff;
+    font-size: 11px;
+}
+
+.main-headlines {
+    margin: 22px 0 11px 7px;
+}
+
+.main-headline {
+    font-size: 18px;
+    font-weight: 500;
+    color: #3f4043;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+}
+
+.menu-logo {
+    display: none;
+}
+
+.main-title {
+    color: #cbccce;
+    font-size: 9px;
+}
+
+.main-menu-block {
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.food-menu-headline {
+    background-color: #3f4043;
+    padding: 10px 0 8px 23px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #acd8ad;
+    text-transform: uppercase;
+}
+
+.food-menu-title {
+    display: inline-block;
+    width: 87%;
+}
+
+.menu-headline {
+    margin: 16px 0 16px 0px;
+    font-size: 14px;
+    line-height: 9px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: -0.3px;
+    vertical-align: top;
+}
+
+.list_item {
+    margin-bottom: 11px;
+}
+
+.dish-title {
+    position: relative;
+    padding: 0 0 2px 8px;
+    margin-bottom: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: -1px;
+
+    color: #3f4043;
+}
+
+.dish-title::before {
+    position: absolute;
+    content: '·';
+    top: 2px;
+    left: 0px;
+    font-weight: 600;
+}
+
+.dish-title::after {
+    position: absolute;
+    content: '$1200';
+    top: 2px;
+    right: 4px;
+    font-weight: 600;
+}
+
+.dish-describe {
+    padding-left: 2px;
+    font-size: 8px;
+    color: #3f4043;
+}
+
+.food-menu>h2:last-of-type {
+    margin-top: 28px;
+}
+
+.menu-type-img {
+    display: inline-block;
+    margin-top: 9px;
+}
+
+.pizza-img {
+    width: 25px;
+    height: 25px;
+}
+
+.wine-img {
+    width: 13px;
+    height: 24px;
+}
+
+.coffee-img {
+    width: 31px;
+    height: 20px;
+}
+
+.beer-img {
+    width: 21px;
+    height: 20px;
+}
+
+
+
+.secondary-menu-headline {
+    background-color: #acd8ad;
+    padding: 11px 0px 12px 20px;
+    margin-top: 37px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.wrapper {
+    margin-top: 50px;
+    background-color: #acd8ad;
+}
+
+.footer-text {
+    padding: 13px 40px;
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+}
+
+@media screen and (min-width: 640px) {
+
+    .header-nav-title {
+        font-size: 22px;
+        padding: 26px 38px;
+    }
+
+    .header-main-headlines {
+        min-width: 80%;
+    }
+
+    .header-main-headline {
+        margin-top: 17px;
+        font-size: 34px;
+        font-weight: 600;
+    }
+
+    .header-main-headline:last-of-type {
+        margin-bottom: 22px;
+    }
+
+    .header-main-url {
+        padding-bottom: 260px;
+        font-size: 34px;
+    }
+
+    .burger-menu {
+        height: 70px;
+        width: 60px;
+    }
+
+    .burger-line {
+        width: 25px;
+        height: 3px;
+        margin: 2px 10px;
+    }
+
+    .burger-down {
+        transform: rotate(-45deg) translate(11px, -2px);
+    }
+
+    .burger-list {
+        top: 75px;
+    }
+
+    .arrow-right {
+        width: 140px;
+        height: 150px;
+    }
+
+    .food-nav-item div:first-child {
+        min-height: 150px;
+    }
+
+    .food-nav-item>div>h2 {
+        font-size: 29px;
+        font-weight: 600;
+    }
+
+    .pizza-bg {
+        background-position: 0% -59%;
+    }
+
+    .salad-bg {
+        background-position: 0% -57%;
+    }
+
+    .dessert-bg {
+        background-position: 0% -124%;
+    }
+
+    .main-headline {
+        font-size: 36px;
+        padding-left: 18px;
+    }
+
+    .main-title {
+        font-size: 17px;
+        padding-left: 18px;
+    }
+
+    .food-menu-headline {
+        font-size: 37px;
+    }
+
+    .menu-headline {
+        font-size: 27px;
+    }
+
+    .secondary-menu-headline {
+        padding: 22px;
+        font-size: 37px;
+    }
+
+    .pizza-img {
+        width: 49px;
+        height: 50px;
+    }
+
+    .wine-img {
+        width: 27px;
+        height: 48px;
+    }
+
+    .coffee-img {
+        width: 59px;
+        height: 42px;
+    }
+
+    .beer-img {
+        width: 43px;
+        height: 42px;
+    }
+
+    .dish-title {
+        font-size: 25px;
+    }
+
+    .dish-describe {
+        font-size: 16px;
+    }
+
+    .fa-chevron-right {
+        font-size: 21px;
+    }
+
+    .menu-type-img {
+        margin: 17px 0 37px 0;
+    }
+
+    .food-menu-title {
+        margin-top: 36px;
+    }
+
+    .footer-text {
+        padding: 28px 140px;
+        font-size: 18px;
+    }
+}
+
+@media screen and (min-width: 980px) {
+
+    .header-nav-title {
+        display: none;
+    }
+
+    .burger-menu {
+        display: none;
+    }
+
+    .nav-logo {
+        display: block;
+        margin: 10px 50px 5px 0;
+        width: 104px;
+        height: 83px;
+    }
+
+    .header-main-headline:first-of-type {
+        padding: 66px 0 20px 0;
+    }
+
+    .header-main-headline {
+        font-size: 47px;
+    }
+
+    .header-main-url {
+        padding-top: 56px;
+        font-size: 34px;
+    }
+
+    .header-nav-menu {
+        display: flex;
+        padding: 44px 30px;
+    }
+
+    .nav-menu-item {
+        margin-right: 32px;
+        color: #fff;
+        font-size: 18px;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: 100;
+    }
+
+    .food-nav {
+        display: flex;
+        justify-content: center;
+    }
+
+    .food-nav-item div:first-child {
+        min-width: 327px;
+        height: 327px;
+    }
+
+    .food-nav-item .arrow-right {
+        display: none;
+    }
+
+    .main-headline {
+        display: inline-block;
+        width: 80%;
+        /* vertical-align: middle; */
+    }
+
+    .food-menu-headline {
+        font-size: 29px;
+        padding: 13px;
+    }
+
+    .food-menu-title {
+        width: 85%;
+    }
+
+    .menu-headline {
+        margin-bottom: 6px;
+        font-size: 22px;
+    }
+
+    .menu-logo {
+        display: inline-block;
+    }
+
+    .main-menu-block {
+        flex-direction: row;
+    }
+
+    .secondary-menu-headline {
+        padding: 23px;
+        font-size: 27px;
+    }
+
+    .dish-title {
+        font-size: 22px;
+    }
+
+    .dish-describe {
+        font-size: 16px;
+    }
+
+    .nav-logo:last-of-type {
+        display: inline-block;
+        margin: 4px 20px;
+    }
+
+    .footer-text {
+        display: inline-block;
+        width: 80%;
+        padding: 28px 0;
+        text-align: right;
+        vertical-align: top;
+    }
+}
