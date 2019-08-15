@@ -382,5 +382,3 @@ const sequenceSum = (begin, end, step) => {
         
 };
 
-let res = sequenceSum(1,5,3);
-console.log(res);
