@@ -5,22 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="reset.css">
     <title>Document</title>
 </head>
 
 <style>
-    body {
-        background: darksalmon;
-    }
-
-    .fill {
-        background-image: url('https://source.unsplash.com/random/150x150');
-        position: relative;
-        height: 150px;
-        width: 150px;
-        top: 5px;
-        left: 5px;
-        cursor: pointer;
+    .mr {
+        /* margin: 0 auto; */
+        background-image: url(img/background.jpg);
+        background-size: auto;
+        background-repeat: no-repeat;
+        background-position: 140% 50%;
+        width: 100vw;
+        height: 100vh;
     }
 
     .hold {
@@ -36,6 +33,13 @@
         background: white;
     }
 
+    /* .big {
+        background-image: url(img/background.jpg);
+        width: 100vw;
+        height: 100vh;
+
+    } */
+
     .hovered {
         background: #f4f4f4;
         border-style: dashed;
@@ -43,20 +47,10 @@
 </style>
 
 <body>
-    <div class="empty">
-        <div class="fill" draggable="true"> </div>
-    </div>
 
-    <div class="empty">
-    </div>
 
-    <div class="empty">
-    </div>
-
-    <div class="empty">
-    </div>
-
-    <div class="empty">
+    <div class="mr">
+        <!-- <img src="img/background.jpg" alt=""> -->
     </div>
 
     <script src="main.js"></script>
