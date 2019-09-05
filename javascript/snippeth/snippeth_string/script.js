@@ -310,7 +310,7 @@
 // console.log(removeSmallest([9, 4,  6, 4 ,8, 4, 4]));
 
 // function dontGiveMeFive(start, end){
-    
+
 //     let arr = [];
 //     for(let i = start; i <= end; i++){
 //         arr.push(i);
@@ -376,9 +376,400 @@
 
 // console.log(removeSmallest([1,2,3,4,1,5,6]))
 
-const sequenceSum = (begin, end, step) => {
-    if(begin > end) return 0;
-    return sequenceSum(begin + step, end, step);
-        
-};
+// const sequenceSum = (begin, end, step) => {
+//     if(begin > end) return 0;
+//     return sequenceSum(begin + step, end, step);
 
+// };
+
+// let res = sequenceSum(1,5,3);
+// console.log(res);
+
+// function deepEqual(obj1, obj2) {
+
+//     let result = true;
+//     for (let key in obj1) {
+//         if (obj1[key] === obj2[key]) {
+//             continue;
+//         } else if (typeof obj1[key] === 'object') {
+//             result = deepEqual(obj1[key], obj2[key]) //JSON.stringify(obj1) === JSON.springify(obj2);
+//         } else {
+//             result = false;
+//         }
+//     }
+//     return result;
+// }
+
+// function deepEqual(a, b) {
+//     if (a === b) return true;
+
+//     if (a == null || typeof a != "object" ||
+//         b == null || typeof b != "object")
+//         return false;
+
+//     var propsInA = 0,
+//         propsInB = 0;
+
+//     for (var prop in a)
+//         propsInA += 1;
+
+//     for (var prop in b) {
+//         propsInB += 1;
+//         if (!(prop in a) || !deepEqual(a[prop], b[prop]))
+//             return false;
+//     }
+
+//     return propsInA == propsInB;
+// }
+
+// debugger;
+// const res = deepEqual({
+//     title: 'Modern JavaScript',
+//     arr: [1, , 22],
+// }, {
+//     title: 'Modern JavaScript',
+//     arr: [1, , 22]
+// });
+
+// function filter(array, test){
+//     let passed = [];
+//     for(let item of array){
+//         if(test(item)){
+//             passed.push(item);
+//         }
+//     }
+//     return passed;
+// }
+
+// function every(array, test){
+//     let result = true;
+//     const everys = [];
+//     for(let item of array){
+//         if(test(item)){
+//             everys.push(item);
+//         } else {
+//             result = false;
+//         }
+//     }
+//     return result;
+// }
+
+// function evert(array, test){
+//     for(let item of predicate){
+//         if(!predicate(element)) return false;
+//     }
+//     return true;
+// }
+
+// console.log(every([1,3,5, 11], (n) => n < 10));
+
+// function map(array, transform){
+//     let mapped = [];
+//     for(let item of array){
+//         mapped.push(transform(item));
+//     }
+//     return mapped;
+// }
+
+// function reduce(array, combine, start) {
+//     let current = start;
+//     for(let item of array){
+//         current = combine(current + item);
+//     }
+//     return current;   
+// }
+
+// function reduce(array){
+//     return array.reduce((acc, current) => acc.concat(current));
+// }
+
+// let arrays = [[1, 2, 3], [4, 5], [6]];
+// console.log(reduce(arrays))
+
+// function loop(start, test, update, body) {
+//    debugger;
+//     for (let value = start; test(value); value = update(value)) {
+//       body(value);
+//     }
+//   }
+
+// loop(3, n => n > 0, n => n - 1, console.log);
+
+// function countBy(items, groupName) {
+//     let counts = [];
+//     for(let item in items){
+//         let name = groupName(item);
+//         let known = counts.findIndex(i => i.name === name);
+//         if(known === -1){
+//             counts.push({name, count: 1});
+//         } else {
+//             counts[known].count++;
+//         }
+//     }
+//     return counts;
+// }
+// console.log(countBy([1, 2, 3, 4, 5], n => n > 2));
+
+// class Vector {
+//   constructor(x, y) {
+//     this.x = x;
+//     this.y = y;
+//   }
+
+//   plus({x, y}){
+//     return new Vector(this.x + x, this.y + y); 
+//   }
+
+//   minus({x, y}){
+//     return new Vector(this.x - x, this.y - y); 
+//   }
+
+//   length(){
+//     return Math.sqrt(Math.pow(this.x, 2) + Math.pow(this.y, 2));
+//   }
+// }
+
+// console.log(new Vector(1, 2).plus(new Vector(2, 3)));
+// console.log(new Vector(1, 2).minus(new Vector(2, 3)));
+// console.log(new Vector(3, 4).length());
+
+// let map = {one: true, two: true, hasOwnProperty: true};
+
+// Object.defineProperty(map, 'hasOwnProperty', {
+//   value: function(key) {
+//     return Object.keys(this).some((v) => v === key);
+//   }
+// })
+
+// console.log(Object.prototype.hasOwnProperty.call(map, 'one'));
+
+// console.log(map.hasOwnProperty(''));
+
+// function stray(res){
+//     res.sort((a,b) => a-b);
+//     return res[0] === res[1] ? res[res.length -1] : res[0]
+// }
+
+// console.log(stray([-1,-1, -3, -1]))
+
+// const stray = nums => nums.reduce((a, b) => a ^ b);
+// debugger;
+// console.log(stray([1,1,3, 1]))
+
+// const reverseLetter = (str) => str.match(/([a-z])/g).reverse().join('')
+
+// console.log(reverseLetter('roma'))
+
+// function sorted(arr) {
+//     console.log(arr);
+//     if (JSON.stringify(arr) === JSON.stringify(arr.sort((a, b) => a - b))) {
+//         return 'yes, ascending';
+//     }
+//     console.log(arr);
+
+//     if (JSON.stringify(arr) === JSON.stringify(arr.sort((a, b) => b - a))) {
+//         return 'no, descending';
+//     }
+//     console.log(arr);
+//     return 'no'
+// }
+
+// console.log(sorted([11,5]))
+
+// function divisors(integer) {
+//     const arr = [];
+//     for(let i = 2; i < integer; i++){
+//         if(integer % i === 0){
+//             arr.push(i);
+//         }
+//     }
+//     if(arr.length === 0){
+//         return `${integer} is prime`
+//     }
+//     return arr;
+// };
+
+// function divisors(int) {
+//     const res = []
+//     for(let i = 2; i < Math.floor(int / 2); i++) {
+//         if(int % i === 0) res.push(i);
+//     }
+//     return res.length ? res : int + ' is prime';
+// }
+
+// console.log(divisors(15))
+// console.log(divisors(13))
+
+// function capitals(word) {
+//     const res = []
+//     for(let i = 0; i < word.match(/([A-Z])/g).length; i++){
+//         res.push(word.indexOf(word.match(/([A-Z])/g)[i]));
+//     }
+// };
+
+// capitals('CodEWaRs');
+
+// function polindrome(str) {
+//     for (let i = 0, j = str.length - 1; j > i; i++, j--) {
+//         if (str[i] !== str[j]) return false;
+//     }
+//     return true;
+// }
+
+// function palindromeChainLength(n , count = 0) {
+//     for(let i = 0;; i++){
+//         if (polindrome(n + '')) {
+//             return count;
+//         } else {
+//            return palindromeChainLength(reverseNumber(n) + n, ++count);
+//         }
+//     }
+// }
+
+// function reverseNumber(n) {
+//     reverse = 0
+//     while (n > 0){
+//         lastDigit = n % 10
+//         reverse = (reverse * 10) + lastDigit
+//         n = Math.floor(n / 10)
+//     }
+//     return reverse;
+// }
+
+// const res = palindromeChainLength(87)
+// console.log(res);
+
+// var palindromeChainLength = function (n) {
+//     var steps = 0;
+//     while (!isPalindromic(n)) {
+//         steps++;
+//         n += reverseNum(n);
+//     }
+//     return steps;
+// };
+
+// function isPalindromic(n) {
+//     if (n < 0) throw 'isPalindromic only works for positive numbers.';
+//     if (Math.floor(n / 10) === 0) return true; // Single digit numbers are palindromic.
+//     if (n % 10 === 0) return false; // n > 0, without leading 0s cannot be palindromic if ending in 0.
+//     return reverseNum(n) === n;
+// }
+
+// function reverseNum(n) {
+//     var r = 0;
+//     while (n) {
+//         r *= 10;
+//         r += n % 10;
+//         n = Math.floor(n / 10);
+//     }
+//     return r;
+// }
+
+// class MultiplicatorUnitFailure extends Error {}
+
+// function primitiveMultiply(a, b) {
+//     if (Math.random() < 0.2) {
+//         return a * b;
+//     } else {
+//         throw new MultiplicatorUnitFailure("Klunk");
+//     }
+// }
+
+// function reliableMultiply(a, b) {
+//     for(;;){
+//         try{
+//             return primitiveMultiply(a, b)
+//         }catch(e){
+//             if(!(e instanceof MultiplicatorUnitFailure)){
+//                 throw e;
+//             }
+//         }
+//     }
+// }
+// const res = reliableMultiply(8, 8);
+// console.log(res)
+
+// let stock = "1 lemon, 2 cabbages, and 101 eggs";
+// function minusOne(match, amount, unit) {
+//   amount = Number(amount) - 1;
+//   if (amount == 1) { // only one left, remove the 's'
+//     unit = unit.slice(0, unit.length - 1);
+//   } else if (amount == 0) {
+//     amount = "no";
+//   }
+//   return amount + " " + unit;
+// }
+// console.log(stock.replace(/(\d+) (\w+)/g, minusOne));
+// // → no lemon, 1 cabbage, and 100 eggs
+
+// verify(/ca[rt]/,
+//     ["my car", "bad cats"],
+//     ["camper", "high art"]);
+
+// verify(/pr?o?p/,
+//     ["pop culture", "mad props"],
+//     ["plop"]);
+
+// verify(/ferr[eya]/,
+//     ["ferret", "ferry", "ferrari"],
+//     ["ferrum", "transfer A"]);
+
+// verify(/[ia]cious/,
+//     ["how delicious", "spacious room"],
+//     ["ruinous", "consciousness"]);
+
+// verify(/\s[.]/,
+//     ["bad punctuation ."],
+//     ["escape the dot"]);
+
+// verify(/\w{7,}/,
+//     ["hottentottententen"],
+//     ["no", "hotten totten tenten"]);
+
+// verify(/^[rw].+/,
+//     ["red platypus", "wobbling nest"],
+//     ["earth bed", "learning ape"]);
+
+// function verify(regexp, yes, no) {
+//     // Ignore unfinished exercises
+//     if (regexp.source == "...") return;
+//     let result = true;
+//     yes.forEach(function (s) {
+//         if (!regexp.test(s))
+//             console.log("Не нашлось '" + s + "'");
+//     });
+//     no.forEach(function (s) {
+//         if (regexp.test(s)) {
+//             console.log("Неожиданное вхождение '" + s + "'");
+//             result = false;
+//         }
+//     });
+//     console.log(result)
+// }
+
+// reg = /<[\s\S]+?>/g;
+
+// str = `... <!-- My -- comment
+//  test --> ..  <!----> ..
+// `;
+
+// alert( str.match(reg) ); // '<!-- My -- comment \n test -->', '<!---->'
+
+// reg = /<[^<>]+>/g;
+
+// str = '<> <a href="/"> <input type="radio" checked> <b>';
+
+// console.log(str.match(reg)); // '<a href="/">', '<input type="radio" checked>', '<b>'
+
+
+// reg = /#(\w{3}\b|\w{6})+/g;
+
+// str = "color: #3f3; background-color: #AA00ef; and: #abcd";
+
+// alert( str.match(reg) ); // #3f3 #AA00ef
+
+reg = /^-*\w*[.,]*/g;
+
+str = "-1.5 0 2 -123.4.";
+
+console.log(str.match(reg)); // -1.5, 0, 2, -123.4

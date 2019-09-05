@@ -12,9 +12,11 @@ function Hamburger(size, stuffing) {
     this.stuffing = stuffing;
     this.topping = [];
 
-    if (size === undefined && stuffing === undefined) {
-        throw new HamburgerException("no size given")
-    } else if (size.cost !== Hamburger.SIZE_SMALL.cost && size.cost !== Hamburger.SIZE_LARGE.cost) {
+    console.log(this)
+
+    if (!size) {
+        throw new HamburgerException(`no size given`)
+    } else if (size.name !== Hamburger.SIZE_SMALL.name && size.name !== Hamburger.SIZE_LARGE.name) {
         throw new HamburgerException(`invalid size ${this.size.name}`)
     }
 }
@@ -124,7 +126,7 @@ Hamburger.prototype.calculatePrice = function () {
  * @return {Number} Калорийность в калориях
  */
 Hamburger.prototype.calculateCalories = function () {
-    
+
     return this.topping.reduce((acc, current) => acc + current.calories, 0) + this.size.calories + this.stuffing.calories;
 }
 
@@ -140,27 +142,26 @@ function HamburgerException(message) {
 }
 
 try {
-    var hamburger = new Hamburger(Hamburger.SIZE_SMALL, Hamburger.STUFFING_CHEESE);
-    // добавка из майонеза
-    hamburger.addTopping(Hamburger.TOPPING_MAYO);
-    // спросим сколько там калорий
-    console.log("Calories: ", hamburger.calculateCalories());
-    // сколько стоит
-    console.log("Price: ", hamburger.calculatePrice());
-    // я тут передумал и решил добавить еще приправу
-    hamburger.addTopping(Hamburger.TOPPING_SPICE);
-    // А сколько теперь стоит? 
-    console.log("Price with sauce: ", hamburger.calculatePrice());
-    // Проверить, большой ли гамбургер? 
-    console.log("Is hamburger large: ", hamburger.getSize() === Hamburger.SIZE_LARGE); // -> false
-    // Убрать добавку
-    hamburger.removeTopping(Hamburger.TOPPING_SPICE);
-    console.log("Have %d toppings", hamburger.getToppings().length); // 1
+    // var hamburger = new Hamburger(Hamburger.SIZE_SMALL, Hamburger.STUFFING_CHEESE);
+    // // добавка из майонеза
+    // hamburger.addTopping(Hamburger.TOPPING_MAYO);
+    // // спросим сколько там калорий
+    // console.log("Calories: ", hamburger.calculateCalories());
+    // // сколько стоит
+    // console.log("Price: ", hamburger.calculatePrice());
+    // // я тут передумал и решил добавить еще приправу
+    // hamburger.addTopping(Hamburger.TOPPING_SPICE);
+    // // А сколько теперь стоит? 
+    // console.log("Price with sauce: ", hamburger.calculatePrice());
+    // // Проверить, большой ли гамбургер? 
+    // console.log("Is hamburger large: ", hamburger.getSize() === Hamburger.SIZE_LARGE); // -> false
+    // // Убрать добавку
+    // hamburger.removeTopping(Hamburger.TOPPING_SPICE);
+    // console.log("Have %d toppings", hamburger.getToppings().length); // 1
 
-    debugger;
-    var h2 = new Hamburger(); // => HamburgerException: no size given
+    // var h2 = new Hamburger(); // => HamburgerException: no size given
 
-    // var h3 = new Hamburger(Hamburger.TOPPING_SPICE, Hamburger.TOPPING_SPICE);
+    var h3 = new Hamburger();
 
     // var h4 = new Hamburger(Hamburger.SIZE_SMALL, Hamburger.STUFFING_CHEESE);
     // h4.addTopping(Hamburger.TOPPING_MAYO);
