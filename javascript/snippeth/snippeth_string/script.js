@@ -771,5 +771,73 @@
 reg = /^-*\w*[.,]*/g;
 
 str = "-1.5 0 2 -123.4.";
+        
+// };
+
+let res = [2,2,2,2,2]
+
+// function chach(){
+// 	return Math.floor(Math.sqrt(res.map(i => Math.pow(i, 2)).reduce((acc, cur) => acc + cur)) / 2);
+// }
+
+// console.log(chach());
+
+// function red(res){
+//     debugger;
+//     const r = [];
+//     return res.reduce((prev, cur) => {
+//         r.push((prev+cur) / 2);
+//         return 0;
+//     })
+// }
+
+// console.log(red(res));
+
+// const removeDuplicateWords = s => Array.from(new Set(s.split(' '))).join(' ')
+
+// const removeDuplicateWords = s => [...new Set(s.split(' '))].join(' ')
+
+// console.log(removeDuplicateWords('beta gamma gamma'));
+
+// function sumDigits(number) {
+//     return 0 || number.toString().match(/\d/g).reduce((acc, cur) => +acc + +cur)
+// }
+
+// function getDivisorsCnt(n){
+//     let j = 0;
+//     for(let i =1; i < n/2; i++){
+//         if(n % i === 0){
+//             j++;
+//         }
+//     }
+//     return j;
+// }
+
+// function getDivisorsCnt(n){
+//     for(let d = 0, i = n; i >0; i--){
+//         if(n % i === 0) d++
+//     }
+//     return d;
+// }
+
+// function reverseNumber(n) {
+//     if(n > 0) {
+//         return reverseNumberM(n);
+//     } else {
+//         return -reverseNumberM(Math.abs(n))
+//     }
+// }
+
+// function reverseNumberM(n){
+//     let res = 0, lastDigit = 0;
+//     while(n > 0) {
+//         lastDigit = n % 10;
+//         res = res * 10 + lastDigit;
+//         n = Math.floor(n / 10);
+//     }
+//     return res;
+// }
+
+// console.log(reverseNumber(-1234))
 
 console.log(str.match(reg)); // -1.5, 0, 2, -123.4
