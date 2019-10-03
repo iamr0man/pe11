@@ -1,41 +1,14 @@
-import { createStore, bindActionCreators } from 'redux';
-
-const reducer = (state = 0, action) => {
-
-    if (action.type === 'INC')
-        return state + 1;
-    else if (action.type === 'DEC')
-        return state - 1;
-    else if (action.type === 'RND')
-        return state + action.payload
-    else
-        return state;
-}
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { createStore } from 'redux';
+import { Provider } from 'react-redux'
+import reducer from './reducer'
+import App from './components/app'
 
 const store = createStore(reducer);
-const { dispatch } = store;
 
-const inc = () => ({ type: 'INC' })
-const dec = () => ({ type: 'DEC' })
-const rnd = (payload) => ({ type: 'RND', payload })
-
-const { incDispatch, decDispatch, rndDispatch } = bindActionCreators({
-    'incDispatch': inc,
-    'decDispatch': dec,
-    'rndDispatch': rnd,
-}, dispatch)
-
-document.getElementById('inc').addEventListener('click', incDispatch)
-document.getElementById('dec').addEventListener('click', decDispatch)
-document.getElementById('rnd').addEventListener('click', () => {
-    const payload = Math.floor(Math.random() * 110);
-    rndDispatch(payload)
-})
-
-const update = () => {
-    document
-        .getElementById('counter')
-        .innerHTML = store.getState();
-}
-
-store.subscribe(update);
+ReactDOM.render(
+    <Provider store={store}>
+        <App />
+    </Provider>,
+    document.getElementById('root'))
