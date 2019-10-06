@@ -1,0 +1,23 @@
+[
+    {
+        "id": 56,
+        "firstName": "Sergey",
+        "lastName": "Nemch",
+        "birthday": "1977-08-03",
+        "hasPet": false 
+    },
+    {
+        "id": 567,
+        "firstName": "Roman",
+        "lastName": "Smoke",
+        "birthday": "2002-04-22",
+        "hasPet": false 
+    },
+    {
+        "id": 5678,
+        "firstName": "Roman",
+        "lastName": "Windetron",
+        "birthday": "1995-11-03",
+        "hasPet": true 
+    }
+]

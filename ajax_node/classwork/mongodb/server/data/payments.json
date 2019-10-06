@@ -1,0 +1,36 @@
+[
+    {   "id": 56,
+        "date": "2019-09-11 10:38:00",
+        "sum": 3150,
+        "balance": 28320,
+        "description": "AZS"
+    },
+    {
+        "id": 567,
+        "date": "2019-09-11 16:38:00",
+        "sum": 1150,
+        "balance": 98520,
+        "description": "Lunch"
+    },
+    {
+        "id": 5678,
+        "date": "2019-09-12 08:38:00",
+        "sum": 19150,
+        "balance": 168520,
+        "description": "Footwear"
+    },
+    {
+        "id": 87,
+        "date": "2019-09-16 10:01:00",
+        "sum": 34150,
+        "balance": 468520,
+        "description": "Iphone"
+    },
+    {
+        "id": 876,
+        "date": "2019-09-14 10:01:00",
+        "sum": 4150,
+        "balance": 8520,
+        "description": "Iphone"
+    }
+]
