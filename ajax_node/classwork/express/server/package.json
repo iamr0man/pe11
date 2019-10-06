@@ -1,0 +1,25 @@
+{
+  "name": "kvitochka",
+  "version": "1.0.0",
+  "description": "Kvitochka is going to be something very intersting",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://bitbucket.org/sergeydonchenko/sportix-landing.git"
+  },
+  "keywords": [
+    "todo",
+    "nodejs",
+    "js"
+  ],
+  "author": "Sergey Donchenko, <sergey.donchenko@gmail.com>",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/sergeydonchenko/sportix-landing#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^1.19.2"
+  }
+}

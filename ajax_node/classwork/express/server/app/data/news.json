@@ -1,0 +1,100 @@
+[{
+        "id": "9",
+        "videoUrl": "https://www.youtube-nocookie.com/embed/dGFdmJ2QoM8",
+        "videoOptions": "?rel=0&amp;showinfo=0",
+        "videoHeight": "315px",
+        "url": "https://promos.privatbank.ua/ru/megogo",
+        "urlUk": "https://promos.privatbank.ua/ua/megogo",
+        "description": "Покупайте билеты на поезд в ПриватБанке, скачивайте фильмы бесплатно на MEGOGO и смотрите в дороге даже без Интернета",
+        "descriptionUk": "Купуйте квитки на поїзд у ПриватБанку, завантажуйте фільми безкоштовно на MEGOGO й дивіться в дорозі навіть без Інтернету",
+        "date": "11.09.2019"
+    },
+    {
+        "id": "8",
+        "videoUrl": "https://www.youtube-nocookie.com/embed/SGgPJstWckE",
+        "videoOptions": "?rel=0&amp;showinfo=0",
+        "videoHeight": "315px",
+        "url": "https://privatbank.ua/ru/news/2019/7/2/953",
+        "urlUk": "https://privatbank.ua/news/2019/7/2/953",
+        "description": "ПриватБанк стал единственным украинским банком в TOP 1 000 World Banks",
+        "descriptionUk": "ПриватБанк став єдиним українським банком у TOP 1 000 World Banks",
+        "date": "03.07.2019"
+    },
+    {
+        "id": "7",
+        "videoUrl": "https://www.youtube-nocookie.com/embed/PcTETIV0ZMg",
+        "videoOptions": "?rel=0&amp;showinfo=0",
+        "videoHeight": "315px",
+        "url": "https://privatbank.ua/ru/news/2019/7/3/954",
+        "urlUk": "https://privatbank.ua/news/2019/7/3/954",
+        "description": "ПриватБанк запустил мгновенный выпуск виртуальных банковских карт",
+        "descriptionUk": "ПриватБанк запустив миттєвий випуск віртуальних банківських карток",
+        "date": "05.07.2019"
+    },
+    {
+        "id": "6",
+        "videoUrl": "https://www.youtube-nocookie.com/embed/JXF4gqTDgsI",
+        "videoOptions": "?rel=0&amp;showinfo=0",
+        "videoHeight": "315px",
+        "url": "https://privatbank.ua/ru/cpa/applemusic?utm_source=google&utm_medium=cpc&utm_campaign=applemusicru",
+        "urlUk": "https://privatbank.ua/cpa/applemusic?utm_source=google&utm_medium=cpc&utm_campaign=applemusicu",
+        "description": "Подписка на Apple Music в Украине с кэшбэком от ПриватБанка",
+        "descriptionUk": "Підписка на Apple Music в Україні з кешбеком від ПриватБанку",
+        "date": "12.06.2019"
+    },
+    {
+        "id": "5",
+        "videoUrl": "https://www.youtube-nocookie.com/embed/IR9tll4wWao",
+        "videoOptions": "?rel=0&amp;showinfo=0",
+        "videoHeight": "315px",
+        "url": "https://promos.privatbank.ua/ru/keshbek-na-avtobusnye-bilety",
+        "urlUk": "https://promos.privatbank.ua/ua/keshbek-na-avtobusni-kvytky",
+        "description": "Кешбэк на автобусные билеты",
+        "descriptionUk": "Кешбек на автобусні квитки",
+        "date": "31.05.2019"
+    },
+    {
+        "id": "4",
+        "videoUrl": "https://www.youtube-nocookie.com/embed/ZAxnrlPahtw",
+        "videoOptions": "?rel=0&amp;showinfo=0",
+        "videoHeight": "315px",
+        "url": "https://specials.mc.today/design-contest",
+        "urlUk": "https://specials.mc.today/design-contest",
+        "description": "",
+        "descriptionUk": "",
+        "date": "24.05.2019"
+    },
+    {
+        "id": "3",
+        "videoUrl": "https://www.youtube-nocookie.com/embed/yg7q9D-fiuY",
+        "videoOptions": "?rel=0&amp;showinfo=0",
+        "videoHeight": "315px",
+        "url": "https://privatbank.ua/ru/news/2019/2/18/844",
+        "urlUk": "https://privatbank.ua/news/2019/2/18/844",
+        "description": "ПриватБанк вошел в топ-20 рейтинга работодателей Украины",
+        "descriptionUk": "ПриватБанк увійшов до топ-20 рейтингу роботодавців України",
+        "date": "21.02.2019"
+    },
+    {
+        "id": "2",
+        "videoUrl": "https://www.youtube-nocookie.com/embed/McbBIPjLNg0",
+        "videoOptions": "?rel=0&amp;showinfo=0",
+        "videoHeight": "315px",
+        "url": "https://privatbank.ua/ru/news/2019/2/6/833",
+        "urlUk": "https://privatbank.ua/news/2019/2/6/833",
+        "description": "ПриватБанк запускает онлайн-обмен валюты в Приват24 и терминалах самообслуживания",
+        "descriptionUk": "ПриватБанк запускає онлайн-обмін валюти в Приват24 та терміналах самообслуговування",
+        "date": "06.02.2019"
+    },
+    {
+        "id": "1",
+        "videoUrl": "https://www.youtube-nocookie.com/embed/Dl6frbEcw3Q",
+        "videoOptions": "?rel=0&amp;showinfo=0",
+        "videoHeight": "315px",
+        "url": "https://www.instagram.com/privatbank_original/",
+        "urlUk": "https://www.instagram.com/privatbank_original/",
+        "description": "ПриватБанк верифицировал официальный аккаунт в Instagram",
+        "descriptionUk": "ПриватБанк верифікував офіційний аккаунт в Instagram",
+        "date": "05.02.2019"
+    }
+]
