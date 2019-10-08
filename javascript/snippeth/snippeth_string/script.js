@@ -768,13 +768,13 @@
 
 // alert( str.match(reg) ); // #3f3 #AA00ef
 
-reg = /^-*\w*[.,]*/g;
+// reg = /^-*\w*[.,]*/g;
 
-str = "-1.5 0 2 -123.4.";
-        
+// str = "-1.5 0 2 -123.4.";
+
 // };
 
-let res = [2,2,2,2,2]
+// let res = [2, 2, 2, 2, 2]
 
 // function chach(){
 // 	return Math.floor(Math.sqrt(res.map(i => Math.pow(i, 2)).reduce((acc, cur) => acc + cur)) / 2);
@@ -840,4 +840,97 @@ let res = [2,2,2,2,2]
 
 // console.log(reverseNumber(-1234))
 
-console.log(str.match(reg)); // -1.5, 0, 2, -123.4
+// console.log(str.match(reg)); // -1.5, 0, 2, -123.4
+
+// function findOdd(arr){
+//     let res = 0;
+//     const digits = new Map()
+//     for(let i = 0; i < arr.length; i++){
+//         if(digits.get(arr[i]) !== undefined) {
+//             const val = digits.get(arr[i])
+//             digits.set(arr[i], val+1)
+//         } else {
+//             digits.set(arr[i], 1);
+//         }
+//     }
+
+//     for(const [key, value] of digits){
+//         if(value % 2 !== 0) res = key;
+//     }
+
+//     console.log(res)
+// }
+// const findOdd = (xs) => xs.reduce((a, b) => a ^ b);
+
+// function findOdd(A){
+//     const obj = {}
+//     A.forEach(e => {
+//         obj[e] ? obj[e]++ : obj[e] = 1;
+//     })
+
+//     for(prop in obj){
+//         if(obj[prop] % 2 !== 0) return prop
+//     }
+// }
+
+// findOdd([ 5, 4, 3, 2, 1, 5, 4, 3, 2, 10, 10 ])
+
+// let n = 39;
+// let i = 0;
+// let temp = []
+// while (n >= 10) {
+//     n = n + ''
+//     temp = n.match(/\d/g);
+//     n = temp.reduce((a, b) => a * b)
+//     i++;
+// }
+
+// return i
+// persistence(999);
+
+// function digital_root(num) {
+//     debugger;
+//     let times = 0;
+
+//     num = num.toString();
+//     while(num.length > 1){
+//         times++;
+//         num = num.split('').map(Number).reduce((a,b) => a + b ).toString();
+//     }
+//     return +num;
+// }
+
+// function digital_root(n) {
+//     return (n - 1) % 9 + 1;
+// }
+
+// console.log(digital_root(123))
+
+const arr = ['better' , 'hire']
+let randomLetters = ['h', 'r', 'i', 'e', 'b','e','','','e','r']
+
+function isIncludes(word){
+    return word.every((e, i, array) => {
+        if(randomLetters.includes(e)){
+            return true;
+        }
+    })
+}
+
+function deleteCharacter(word){
+    word.forEach((element) => {
+        const index = randomLetters.indexOf(element)
+        randomLetters.splice(index, 1)  
+        console.log(randomLetters)
+    });
+} 
+
+function main(arr) {
+    arr.forEach(e => {
+        if(isIncludes([...e])){
+            deleteCharacter([...e])
+        }
+    })
+}
+
+main(arr)
