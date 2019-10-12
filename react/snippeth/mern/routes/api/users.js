@@ -6,7 +6,7 @@ const jwt = require('jsonwebtoken')
 const config = require('config')
 const { check, validationResult } = require('express-validator')
 
-const User = require('')
+const User = require('../../models/User')
 
 //@route    GET api/users
 //@desc     Test route
@@ -33,7 +33,7 @@ router.post('/',
             let user = await User.findOne({ email: email })
 
             if (user) {
-                res.status(400).json({ errors: [{ msg: 'User Not Found' }] })
+                return res.status(400).json({ errors: [{ msg: 'User already exists' }] })
             }
 
             const avatar = gravatar.url(email, {
@@ -58,17 +58,19 @@ router.post('/',
                 }
             }
 
-            jwt.sign(payload, config.get('jwtToken'), { expiresIn: 360000 },
+            jwt.sign(payload, config.get('jwtSecret'),
+                { expiresIn: 360000 },
                 (err, token) => {
                     if (err) throw err;
                     res.json({ token })
                 })
 
         } catch (err) {
-
+            console.error(err.message)
+            res.status(500).send('Server error')
         }
 
-        res.send('User registered')
+        // res.send('User registered')
     })
 
 module.exports = router;    
