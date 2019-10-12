@@ -771,10 +771,10 @@
 reg = /^-*\w*[.,]*/g;
 
 str = "-1.5 0 2 -123.4.";
-        
+
 // };
 
-let res = [2,2,2,2,2]
+let res = [2, 2, 2, 2, 2]
 
 // function chach(){
 // 	return Math.floor(Math.sqrt(res.map(i => Math.pow(i, 2)).reduce((acc, cur) => acc + cur)) / 2);
@@ -840,4 +840,28 @@ let res = [2,2,2,2,2]
 
 // console.log(reverseNumber(-1234))
 
-console.log(str.match(reg)); // -1.5, 0, 2, -123.4
+// console.log(str.match(reg)); // -1.5, 0, 2, -123.4
+
+function orderPlease(string) {
+    const arr = string.split(' ');
+    let res = []
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 1; j < arr.length + 1; j++) {
+            if (arr[i].search(`${j}`) > -1) {
+                console.log('j = ', j)
+                console.log('first slice, - ', arr.slice(0, j - 1))
+                console.log('arr[i], -', arr[i])
+                console.log('second slice, -', arr.slice(j))
+                res = [
+                    ...arr.slice(0, j - 1),
+                    arr[i],
+                    ...arr.slice(j)
+                ]
+            }
+        }
+        console.log('res =', res)
+    }
+}
+
+// debugger;
+orderPlease('Th1s t3st o2e')
