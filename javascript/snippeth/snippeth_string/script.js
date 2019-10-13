@@ -842,26 +842,50 @@ let res = [2, 2, 2, 2, 2]
 
 // console.log(str.match(reg)); // -1.5, 0, 2, -123.4
 
-function orderPlease(string) {
-    const arr = string.split(' ');
-    let res = []
-    for (let i = 0; i < arr.length; i++) {
-        for (let j = 1; j < arr.length + 1; j++) {
-            if (arr[i].search(`${j}`) > -1) {
-                console.log('j = ', j)
-                console.log('first slice, - ', arr.slice(0, j - 1))
-                console.log('arr[i], -', arr[i])
-                console.log('second slice, -', arr.slice(j))
-                res = [
-                    ...arr.slice(0, j - 1),
-                    arr[i],
-                    ...arr.slice(j)
-                ]
-            }
-        }
-        console.log('res =', res)
-    }
-}
+// function orderPlease(string) {
+//     const arr = string.split(' ');
+//     for (let i = 0; i < arr.length; i++) {
+//         for (let j = 0; j < arr.length - i - 1; j++) {
+//             a_num = +arr[j].match(/\d/g)
+//             b_num = +arr[j + 1].match(/\d/g)
+//             if (a_num > b_num) {
+//                 let temp = arr[j];
+//                 arr[j] = arr[j + 1];
+//                 arr[j + 1] = temp;
+//             }
+//         }
+//     }
 
-// debugger;
-orderPlease('Th1s t3st o2e')
+//     return arr.join(' ')
+// }
+
+// function order(string) {
+//     return string.split(' ').sort((a, b) => {
+//         return a.match(/\d/) - b.match(/\d/)
+//     }).join(' ')
+// }
+
+// console.log(order('Th1s t3st o2e'))
+
+// function letter_count(string) {
+//     const myObj = {}
+//     for (let i = 0; i < string.length; i++) {
+//         if (!myObj[string[i]]) {
+//             myObj[string[i]] = 1;
+//         } else {
+//             let old = myObj[string[i]];
+//             myObj[string[i]] = ++old;
+//         }
+//     }
+//     return myObj
+// }
+
+const letter_count = s =>
+    s.split('')
+        .reduce((accum, value) => {
+            accum[value] = accum[value] ? accum[value] + 1 : 1;
+            return accum
+        }, {})
+
+
+console.log(letter_count('arithmetics'))
