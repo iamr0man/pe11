@@ -57,7 +57,7 @@ router.post('/', [auth, [
     if (req.body.githubusername)
         profileFields.githubusername = req.body.githubusername;
     if (typeof req.body.skills !== 'undefined') {
-        profileFields.skills = req.body.skills.split(',');
+        profileFields.skills = req.body.skills.split(', ');
     }
 
     profileFields.social = {};
@@ -126,13 +126,12 @@ router.get('/user/:user_id', async (req, res) => {
 })
 
 //@route    DELETE api/profile/all
-//@desc     Delete profile, user & posts
+//@desc     Delete profile & user
 //@access   Private
 
 router.delete('/', auth, async (req, res) => {
     try {
         //Remove profile
-        console.log(req.user.id)
         await Profile.findOneAndRemove({ user: req.user.id })
         //Remove user
         await User.findOneAndRemove({ _id: req.user.id })

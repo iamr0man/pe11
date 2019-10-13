@@ -8,7 +8,7 @@ const { check, validationResult } = require('express-validator')
 
 const User = require('../../models/User')
 //@route    GET api/auth
-//@desc     Test route
+//@desc     Get auth user
 //@access   Public
 
 router.get('/', auth, async (req, res) => {
@@ -47,7 +47,7 @@ router.post('/',
             const isMatch = await bcrypt.compare(password, user.password)
 
             if (!isMatch) {
-                return res.status(400).json({ errors: [{ msg: 'Invailid Credantials' }] })
+                return res.status(400).json({ errors: [{ msg: 'Invailid Password' }] })
             }
 
             const payload = {
