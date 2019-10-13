@@ -113,19 +113,19 @@ router.get('/user/:user_id', async (req, res) => {
     try {
         const profiles = await Profile.findOne({ user: req.params.user_id }).populate('user', ['name', 'avatar'])
 
-        if (!profiles) return res.status(400).json({ msg: "Profile not found" })
+        if (!profiles) return res.status(404).json({ msg: "Profile not found" })
 
         res.json(profiles)
     } catch (err) {
         console.error(err.message)
         if (err.kind == 'ObjectId') {
-            return res.status(400).json({ msg: "Profile not found" })
+            return res.status(404).json({ msg: "Profile not found" })
         }
         res.status(500).send('Server error')
     }
 })
 
-//@route    DELETE api/profile/all
+//@route    DELETE api/profile/
 //@desc     Delete profile & user
 //@access   Private
 
