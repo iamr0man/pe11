@@ -23,9 +23,8 @@ router.post('/', [
     }
 
     try {
-
         const user = await User.findOne({ id: req.body.id }).select('-password')
-        console.log(req.body.user)
+
         const newPost = new Post({
             text: req.body.text,
             name: user.name,
@@ -151,6 +150,78 @@ router.put('/unlike/:id', auth, async (req, res) => {
 
         res.json(post.likes)
     } catch (error) {
+        console.error(err.message)
+        res.status(500).send('Server error')
+    }
+})
+
+//@route    POST api/posts/comment/:id
+//@desc     Comment on a post
+//@access   Private
+
+router.post('/comment/:id', [
+    auth,
+    check('text', 'Text is required')
+        .not()
+        .isEmpty()
+], async (req, res) => {
+
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        res.status(400).json({ errors: errors.array() })
+    }
+
+    try {
+
+        const user = await User.findOne({ id: req.body.id }).select('-password')
+        const post = await Post.findOne({ id: req.body.id })
+
+        const newComment = new Post({
+            text: req.body.text,
+            name: user.name,
+            avatar: user.avatar,
+            user: user.id
+        })
+
+        post.comments.unshift(newComment)
+
+        await post.save();
+
+        res.json(post.comments)
+    } catch (err) {
+        console.error(err.message)
+        res.status(500).send('Server Error')
+    }
+})
+
+//@route    DELETE api/posts/comment/:id:/comment_id
+//@desc     Delete comment on a post
+//@access   Private
+
+router.delete('/comment/:id/:comment_id', auth, async (req, res) => {
+    try {
+        const post = await Post.findOne({ _id: req.params.id })
+
+        const comment = post.comments.find(comment => comment.id === req.params.comment_id);
+
+        //Make sure comments exist
+        if (!comment) {
+            return res.status(404).json({ msg: 'Comment does not exist' })
+        }
+
+        //Check user
+        if (comment.user.toString() !== req.user.id) {
+            return res.status(401).json({ msg: 'User not authorized' })
+        }
+
+        const removeIndex = post.comments.map(comment => comment.user.toString()).indexOf(req.user.id);
+
+        post.comments.splice(removeIndex, 1)
+
+        await post.save();
+
+        res.json(post.comments)
+    } catch (err) {
         console.error(err.message)
         res.status(500).send('Server error')
     }
