@@ -26,7 +26,6 @@ const Dashboard = ({ getCurrentProfile, auth: { user }, profile: { profile, load
                         {/* <button className='btn btn-danger' onClick={() => deleteAccount()}> */}
                         {/* <i className='fas fa-user-minus' /> Delete My Account */}
                         {/* </button> */}
-                        has
                     </div>
                 </Fragment>
             ) : (
