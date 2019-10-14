@@ -65,7 +65,7 @@ router.get('/', async (req, res) => {
 router.get('/:post_id', auth, async (req, res) => {
     try {
 
-        const post = await Post.findOne({ _id: req.params.post_id })
+        const post = await Post.findById(req.params.post_id)
 
         if (!post) return res.status(404).json({ msg: 'Post not found' })
 
@@ -85,12 +85,11 @@ router.get('/:post_id', auth, async (req, res) => {
 
 router.delete('/:post_id', auth, async (req, res) => {
     try {
-        const post = await Post.findOne({ _id: req.params.post_id })
+        const post = await Post.findById(req.params.post_id)
 
         if (!post) {
             return res.status(404).json({ msg: 'Post not found' })
         }
-
         if (post.user.toString() !== req.user.id) {
             return res.status(401).json({ msg: 'User not authorized' })
         }
@@ -113,8 +112,8 @@ router.delete('/:post_id', auth, async (req, res) => {
 
 router.put('/like/:id', auth, async (req, res) => {
     try {
-        const post = await Post.findOne({ _id: req.params.id })
-        // console.log()
+        const post = await Post.findById(req.params.id)
+
         if (post.likes.filter(like => like.user.toString() === req.user.id).length > 0) {
             return res.status(400).json({ msg: 'Post already liked' })
         }
