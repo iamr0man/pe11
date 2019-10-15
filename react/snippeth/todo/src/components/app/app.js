@@ -14,12 +14,9 @@ export default class App extends Component {
 
   state = {
     todoData: [
-      this.createTodoItem('Drink Coffee'),
-      this.createTodoItem('Make Awesome App'),
-      this.createTodoItem('Have a lunch'),
     ],
     term: '',
-    filter: 'done' //active, all, done
+    filter: 'all' //active, all, done
 
   }
 
@@ -33,6 +30,8 @@ export default class App extends Component {
   }
 
   addItem = (text) => {
+    if (!text) return;
+
     const newItem = this.createTodoItem(text)
 
     this.setState(({ todoData }) => {
