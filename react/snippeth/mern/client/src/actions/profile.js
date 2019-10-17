@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { setAlert } from './alert'
 
-import { GET_PROFILE, UPDATE_PROFILE, PROFILE_ERROR } from "./types";
+import { GET_PROFILE, UPDATE_PROFILE, PROFILE_ERROR, CLEAR_PROFILE, DELETE_ACCOUNT } from "./types";
 
 //Get current user profile
 export const getCurrentProfile = () => async dispatch => {
@@ -124,3 +124,63 @@ export const addEducation = (fromData, history) => async dispatch => {
     }
 }
 
+//Delete Expereince
+export const deleteExperience = (id) => async dispatch => {
+    try {
+
+        const res = axios.delete(`api/profile/experience/${id}`)
+
+        dispatch({
+            type: UPDATE_PROFILE,
+            payload: res.data
+        })
+
+        dispatch(setAlert('Experience Removed', 'success'))
+    } catch (err) {
+
+        dispatch({
+            type: PROFILE_ERROR,
+            payload: { msg: err.response.statusText, status: err.response.status }
+        })
+    }
+}
+
+//Delete Expereince
+export const deleteEducation = (id) => async dispatch => {
+    try {
+        const res = axios.delete(`api/profile/education/${id}`)
+
+        dispatch({
+            type: UPDATE_PROFILE,
+            payload: res.data
+        })
+
+        dispatch(setAlert('Education Removed', 'success'))
+    } catch (err) {
+
+        dispatch({
+            type: PROFILE_ERROR,
+            payload: { msg: err.response.statusText, status: err.response.status }
+        })
+    }
+}
+
+//Delete profile & acc
+export const deleteAccount = () => async dispatch => {
+    if (window.confirm('Are you sure? This can NOT be undoe!!')) {
+        try {
+            await axios.delete(`api/profile`)
+
+            dispatch({ type: CLEAR_PROFILE })
+            dispatch({ type: DELETE_ACCOUNT })
+
+            dispatch(setAlert('Your account has been permanantly deleted'))
+        } catch (err) {
+
+            dispatch({
+                type: PROFILE_ERROR,
+                payload: { msg: err.response.statusText, status: err.response.status }
+            })
+        }
+    }
+}

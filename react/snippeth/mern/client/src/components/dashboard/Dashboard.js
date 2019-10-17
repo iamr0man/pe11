@@ -8,6 +8,7 @@ import Experience from '../dashboard/Experience'
 import Education from '../dashboard/Education'
 
 import { getCurrentProfile } from '../../actions/profile'
+import { deleteAccount } from '../../actions/profile'
 
 const Dashboard = ({ getCurrentProfile, auth: { user }, profile: { profile, loading } }) => {
     useEffect(() => {
@@ -27,9 +28,9 @@ const Dashboard = ({ getCurrentProfile, auth: { user }, profile: { profile, load
                     <Education education={profile.education} />
 
                     <div className='my-2'>
-                        {/* <button className='btn btn-danger' onClick={() => deleteAccount()}> */}
-                        {/* <i className='fas fa-user-minus' /> Delete My Account */}
-                        {/* </button> */}
+                        <button className='btn btn-danger' onClick={() => deleteAccount()}>
+                            <i className='fas fa-user-minus' /> Delete My Account
+                        </button>
                     </div>
                 </Fragment>
             ) : (
