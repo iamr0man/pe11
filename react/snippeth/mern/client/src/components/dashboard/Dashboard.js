@@ -4,6 +4,9 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import Spinner from '../layout/Spinner'
 import DashboardActions from '../dashboard/DashboardActions'
+import Experience from '../dashboard/Experience'
+import Education from '../dashboard/Education'
+
 import { getCurrentProfile } from '../../actions/profile'
 
 const Dashboard = ({ getCurrentProfile, auth: { user }, profile: { profile, loading } }) => {
@@ -20,8 +23,8 @@ const Dashboard = ({ getCurrentProfile, auth: { user }, profile: { profile, load
             {profile !== null ? (
                 <Fragment>
                     <DashboardActions />
-                    {/* <Experience experience={profile.experience} /> */}
-                    {/* <Education education={profile.education} /> */}
+                    <Experience experience={profile.experience} />
+                    <Education education={profile.education} />
 
                     <div className='my-2'>
                         {/* <button className='btn btn-danger' onClick={() => deleteAccount()}> */}
