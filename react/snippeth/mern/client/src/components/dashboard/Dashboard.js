@@ -12,7 +12,7 @@ import { getCurrentProfile, deleteAccount } from '../../actions/profile'
 const Dashboard = ({ getCurrentProfile, auth: { user }, profile: { profile, loading }, deleteAccount }) => {
     useEffect(() => {
         getCurrentProfile();
-    }, [])
+    }, [getCurrentProfile])
 
     console.log(profile)
     return loading && profile === null ? <Spinner /> :
@@ -24,8 +24,8 @@ const Dashboard = ({ getCurrentProfile, auth: { user }, profile: { profile, load
             {profile !== null ? (
                 <Fragment>
                     <DashboardActions />
-                    <Experience experience={profile.experience || []} />
-                    <Education education={profile.education || []} />
+                    <Experience experience={profile.experience} />
+                    <Education education={profile.education} />
 
                     <div className='my-2'>
                         <button className='btn btn-danger' onClick={() => deleteAccount()}>

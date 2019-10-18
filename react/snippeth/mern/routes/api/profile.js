@@ -9,7 +9,7 @@ const Profile = require('../../models/Profile')
 const Post = require('../../models/Post')
 const User = require('../../models/User')
 
-//@route    GET api/profile
+//@route    GET api/profile/me
 //@desc     Get current users profile
 //@access   Private
 
@@ -96,7 +96,7 @@ router.post('/', [auth, [
 //@desc     Get all profiles
 //@access   Public
 
-router.get('/all', async (req, res) => {
+router.get('/', async (req, res) => {
     try {
         const profiles = await Profile.find().populate('user', ['name', 'avatar'])
         res.json(profiles)
