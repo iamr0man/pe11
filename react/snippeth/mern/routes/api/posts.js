@@ -50,8 +50,8 @@ router.get('/', async (req, res) => {
     try {
         const posts = await Post.find().sort({ data: -1 })
 
+        console.log(posts)
         res.json(posts)
-
     } catch (err) {
         console.error(err.message)
         res.status(500).send('Server error')
