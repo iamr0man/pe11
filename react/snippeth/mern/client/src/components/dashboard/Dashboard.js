@@ -14,7 +14,6 @@ const Dashboard = ({ getCurrentProfile, auth: { user }, profile: { profile, load
         getCurrentProfile();
     }, [getCurrentProfile])
 
-    console.log(profile)
     return loading && profile === null ? <Spinner /> :
         <Fragment>
             <h1 className="large text-primary">Dashboard</h1>
