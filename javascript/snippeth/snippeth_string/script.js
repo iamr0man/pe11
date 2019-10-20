@@ -904,28 +904,28 @@
 
 // console.log(digital_root(123))
 
-const arr = ['better' , 'hire']
-let randomLetters = ['h', 'r', 'i', 'e', 'b','e','','','e','r']
+const arr = ['better', 'hire']
+let randomLetters = ['h', 'r', 'i', 'e', 'b', 'e', '', '', 'e', 'r']
 
-function isIncludes(word){
+function isIncludes(word) {
     return word.every((e, i, array) => {
-        if(randomLetters.includes(e)){
+        if (randomLetters.includes(e)) {
             return true;
         }
     })
 }
 
-function deleteCharacter(word){
+function deleteCharacter(word) {
     word.forEach((element) => {
         const index = randomLetters.indexOf(element)
-        randomLetters.splice(index, 1)  
+        randomLetters.splice(index, 1)
         // console.log(randomLetters)
     });
-} 
+}
 
 function main(arr) {
     arr.forEach(e => {
-        if(isIncludes([...e])){
+        if (isIncludes([...e])) {
             deleteCharacter([...e])
         }
     })
@@ -973,6 +973,7 @@ main(arr)
 const letter_count = s =>
     s.split('')
         .reduce((accum, value) => {
+            console.log(accum[value])
             accum[value] = accum[value] ? accum[value] + 1 : 1;
             return accum
         }, {})
@@ -995,13 +996,13 @@ const letter_count = s =>
 //     }
 // }
 
-function likes (names) {
+function likes(names) {
     var templates = [
-      'no one likes this',
-      '{name} likes this',
-      '{name} and {name} like this',
-      '{name}, {name} and {name} like this',
-      '{name}, {name} and {n} others like this'
+        'no one likes this',
+        '{name} likes this',
+        '{name} and {name} like this',
+        '{name}, {name} and {name} like this',
+        '{name}, {name} and {n} others like this'
     ];
     const idx = Math.min(names.length, 4)
     return templates[idx].replace(/{name}|{n}/g, val => {
@@ -1033,4 +1034,35 @@ function alphabetPosition(text) {
         .join(' ')
 }
 
-console.log(alphabetPosition("_erager$%#$3453:: rsger:32446: wgre:"))
+// console.log(alphabetPosition("_erager$%#$3453:: rsger:32446: wgre:"))
+
+// function songDecoder(song) {
+//     return song
+//         .replace(/WUB/g, ' ')
+//         .replace(/  +/g, ' ')
+//         .split('')
+//         .join('')
+//         .trim()
+// }
+
+function songDecoder(song) {
+    return song.replace(/(WUB)+/g, ' ').trim()
+}
+
+// console.log(songDecoder('WUBWEWUBAREWUBWUBTHEWUBCHAMPIONSWUBMYWUBFRIENDWUB'))
+
+function dec2bin(dec) {
+    return (dec >>> 0).toString(2).split('').filter(n => +n === 1).length
+}
+
+// console.log(dec2bin(1234))
+
+function array_diff(a, b) {
+    return a.filter(x => b.indexOf(x) === -1)
+}
+
+// function array_diff(a, b) {
+//     return a.filter(x => !b.includes(x))
+// }
+
+console.log(array_diff([1, 2, 3], [2, 3, 5]))

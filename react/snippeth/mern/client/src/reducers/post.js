@@ -60,7 +60,7 @@ export default function (state = initialState, action) {
             return {
                 ...state,
                 post: {
-                    ...state.post,
+                    ...state,
                     comments: state.post.comments.filter(comment => comment._id !== payload),
                     loading: false
                 }
