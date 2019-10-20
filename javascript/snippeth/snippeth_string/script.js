@@ -919,7 +919,7 @@ function deleteCharacter(word){
     word.forEach((element) => {
         const index = randomLetters.indexOf(element)
         randomLetters.splice(index, 1)  
-        console.log(randomLetters)
+        // console.log(randomLetters)
     });
 } 
 
@@ -978,4 +978,59 @@ const letter_count = s =>
         }, {})
 
 
-console.log(letter_count('arithmetics'))
+// console.log(letter_count('arithmetics'))
+
+// function likes(names) {
+//     switch(names.length){
+//         case 0:
+//             return "no one likes this"
+//         case 1:
+//             return `${names[0]} likes this`;
+//         case 2:
+//             return `${names[0]} and ${names[1]} like this`
+//         case 3: 
+//             return `${names[0]}, ${names[1]} and ${names[2]} like this`
+//         default:
+//             return `${names[0]}, ${names[1]} and ${names.length - 2} others like this`
+//     }
+// }
+
+function likes (names) {
+    var templates = [
+      'no one likes this',
+      '{name} likes this',
+      '{name} and {name} like this',
+      '{name}, {name} and {name} like this',
+      '{name}, {name} and {n} others like this'
+    ];
+    const idx = Math.min(names.length, 4)
+    return templates[idx].replace(/{name}|{n}/g, val => {
+        return val === '{name}' ? names.shift() : names.length;
+    })
+}
+
+// console.log(likes(["Alex", "Jacob", "Ebby", "Carol"]))
+
+// const alphabet = ' ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+
+// function alphabetPosition(text) {
+//     return text ? text
+//     .toUpperCase()
+//     .replace(/([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\'\`\#\;\%\_[^0-9|\W]|\<\>\-\&])/g,"")
+//     .replace(/[^0-9|\W]/g, val => {
+//         console.log(val)
+//         return alphabet.indexOf(val) + ' '
+//     })
+//     // .replace(/  /g, ' ')
+//     .trim() : ''
+// }
+
+function alphabetPosition(text) {
+    return text
+        .toUpperCase()
+        .match(/[a-z]/gi)
+        .map(e => e.charCodeAt() - 64)
+        .join(' ')
+}
+
+console.log(alphabetPosition("_erager$%#$3453:: rsger:32446: wgre:"))
