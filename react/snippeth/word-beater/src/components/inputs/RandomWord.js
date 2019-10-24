@@ -1,16 +1,17 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { connect } from 'react-redux';
 
 import PropTypes from 'prop-types'
 
 import { changeCurrent, changeInput } from '../../actions/word';
 import { setAlert } from '../../actions/alert';
+import { changeScore } from '../../actions/score';
 
 const RandomWord = ({ word: { inputWord, currentWord },
     changeCurrent,
-    changeInput, setAlert }) => {
+    changeInput, setAlert, changeScore }) => {
 
-    const [words, setWord] = useState([
+    const words = [
         'hat',
         'river',
         'lucky',
@@ -36,7 +37,7 @@ const RandomWord = ({ word: { inputWord, currentWord },
         'master',
         'space',
         'definition'
-    ])
+    ]
 
     const idx = Math.floor(Math.random() * words.length);
 
@@ -48,6 +49,7 @@ const RandomWord = ({ word: { inputWord, currentWord },
         changeCurrent(words[idx]);
         changeInput('')
         setAlert('Correct!!!')
+        changeScore(1)
     }
 
     return (
@@ -65,4 +67,4 @@ const mapStateToProps = state => ({
     word: state.words
 })
 
-export default connect(mapStateToProps, { changeInput, changeCurrent, setAlert })(RandomWord)
+export default connect(mapStateToProps, { changeInput, changeCurrent, setAlert, changeScore })(RandomWord)

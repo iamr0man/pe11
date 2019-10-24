@@ -8,16 +8,21 @@ import { Provider } from "react-redux";
 import store from './store'
 
 const App = () => {
+
+  const height = {
+    height: '100vh'
+  }
+
   return (
     <Provider store={store}>
-      <div className="bg-dark text-white">
+      <div className="bg-dark text-white" style={height}>
         <Header />
         <div className="container text-center">
           <Buttons />
           <WordAndInput />
         </div>
       </div>
-    </Provider>
+    </Provider >
   );
 }
 

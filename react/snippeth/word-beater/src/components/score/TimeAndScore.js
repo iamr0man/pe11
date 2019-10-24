@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types'
 
-const TimeAndScore = ({ time: { level } }) => {
+const TimeAndScore = ({ time: { level }, score: { score } }) => {
     return (
         <div className="row mt-5">
             <div className="col-md-6">
@@ -12,7 +12,7 @@ const TimeAndScore = ({ time: { level } }) => {
             </div>
             <div className="col-md-6">
                 <h3>Score:
-              <span id="score">0</span>
+              <span>{score}</span>
                 </h3>
             </div>
         </div>
@@ -24,7 +24,8 @@ TimeAndScore.propTypes = {
 }
 
 const mapStateToProps = state => ({
-    time: state.levels
+    time: state.levels,
+    score: state.score
 })
 
 export default connect(mapStateToProps, null)(TimeAndScore)

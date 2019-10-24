@@ -2,23 +2,24 @@ import React from 'react'
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
+import Timer from './Timer';
 import RandomWord from './RandomWord';
 import InputWord from './InputWord';
 import Message from './Message';
 import TimeAndScore from '../score/TimeAndScore';
+import Instruction from '../inscruction/Instruction';
 
 const WordAndInput = ({ level: { level } }) => {
 
     return (
         <div className="row">
             <div className="col-md-6 mx-auto">
-                <p className="lead">Type The Given Word Within
-                    <span className="text-success"> {level}</span> Seconds:
-                </p>
+                <Timer />
                 <RandomWord />
                 <InputWord />
                 <Message />
                 <TimeAndScore />
+                <Instruction />
             </div>
         </div>
     )
