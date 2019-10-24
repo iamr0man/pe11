@@ -3,8 +3,13 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types'
 
 const Message = ({ msg: { message } }) => {
+
+    const height = {
+        height: '7vh'
+    }
+
     return (
-        <h4 class="mt-3">{message}</h4>
+        <h4 className="mt-3" style={height}>{message}</h4>
     )
 }
 

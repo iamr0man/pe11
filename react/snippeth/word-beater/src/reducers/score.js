@@ -1,7 +1,8 @@
-import { UPDATE_SCORE } from "../actions/types";
+import { UPDATE_SCORE, FINISH_GAME } from "../actions/types";
 
 const initialState = {
-    score: -1
+    score: -1,
+    isPlaying: true
 }
 
 export default function (state = initialState, action) {
@@ -10,7 +11,13 @@ export default function (state = initialState, action) {
     switch (type) {
         case UPDATE_SCORE:
             return {
-                score: state.score + payload
+                ...state,
+                score: state.score + payload,
+            }
+        case FINISH_GAME:
+            return {
+                ...state,
+                isPlaying: false
             }
         default:
             return {

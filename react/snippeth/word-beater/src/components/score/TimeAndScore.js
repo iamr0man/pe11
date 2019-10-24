@@ -1,13 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types'
 
-const TimeAndScore = ({ time: { level }, score: { score } }) => {
+import { checkStatus } from '../../actions/score';
+
+const TimeAndScore = ({ time: { level }, score: { score }, checkStatus }) => {
+
     return (
         <div className="row mt-5">
             <div className="col-md-6">
                 <h3>Time Left:
-              <span>{level}</span>
+              <span onChange={checkStatus(level)}>{level}</span>
                 </h3>
             </div>
             <div className="col-md-6">
@@ -28,4 +31,4 @@ const mapStateToProps = state => ({
     score: state.score
 })
 
-export default connect(mapStateToProps, null)(TimeAndScore)
+export default connect(mapStateToProps, { checkStatus })(TimeAndScore)
