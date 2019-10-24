@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 
 import RandomWord from './RandomWord';
 import InputWord from './InputWord';
+import Message from './Message';
+import TimeAndScore from '../score/TimeAndScore';
 
 const WordAndInput = ({ level: { level } }) => {
 
@@ -15,7 +17,8 @@ const WordAndInput = ({ level: { level } }) => {
                 </p>
                 <RandomWord />
                 <InputWord />
-                {/* <Message /> */}
+                <Message />
+                <TimeAndScore />
             </div>
         </div>
     )

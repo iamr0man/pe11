@@ -4,10 +4,11 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types'
 
 import { changeCurrent, changeInput } from '../../actions/word';
+import { setAlert } from '../../actions/alert';
 
 const RandomWord = ({ word: { inputWord, currentWord },
     changeCurrent,
-    changeInput }) => {
+    changeInput, setAlert }) => {
 
     const [words, setWord] = useState([
         'hat',
@@ -43,14 +44,15 @@ const RandomWord = ({ word: { inputWord, currentWord },
         changeCurrent(words[idx])
     }, [])
 
-    const clearInput = () => {
+    const isMatch = () => {
         changeCurrent(words[idx]);
         changeInput('')
+        setAlert('Correct!!!')
     }
 
     return (
         <h2 className="display-2 mb-5">
-            {inputWord !== currentWord ? currentWord : clearInput()}
+            {inputWord !== currentWord ? currentWord : isMatch()}
         </h2>
     )
 }
@@ -60,7 +62,7 @@ RandomWord.propTypes = {
 }
 
 const mapStateToProps = state => ({
-    word: state.currentWord
+    word: state.words
 })
 
-export default connect(mapStateToProps, { changeInput, changeCurrent })(RandomWord)
+export default connect(mapStateToProps, { changeInput, changeCurrent, setAlert })(RandomWord)

@@ -8,7 +8,7 @@ const InputWord = ({ changeInput, word: { inputWord } }) => {
 
     return (
         <input type="text" className="form-control form-control-lg" placeholder="Start typing..." autoFocus
-            onInput={e => changeInput(e.target.value)}
+            onChange={e => changeInput(e.target.value)}
             value={inputWord}
         />
     )
@@ -20,7 +20,7 @@ InputWord.propTypes = {
 }
 
 const mapStateToProps = state => ({
-    word: state.currentWord
+    word: state.words
 })
 
 export default connect(mapStateToProps, { changeInput })(InputWord)

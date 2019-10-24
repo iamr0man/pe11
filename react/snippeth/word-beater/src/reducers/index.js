@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux'
 import levels from './levels'
-import currentWord from './currentWord'
+import words from './words'
+import alert from './alert'
 
 export default combineReducers({
     levels,
-    currentWord
+    words,
+    alert
 })

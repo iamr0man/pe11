@@ -2,7 +2,7 @@ import { SET_WORD, SET_CURRENT } from "../actions/types";
 
 const initialState = {
     inputWord: '',
-    currentWord: ''
+    currentWord: '',
 }
 
 export default function (state = initialState, action) {
@@ -12,12 +12,12 @@ export default function (state = initialState, action) {
         case SET_WORD:
             return {
                 ...state,
-                inputWord: payload
+                inputWord: payload,
             }
         case SET_CURRENT:
             return {
                 ...state,
-                currentWord: payload
+                currentWord: payload,
             }
         default:
             return {
