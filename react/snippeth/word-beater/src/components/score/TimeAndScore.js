@@ -6,11 +6,15 @@ import { checkStatus } from '../../actions/score';
 
 const TimeAndScore = ({ time: { level }, score: { score }, checkStatus }) => {
 
+    useEffect(() => {
+        checkStatus(level)
+    }, [])
+
     return (
         <div className="row mt-5">
             <div className="col-md-6">
                 <h3>Time Left:
-              <span onChange={checkStatus(level)}>{level}</span>
+              <span>{level}</span>
                 </h3>
             </div>
             <div className="col-md-6">

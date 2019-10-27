@@ -1,4 +1,4 @@
-import { CHANGE_LEVEL, PROGRESS_GAME, FINISH_GAME } from "./types";
+import { CHANGE_LEVEL, PROGRESS_GAME } from "./types";
 
 
 export const startGame = () => dispatch => {
