@@ -170,15 +170,15 @@ router.post('/comment/:id', [
     }
 
     try {
-
-        const user = await User.findOne({ id: req.body.id }).select('-password')
-        const post = await Post.findOne({ id: req.body.id })
-
+        console.log(req.user)
+        const user = await User.findById(req.user.id).select('-password')
+        const post = await Post.findById(req.params.id)
+        console.log(post)
         const newComment = new Post({
             text: req.body.text,
             name: user.name,
             avatar: user.avatar,
-            user: user.id
+            user: req.user.id
         })
 
         post.comments.unshift(newComment)
