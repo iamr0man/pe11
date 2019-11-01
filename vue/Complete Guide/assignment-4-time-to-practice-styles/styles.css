@@ -25,3 +25,8 @@
   width: 0;
       background-color: 'teal';
 }
+
+.testing {
+  border: 1px solid #ccc;
+  color: teal;
+ }

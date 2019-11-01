@@ -1,7 +1,7 @@
 new Vue({
   el: '#exercise',
   data: {
-    color: '',
+    color: 'teal',
     effectClasses: {
       highlight: true,
       shrink: false
@@ -11,6 +11,8 @@ new Vue({
       red: true
     },
     width: 0,
+    inputClass: '',
+    inputBool: true
   },
   methods: {
     startEffect: function () {
@@ -23,7 +25,7 @@ new Vue({
     startProgress: function () {
       const id = setInterval(() => {
         if (this.width > 100)
-          clearInterval(id)
+          this.width = 0;
         return this.width += 30
       }, 1200)
     },
