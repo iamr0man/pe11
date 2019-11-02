@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <main id="todolist">
+        <h1>
+            Todo List
+            <span>Get things done, one item at a time.</span>
+        </h1>
+
+        <template v-if="todo.length">
+            <transition-group name="todolist" tag="ul">
+                <li v-for="item in todoByStatus" :class="item.done ? 'done' : ''" :key="item.id">
+                    <span class="label">{{item.label}}</span>
+                    <div class="actions">
+                        <button class="btn-picto" type="button" @click="markAsDoneOrUndone(item)"
+                            :aria-label="item.done ? 'Undone' : 'Done'" :title="item.done ? 'Undone' : 'Done'">
+                            <i aria-hidden="true"
+                                class="material-icons">{{ item.done ? 'check_box' : 'check_box_outline_blank' }}</i>
+                        </button>
+                        <button class="btn-picto" type="button" @click="deleteItemFromList(item)" aria-label="Delete"
+                            title="Delete"><i aria-hidden="true" class="material-icons">delete</i></button>
+                    </div>
+                </li>
+            </transition-group>
+            <togglebutton label="Mode done items at the end" name="todosort" @clicked="clickontoggle" />
+        </template>
+        <p v-else class="emptylist">Your todo list is empty.</p>
+
+        <form name="newform" @submit.prevent="addItem">
+            <label for="newitem">Add to the todo list</label>
+            <input type="text" id="newitem" name="newitem" v-model="newitem">
+            <button type="submit">Add item</button>
+        </form>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
