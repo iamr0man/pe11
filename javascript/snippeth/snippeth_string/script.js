@@ -1065,4 +1065,85 @@ function array_diff(a, b) {
 //     return a.filter(x => !b.includes(x))
 // }
 
-console.log(array_diff([1, 2, 3], [2, 3, 5]))
+// console.log(array_diff([1, 2, 3], [2, 3, 5]))
+
+// function findOutlier(integers){
+//     const odd = [], even = []
+//     for (let i = 0; i < integers.length; i++) {
+//         if(integers[i] % 2 === 0)  
+//             odd.push(integers[i])
+//         else
+//             even.push(integers[i]) 
+//     }
+//     return odd.length === 1 ? odd[0] : even[0];
+// }
+
+function findOutlier(int){
+    var even = int.filter(a=>a%2==0);
+    var odd = int.filter(a=>a%2!==0);
+    return even.length==1? even[0] : odd[0];
+  }
+
+// console.log(findOutlier([38092298,-143539080,183498450,104812148,-1897126,-95053961,92536448,-151040634,88809426,-38735280]))
+
+function digPow(n, p){
+    const str = n + '';
+    const tmp = str.split('').reduce((acc, cur) => {
+        return acc + Math.pow(cur, p++)
+    }, 0)
+    return tmp % n !== 0 ? tmp / n : -1
+}
+
+// console.log(digPow(92, 1))
+
+const findMissingLetter = (array) => {
+    const prevDigit = array.map(v => v.charCodeAt(0))
+    .filter((v, i, a) => Math.abs(a[i] - a[i+1]) === 2).join()
+    return String.fromCharCode(Number(prevDigit)+1)
+}
+
+// console.log(findMissingLetter(['O','Q','R','S']))
+
+let a = [13, 34, 42]  
+let b = [169, 1157, 1764]
+
+// function comp(a, b){
+
+//     if (a == null || b == null) return false;
+//     if (a.length != b.length) return false;
+
+//     const sortedA = a.map(x => x*x).sort()
+//     const sortedB = b.sort();
+
+//     return JSON.stringify(sortedA)==JSON.stringify(sortedB)
+// }
+
+// function comp(array1, array2) {
+//     if(array1 == null || array2 == null) return false;
+//     array1.sort((a, b) => a - b); array2.sort((a, b) => a - b);
+//     return array1.map(v => v * v).every((v, i) => v == array2[i]);
+//   }
+
+// console.log(comp(a, b))
+
+// function createPhoneNumber(numbers){
+//     const phone = numbers.join("");
+//     return String("(" + phone.slice(0,3) + ") " + phone.slice(3, 6) + "-" + phone.slice(6) )
+// }
+
+// function createPhoneNumber(numbers){
+//     var format = "(xxx) xxx-xxxx";
+    
+//     for(var i = 0; i < numbers.length; i++)
+//     {
+//       format = format.replace('x', numbers[i]);
+//     }
+    
+//     return format;
+// }
+
+function createPhoneNumber(numbers){
+    return numbers.join('').replace(/(...)(...)(.*)/, '($1) $2-$3');
+}
+
+console.log(createPhoneNumber([1, 1, 1, 1, 1, 1, 1, 1, 1, 1]))
