@@ -39,7 +39,7 @@ export const actions = {
           type: 'error',
           message: 'There was a problem creating your event: ' + error.message
         }
-        dispatch('notification/', notification, { root: true })
+        dispatch('notification/add', notification, { root: true })
         throw error
       })
   },
