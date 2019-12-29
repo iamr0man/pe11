@@ -1147,3 +1147,21 @@ function createPhoneNumber(numbers){
 }
 
 console.log(createPhoneNumber([1, 1, 1, 1, 1, 1, 1, 1, 1, 1]))
+
+
+
+function longestSubstringWithoutDiblication(string){
+    string = string.split('')
+    let lastSeen = {}
+    const longest = [[], []]
+    let startIdx = 0;
+
+    for(const char, i in string){
+        if(char in lastSeen)
+            startIdx = Math.max(startIdx, lastSeen[char + 1])
+        if(longest[1] - longest[0] < i + 1 - startIdx)
+            longest = [startIdx, i+1]
+        lastSeen[char] = 1;
+    }
+    // return string[longest[0]:longest[1]]
+}
