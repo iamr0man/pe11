@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import store from './store/store'
 import EventCreate from './views/EventCreate.vue'
 import EventList from './views/EventList.vue'
 import EventShow from './views/EventShow.vue'
@@ -14,7 +15,8 @@ const router = new Router({
     {
       path: '/',
       name: 'event-list',
-      component: EventList
+      component: EventList,
+      props: true
     },
     {
       path: '/event/create',
@@ -26,8 +28,10 @@ const router = new Router({
       name: 'event-show',
       component: EventShow,
       props: true,
-      beforeEnter(routeTo, routeFrom, next) {
-        this.$store.dispatch('event/fetchEvent', routeTo.params.id).then(() => {
+      beforeEnter(to, from, next) {
+        store.dispatch('event/fetchEvent', to.params.id).then(event => {
+          console.log(event)
+          to.params.event = event
           next()
         })
       }
@@ -35,12 +39,12 @@ const router = new Router({
   ]
 })
 
-router.beforeEach((routeTo, routeFrom, next) => {
+router.beforeEach((to, from, next) => {
   NProgress.start()
   next()
 })
 
-router.afterEach((routeTo, routeFrom, next) => {
+router.afterEach(() => {
   NProgress.done()
 })
 

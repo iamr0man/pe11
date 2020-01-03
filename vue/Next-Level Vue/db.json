@@ -231,6 +231,60 @@
       "date": "",
       "time": "5:00",
       "attendees": []
+    },
+    {
+      "id": 5814035,
+      "user": {
+        "id": "abc123",
+        "name": "Adam"
+      },
+      "category": "sustainability",
+      "organizer": {
+        "id": "abc123",
+        "name": "Adam"
+      },
+      "title": "SUCCESS",
+      "description": "",
+      "location": "",
+      "date": "",
+      "time": "",
+      "attendees": []
+    },
+    {
+      "id": 9045748,
+      "user": {
+        "id": "abc123",
+        "name": "Adam"
+      },
+      "category": "food",
+      "organizer": {
+        "id": "abc123",
+        "name": "Adam"
+      },
+      "title": "Eat in MacBack",
+      "description": "",
+      "location": "Prospect",
+      "date": "2020-01-03T16:05:00.000Z",
+      "time": "19:00",
+      "attendees": []
+    },
+    {
+      "id": 7167701,
+      "user": {
+        "id": "abc123",
+        "name": "Adam"
+      },
+      "category": "education",
+      "organizer": {
+        "id": "abc123",
+        "name": "Adam"
+      },
+      "title": "Learn How Lo Learn",
+      "description": "Finish second week",
+      "location": "",
+      "date": "2020-01-05T16:09:00.000Z",
+      "time": "18:00",
+      "attendees": []
     }
   ]
 }

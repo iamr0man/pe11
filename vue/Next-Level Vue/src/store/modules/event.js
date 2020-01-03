@@ -5,7 +5,8 @@ export const namespaced = true
 export const state = {
   events: [],
   eventsTotal: 0,
-  event: {}
+  event: {},
+  perPage: 3
 }
 
 export const mutations = {
@@ -58,10 +59,15 @@ export const actions = {
       })
   },
   fetchEvent({ commit, getters, dispatch }, id) {
-    var event = getters.getEventById(id)
+    if (id == state.event.id) {
+      return state.event
+    }
+
+    const event = getters.getEventById(id)
 
     if (event) {
       commit('SET_EVENT', event)
+      return event
     } else {
       return EventService.getEvent(id)
         .then(response => {
