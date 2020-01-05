@@ -7,9 +7,10 @@ import store from './store/store'
 import BaseIcon from '@/components/BaseIcon'
 import 'nprogress/nprogress.css'
 import Vuelidate from 'vuelidate'
+import DateFilter from './filters/date'
 
 Vue.use(Vuelidate)
-Vue.component('BaseIcon', BaseIcon)
+Vue.filter('date', DateFilter)
 
 Vue.config.productionTip = false
 
