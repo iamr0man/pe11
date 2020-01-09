@@ -1165,3 +1165,54 @@ function longestSubstringWithoutDiblication(string){
     }
     // return string[longest[0]:longest[1]]
 }
+
+
+const tmp = [
+    {
+      filters: [
+        {
+            filter:{
+                type:"Color"
+            },
+            subFilter: {
+                name: "Black"
+            }
+        },
+        {
+            filter:{
+                type:"Sizes"
+            },
+            subFilter: {
+                name: "43"
+            }
+        },
+      ]
+    },
+    {
+      filters: [
+        {
+            filter:{
+                type:"Sizes"
+            },
+            subFilter: {
+                name: "43"
+            }
+        },
+        {
+            filter:{
+                type:"Color"
+            },
+            subFilter: {
+                name: "Teal"
+            }
+        },
+      ]
+    },
+  ]
+
+for(let i = 0; i < tmp.length; i++){
+    const log = _.get(tmp, `tmp[${i}].filters[${i}].subFilter.name`)
+    console.log(log)
+}
+
+console.log(_)
