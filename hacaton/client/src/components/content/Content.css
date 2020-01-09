@@ -1,0 +1,107 @@
+.main {
+  width: 100%;
+  padding-top: 140px;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.main-headline {
+  text-align: center;
+  font-size: 50px;
+  font-weight: 500;
+  color: white;
+  margin-top: 50px;
+}
+
+.highlight {
+  font-family: 'Lobster', cursive;
+}
+
+/* VIDEO */
+#myVideo {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+/*  CARD */
+
+/* style="width:75px;" */
+
+.card {
+  margin-top: 40px;
+  /* color: black; */
+  background: #ffffff26;;
+  font-family: 'Open Sans', sans-serif;
+  padding: 2em 2em 1em 2em;
+  box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.03), 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+  margin: 140px auto;
+  width: 740px;
+  text-align: center;
+  overflow: auto;
+  /* opacity: ; */
+}
+img{
+
+ height:75px;
+ width: 78.28px;
+}
+.rbox{
+
+ height: 356.54px;
+ padding-top: 32px;
+ width: 100%;
+ 
+}
+
+.t1{
+   color: #FFF;
+   font-family: 'Montserrat', sans-serif;
+   text-transform: uppercase;
+   font-size: 30px;
+   font-weight: bold;
+   margin: 0 0 .15em 0;
+}
+.t2 {
+   display: block;
+   margin-block-start: 1em;
+   margin-block-end: 1em;
+   margin-inline-start: 0px;
+   margin-inline-end: 0px;
+   margin: 0;
+   color: #FFFF !important;
+}
+
+.button1{
+
+    text-decoration: none;
+   padding: 32px 0;
+   margin-top: 16px;
+   width: auto;
+   font-size: 24px;
+   line-height: 1.5em;
+   border-radius: 0;
+   display: inline-block;
+   padding: 15px 30px 15px 30px;
+
+   background-color: #66694c;
+   color: #ffffff;
+   text-decoration: none;
+   text-transform: uppercase;
+   font-weight: bold;
+   font-family: Montserrat, sans-serif;
+   font-size: 18px;
+}
+
+.buttin1:hover {
+  color: #66694c;
+}
+
+.butdiv{
+ padding-top: 2em;
+   padding-bottom: 0;
+   width: 80%;
+   margin: auto;
+}
