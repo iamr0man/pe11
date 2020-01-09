@@ -1,31 +1,25 @@
-<template>
-  <div>
-    <h1>Events Listing</h1>
-    <EventCard v-for="event in events" :key="event.id" :event="event"/>
-  </div>
+<template slot="items" slot-scope="props">
+  <tr @click.native="test">
+    <td>{{ props.item.name }}</td>
+    <td class="text-xs-right">{{ props.item.calories }}</td>
+    <td class="text-xs-right">{{ props.item.fat }}</td>
+    <td class="text-xs-right">{{ props.item.carbs }}</td>
+    <td class="text-xs-right">{{ props.item.protein }}</td>
+    <td class="text-xs-right">{{ props.item.iron }}</td>  
+  </tr>
 </template>
 
 <script>
-import EventCard from '@/components/EventCard.vue'
-import EventService from '../services/EventService'
-
 export default {
   data() {
     return {
-      events: []
+      items: [{ name: 'Banana', calories: '144gr', fat: '19gr', carbs: '28', protein: '4gr', iron: 'million gr'},]
     }
   },
-  components: {
-    EventCard
-  },
-  created(){
-    EventService.getEvents()
-      .then(response => {
-        this.events = response.data
-      })
-      .catch(err => {
-        console.log(err)
-      })
+  methods: {
+    test() {
+      console.log('click')
+    }
   }
 }
 </script>

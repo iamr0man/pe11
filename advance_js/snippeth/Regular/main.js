@@ -38,9 +38,7 @@ let reg = /[.]{3,}/g;
 console.log("Привет!... Как дела?.....".match(reg));
 
 reg = /#[\da-f]{6}\b/gi;
-
 str = "color:#121212; background-color:#AA00ef bad-colors:f#fddee #fd2 #12345678.\ncolors\ncwrwd\n";
-console.log(str);
 console.log(str.match(reg)) // #121212,#AA00ef
 
 console.log(str.match(/^\w+/g));

@@ -14,6 +14,7 @@ export default class App extends Component {
 
   state = {
     todoData: [
+      {label: 'Repeat todo', important: true, done: false}
     ],
     term: '',
     filter: 'all' //active, all, done
