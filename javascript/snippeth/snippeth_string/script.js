@@ -1146,73 +1146,330 @@ function createPhoneNumber(numbers){
     return numbers.join('').replace(/(...)(...)(.*)/, '($1) $2-$3');
 }
 
-console.log(createPhoneNumber([1, 1, 1, 1, 1, 1, 1, 1, 1, 1]))
+// console.log(createPhoneNumber([1, 1, 1, 1, 1, 1, 1, 1, 1, 1]))
 
 
 
-function longestSubstringWithoutDiblication(string){
-    string = string.split('')
-    let lastSeen = {}
-    const longest = [[], []]
-    let startIdx = 0;
+// function longestSubstringWithoutDiblication(string){
+//     string = string.split('')
+//     let lastSeen = {}
+//     const longest = [[], []]
+//     let startIdx = 0;
 
-    for(const char, i in string){
-        if(char in lastSeen)
-            startIdx = Math.max(startIdx, lastSeen[char + 1])
-        if(longest[1] - longest[0] < i + 1 - startIdx)
-            longest = [startIdx, i+1]
-        lastSeen[char] = 1;
+//     for(const char, i in string){
+//         if(char in lastSeen)
+//             startIdx = Math.max(startIdx, lastSeen[char + 1])
+//         if(longest[1] - longest[0] < i + 1 - startIdx)
+//             longest = [startIdx, i+1]
+//         lastSeen[char] = 1;
+//     }
+//     // return string[longest[0]:longest[1]]
+// }
+
+
+// const tmp = [
+//     {
+//       filters: [
+//         {
+//             filter:{
+//                 type:"Color"
+//             },
+//             subFilter: {
+//                 name: "Black"
+//             }
+//         },
+//         {
+//             filter:{
+//                 type:"Sizes"
+//             },
+//             subFilter: {
+//                 name: "43"
+//             }
+//         },
+//       ]
+//     },
+//     {
+//       filters: [
+//         {
+//             filter:{
+//                 type:"Sizes"
+//             },
+//             subFilter: {
+//                 name: "43"
+//             }
+//         },
+//         {
+//             filter:{
+//                 type:"Color"
+//             },
+//             subFilter: {
+//                 name: "Teal"
+//             }
+//         },
+//       ]
+//     },
+//   ]
+
+// for(let i = 0; i < tmp.length; i++){
+//     const log = _.get(tmp, `tmp[${i}].filters[${i}].subFilter.name`)
+//     console.log(log)
+// }
+
+
+// function isValidWalk(walk) {
+//     const tmp = {}
+//     if(walk.length !== 10) {
+//         return false;
+//     }
+//     walk.forEach(v => tmp[v] === undefined ? tmp[v]=0 : tmp[v]+=1 )
+
+//     return tmp.n === tmp.s && tmp.w === tmp.e
+// }
+
+function isValidWalk(walk) {
+    function count(v){
+        return walk.filter(d => d === v).lenght
     }
-    // return string[longest[0]:longest[1]]
+    return walk.length === 10 && count('s') === count('n') && count('w') === count('e')
 }
 
+// console.log(isValidWalk(['n','s','n','s','n','s','n','s','n','s']))
+// console.log(isValidWalk(['w','e','w','e','w','e','w','e','w','e','w','e']))
+// console.log(isValidWalk(['w']))
+// console.log(isValidWalk(['w', 'e', 'n', 's']))
+// console.log(isValidWalk(['n','n','n','s','n','s','n','s','n','s']))
 
-const tmp = [
-    {
-      filters: [
-        {
-            filter:{
-                type:"Color"
-            },
-            subFilter: {
-                name: "Black"
-            }
-        },
-        {
-            filter:{
-                type:"Sizes"
-            },
-            subFilter: {
-                name: "43"
-            }
-        },
-      ]
-    },
-    {
-      filters: [
-        {
-            filter:{
-                type:"Sizes"
-            },
-            subFilter: {
-                name: "43"
-            }
-        },
-        {
-            filter:{
-                type:"Color"
-            },
-            subFilter: {
-                name: "Teal"
-            }
-        },
-      ]
-    },
-  ]
+// function catMouse(x, j){
+//     if(!x || x.match(/\w/g).length !== 3) return 'boring without all three'
+//     const between = x.match(/(m|C)\.*[D]?\.*(m|C)/g)[0];
+//     const isEscaped = between.substring(between.indexOf('.')+1).length - j >=0 && between.length > 2
+//     if(x.match(/\w/g)[1] === 'D' && !isEscaped) return 'Protected!'
 
-for(let i = 0; i < tmp.length; i++){
-    const log = _.get(tmp, `tmp[${i}].filters[${i}].subFilter.name`)
-    console.log(log)
+//     return isEscaped ? 'Escaped!'  : 'Caught!' 
+// }
+
+// console.log(catMouse('....CD.....m...', 2));
+// console.log(catMouse('.D...mC..', 1));
+
+function f(x) {
+    alert(x);
+}
+  
+function delay(f, ms) {
+    return function(text) {
+        setTimeout(f(text), ms)
+    }   
+}  
+  
+// создаём обёртки
+let f1000 = delay(f, 1000);
+let f1500 = delay(f, 1500);
+  
+//   f1000("test"); // показывает "test" после 1000 мс
+//   f1500("test"); // показывает "test" после 1500 мс
+
+function debounce(f, ms) {
+    return function (args) {
+        let previousCall = this.lastCall;
+        this.lastCall = Date.now();
+        if (previousCall && ((this.lastCall - previousCall) <= ms)) {
+            clearTimeout(this.lastCallTimer);
+        }
+        this.lastCallTimer = setTimeout(() => f(args), ms);
+    }
 }
 
-console.log(_)
+let logger = (args) => console.log(`My args are ${args}`);
+// debounce: call the logger when two seconds have elapsed since the last call
+let debouncedLogger = debounce(logger, 2000);
+
+// debouncedLogger([1, 2, 3]);
+
+function findNb(m) {
+    let res = 0;
+    const newArr = m.split('');
+
+    for(let i = 0; i < m; i++) {
+        res += Math.pow(m - i, 3)
+    }
+
+    console.log(res)
+}
+
+// findNb('45')
+
+// console.log(bubble([5, 3, 2, 8, 1, 4]))
+
+function sortArray(array) {
+    const indices = []
+    array
+      .filter((v, i) => v % 2 !== 0 && indices.push(i))
+      .sort((a,b) => a-b)
+      .forEach((v, i) => array[indices[i]] = v)
+      
+    return array
+}
+
+console.log(sortArray([5, 3, 2, 8, 1, 4]))
+
+function findUniq(arr) {
+    arr.sort((a,b) => a-b)
+    return arr[0] === arr[1] ? arr.pop() : arr[0]
+};
+
+// console.log(findUniq([1,1,1,1,2,1]))
+
+// function deleteNth(arr,n){
+//     const d = {}
+//     arr.forEach(v => d[v] !== undefined ? d[v]+=1 : d[v]=1)
+
+//     for(let v in d) {
+//         if(d[v] > n) {
+//             for(let i = 0; i < d[v] - n; i++){
+//                 arr.splice(arr.lastIndexOf(+v), 1)
+//             }
+//         } 
+//     }
+//     return arr
+// }
+
+function deleteNth(arr, n) {
+    const cache = {}
+    return arr.filter(n => {
+        cache[n] = (cache[n||0]) + 1;
+        return cache[n] <= x
+    })
+}
+
+// console.log(deleteNth([20,37,20,21], 1))
+// console.log(deleteNth([1,1,3,3,7,2,2,2,2], 3))
+
+function tickets(arr) {
+
+    let flag = "YES";
+    const temp = [[], [], []];
+
+    arr.forEach(money => {
+        switch(money){
+            case 25:
+                temp[0].push(25)
+                break;
+            case 50:
+                if(temp[0].includes(25)){
+                    temp[0].pop();
+                    temp[1].push(50);
+                } else 
+                    flag = 'NO'
+                break;
+            case 100:
+                debugger
+                if(temp[0].length >= 1 && temp[1].length >= 1) {
+                    temp[0].pop()
+                    temp[1].pop()
+                }
+                else if(temp[0].length >= 3){
+                    for (let i = 0; i < 3; i++) temp[0].pop()
+                }
+                else
+                    flag = "NO"
+                break;
+        }
+    })
+    return flag
+}
+
+// console.log(tickets([25,25,25,100,25,25,50,100,25,25,25,100]))
+// console.log(tickets([25,25, 50,50, 25, 25, 50,25]))
+// console.log(tickets([ 25, 25, 25, 25, 50, 100, 50 ]))
+// console.log(tickets([25,50,25,100,25,50,25,100,25,25,25,100,25,50,25,100]))
+
+function tribonacci(signature,n){
+    for(let i = signature.length, j = 0; i < n; i++, j++) {
+        signature.push(signature.slice(j, i).reduce((acc, curr) => acc + curr))
+    }
+    return signature
+}
+//   console.log(tribonacci([1,1,1],10),[1,1,1,3,5,9,17,31,57,105])
+
+// function uniqueInOrder(iterable){
+//     //your code here - remember iterable can be a string or an array
+//     const res = [];
+//     for(let i = 1; i < iterable.length; i++) {
+//         debugger
+//         if(iterable[i-1] !== iterable[i]){
+//             res.push(iterable[i-1])
+//         }
+//     }
+//     res.push(iterable[iterable.length - 1])
+//     return res
+// }
+
+// console.log(uniqueInOrder('AAD'))
+
+// function iqTest(numbers){
+
+//     // const indices = []
+//     // array
+//     //     .filter((v, i) => v % 2 && indices.push(i)) // filter odd number
+//     //     .sort((a,b) => a - b)                       // sort odd number
+//     //     .forEach((v, i) => array[indices[i]] = v)   // check index number and write him to general array
+//     // return array
+
+//     const even = numbers.split(' ').filter(v => v % 2 === 0)
+//     const odd = numbers.split(' ').filter(v => v % 2 !== 0)
+
+//     let indices = []
+//     const isOdd = even.length > odd.length;
+
+//     if(isOdd) {
+//         numbers.split(' ').filter((v, i) => v % 2 && indices.push(i))
+//     } else {
+//         numbers.split(' ').filter((v, i) => v % 2 === 0 && indices.push(i))
+//     }
+
+//     return indices[0] + 1
+// }
+
+function iqTest(numbers){
+    let ieven = [], iodd = []
+    const even = numbers.split(' ').filter((v, i) => v % 2 === 0 && ieven.push(i))
+    const odd = numbers.split(' ').filter((v, i) => v % 2 !== 0 && iodd.push(i))
+
+    return even.length > odd.length ? iodd[0] + 1 : ieven[0] + 1
+}
+
+// console.log(iqTest('2 9 15 23'))
+// console.log(iqTest('2 2 2 4 4 5'))
+
+// function list(names){
+//     names = names.map(v => v.name);
+
+//     switch(names.length) {
+//         case 0: 
+//             return ''
+//         case 1:
+//             return names[0]
+//         case 2:
+//             return `${names[0]} & ${names[1]}`
+//         default:
+//             const lastChild = names.pop();
+//             return names.join(", ") + ' & ' + lastChild
+//     }
+// }
+
+function list(names) {
+    return names.reduce((prev, curr, index, array) => {
+        debugger
+        if(index === 0){
+            return curr.name
+        }
+        else if(index === array.length -1) {
+            return prev + " & " + curr.name
+        }
+        else {
+            return prev + ", " + curr.name
+        }
+    }, '')
+}
+
+console.log(list([{name: 'Bart'},{name: 'Lisa'},{name: 'Maggie'},{name: 'Homer'},{name: 'Marge'}]))
