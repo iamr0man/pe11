@@ -1472,4 +1472,70 @@ function list(names) {
     }, '')
 }
 
-console.log(list([{name: 'Bart'},{name: 'Lisa'},{name: 'Maggie'},{name: 'Homer'},{name: 'Marge'}]))
+// console.log(list([{name: 'Bart'},{name: 'Lisa'},{name: 'Maggie'},{name: 'Homer'},{name: 'Marge'}]))
+
+// function toCamelCase(str){
+//     return !str ? str.split(/(-|_)/).filter((v, i) => i % 2 !== 1).reduce((prev, curr, index, array) => {
+//         if(index === 0 && curr.charCodeAt(0) >= 97){
+//             return curr;
+//         } else {
+//             return prev + curr[0].toUpperCase() +curr.substring(1)
+//         }
+//     }, '') : ''
+// } 
+
+function toCamelCase(str){
+    var regExp=/[-_]\w/ig;
+    return str.replace(regExp,function(match){
+          return match.charAt(1).toUpperCase();
+     });
+}
+
+console.log(toCamelCase('the_stealth-warrior'))
+
+function dirReduc(arr){
+
+    if(arr.length === 4 &&
+        arr.includes("SOUTH") &&
+        arr.includes("NORTH") &&
+        arr.includes("WEST") &&
+        arr.includes("EAST")) return arr;
+
+    // const oldArray = [].concat(arr)
+
+    function count(d, od) {
+        const length = arr.filter(v => v === d).length;
+        for(let i = 0; i < length; i++) {
+            arr.splice(arr.indexOf(d), 1);
+            arr.splice(arr.indexOf(od), 1);
+        }
+    }
+    
+    for(let i = 0; i < arr.length; i++) {
+        // const current = arr[i]
+        // if(current === arr[0])
+        switch(arr[0]) {
+            case "NORTH":
+                count("SOUTH", "NORTH");
+                break;
+            case "WEST":
+                count("EAST", "WEST")
+                break;
+            case "SOUTH":
+                count("SOUTH", "NORTH");
+                break;
+            case "EAST":
+                count("EAST", "WEST")
+                break;
+        }
+    }
+
+    return arr;
+  }
+
+  console.log(dirReduc(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"]))
+  console.log(dirReduc(["NORTH", "SOUTH", "EAST", "WEST"]))
+  console.log(dirReduc(["NORTH", "WEST", "SOUTH", "EAST"]))
+  console.log(dirReduc(["NORTH", "SOUTH", "EAST", "WEST", "EAST", "WEST"]))
+
+  
