@@ -1538,4 +1538,39 @@ function dirReduc(arr){
   console.log(dirReduc(["NORTH", "WEST", "SOUTH", "EAST"]))
   console.log(dirReduc(["NORTH", "SOUTH", "EAST", "WEST", "EAST", "WEST"]))
 
-  
+
+//   function high(x){
+//     const obj = {}
+//     const aph = 'abcdefghijklmnopqrstuvwxyz'.split('').forEach((v, i) => obj[v] = i+1);
+
+//     const countWord = word => word.split('').reduce((prev, acc) => prev + obj[acc] , 0)
+//     const numbers = x.split(' ').map(v => countWord(v))
+
+//     const biggest = Math.max(...numbers)
+//     return x.split(' ')[numbers.findIndex(v => v === biggest)]
+// }
+
+// function high(x){
+//     const obj = {}
+//     const arr = x.split(' ')
+//     const aph = 'abcdefghijklmnopqrstuvwxyz'.split('').forEach((v, i) => obj[v] = i+1);
+
+//     const countWord = word => word.split('').reduce((prev, acc) => prev + obj[acc] , 0)
+//     debugger
+//     const numbers = arr.map(v => countWord(v))
+//     return arr[numbers.indexOf(v => v === Math.max(...numbers))]
+// }
+
+function high(s){
+    let as = s.split(' ').map(s=>[...s].reduce((a,b)=>a+b.charCodeAt(0)-96,0));
+    return s.split(' ')[as.indexOf(Math.max(...as))];
+  }
+
+// console.log(high('experience i need'))
+
+function narcissistic(value) {
+    const str = value + '';
+    return str.split('').reduce((prev, acc) => prev + Math.pow(acc, str.length), 0) == value
+}
+
+console.log(narcissistic(153))
