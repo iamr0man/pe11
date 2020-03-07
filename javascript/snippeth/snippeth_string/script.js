@@ -972,11 +972,11 @@ main(arr)
 
 const letter_count = s =>
     s.split('')
-        .reduce((accum, value) => {
-            console.log(accum[value])
-            accum[value] = accum[value] ? accum[value] + 1 : 1;
-            return accum
-        }, {})
+    .reduce((accum, value) => {
+        console.log(accum[value])
+        accum[value] = accum[value] ? accum[value] + 1 : 1;
+        return accum
+    }, {})
 
 
 // console.log(letter_count('arithmetics'))
@@ -1078,15 +1078,15 @@ function array_diff(a, b) {
 //     return odd.length === 1 ? odd[0] : even[0];
 // }
 
-function findOutlier(int){
-    var even = int.filter(a=>a%2==0);
-    var odd = int.filter(a=>a%2!==0);
-    return even.length==1? even[0] : odd[0];
-  }
+function findOutlier(int) {
+    var even = int.filter(a => a % 2 == 0);
+    var odd = int.filter(a => a % 2 !== 0);
+    return even.length == 1 ? even[0] : odd[0];
+}
 
 // console.log(findOutlier([38092298,-143539080,183498450,104812148,-1897126,-95053961,92536448,-151040634,88809426,-38735280]))
 
-function digPow(n, p){
+function digPow(n, p) {
     const str = n + '';
     const tmp = str.split('').reduce((acc, cur) => {
         return acc + Math.pow(cur, p++)
@@ -1098,13 +1098,13 @@ function digPow(n, p){
 
 const findMissingLetter = (array) => {
     const prevDigit = array.map(v => v.charCodeAt(0))
-    .filter((v, i, a) => Math.abs(a[i] - a[i+1]) === 2).join()
-    return String.fromCharCode(Number(prevDigit)+1)
+        .filter((v, i, a) => Math.abs(a[i] - a[i + 1]) === 2).join()
+    return String.fromCharCode(Number(prevDigit) + 1)
 }
 
 // console.log(findMissingLetter(['O','Q','R','S']))
 
-let a = [13, 34, 42]  
+let a = [13, 34, 42]
 let b = [169, 1157, 1764]
 
 // function comp(a, b){
@@ -1133,16 +1133,16 @@ let b = [169, 1157, 1764]
 
 // function createPhoneNumber(numbers){
 //     var format = "(xxx) xxx-xxxx";
-    
+
 //     for(var i = 0; i < numbers.length; i++)
 //     {
 //       format = format.replace('x', numbers[i]);
 //     }
-    
+
 //     return format;
 // }
 
-function createPhoneNumber(numbers){
+function createPhoneNumber(numbers) {
     return numbers.join('').replace(/(...)(...)(.*)/, '($1) $2-$3');
 }
 
@@ -1227,7 +1227,7 @@ function createPhoneNumber(numbers){
 // }
 
 function isValidWalk(walk) {
-    function count(v){
+    function count(v) {
         return walk.filter(d => d === v).lenght
     }
     return walk.length === 10 && count('s') === count('n') && count('w') === count('e')
@@ -1254,17 +1254,17 @@ function isValidWalk(walk) {
 function f(x) {
     alert(x);
 }
-  
+
 function delay(f, ms) {
-    return function(text) {
+    return function (text) {
         setTimeout(f(text), ms)
-    }   
-}  
-  
+    }
+}
+
 // создаём обёртки
 let f1000 = delay(f, 1000);
 let f1500 = delay(f, 1500);
-  
+
 //   f1000("test"); // показывает "test" после 1000 мс
 //   f1500("test"); // показывает "test" после 1500 мс
 
@@ -1272,7 +1272,7 @@ function debounce(f, ms) {
     return function (args) {
         let previousCall = this.lastCall;
         this.lastCall = Date.now();
-        if (previousCall && ((this.lastCall - previousCall) <= ms)) {
+        if (previousCall && ((this.lastCall - previousCall) <= ms)) {
             clearTimeout(this.lastCallTimer);
         }
         this.lastCallTimer = setTimeout(() => f(args), ms);
@@ -1289,7 +1289,7 @@ function findNb(m) {
     let res = 0;
     const newArr = m.split('');
 
-    for(let i = 0; i < m; i++) {
+    for (let i = 0; i < m; i++) {
         res += Math.pow(m - i, 3)
     }
 
@@ -1303,17 +1303,17 @@ function findNb(m) {
 function sortArray(array) {
     const indices = []
     array
-      .filter((v, i) => v % 2 !== 0 && indices.push(i))
-      .sort((a,b) => a-b)
-      .forEach((v, i) => array[indices[i]] = v)
-      
+        .filter((v, i) => v % 2 !== 0 && indices.push(i))
+        .sort((a, b) => a - b)
+        .forEach((v, i) => array[indices[i]] = v)
+
     return array
 }
 
 console.log(sortArray([5, 3, 2, 8, 1, 4]))
 
 function findUniq(arr) {
-    arr.sort((a,b) => a-b)
+    arr.sort((a, b) => a - b)
     return arr[0] === arr[1] ? arr.pop() : arr[0]
 };
 
@@ -1336,7 +1336,7 @@ function findUniq(arr) {
 function deleteNth(arr, n) {
     const cache = {}
     return arr.filter(n => {
-        cache[n] = (cache[n||0]) + 1;
+        cache[n] = (cache[n || 0]) + 1;
         return cache[n] <= x
     })
 }
@@ -1347,30 +1347,32 @@ function deleteNth(arr, n) {
 function tickets(arr) {
 
     let flag = "YES";
-    const temp = [[], [], []];
+    const temp = [
+        [],
+        [],
+        []
+    ];
 
     arr.forEach(money => {
-        switch(money){
+        switch (money) {
             case 25:
                 temp[0].push(25)
                 break;
             case 50:
-                if(temp[0].includes(25)){
+                if (temp[0].includes(25)) {
                     temp[0].pop();
                     temp[1].push(50);
-                } else 
+                } else
                     flag = 'NO'
                 break;
             case 100:
                 debugger
-                if(temp[0].length >= 1 && temp[1].length >= 1) {
+                if (temp[0].length >= 1 && temp[1].length >= 1) {
                     temp[0].pop()
                     temp[1].pop()
-                }
-                else if(temp[0].length >= 3){
+                } else if (temp[0].length >= 3) {
                     for (let i = 0; i < 3; i++) temp[0].pop()
-                }
-                else
+                } else
                     flag = "NO"
                 break;
         }
@@ -1383,8 +1385,8 @@ function tickets(arr) {
 // console.log(tickets([ 25, 25, 25, 25, 50, 100, 50 ]))
 // console.log(tickets([25,50,25,100,25,50,25,100,25,25,25,100,25,50,25,100]))
 
-function tribonacci(signature,n){
-    for(let i = signature.length, j = 0; i < n; i++, j++) {
+function tribonacci(signature, n) {
+    for (let i = signature.length, j = 0; i < n; i++, j++) {
         signature.push(signature.slice(j, i).reduce((acc, curr) => acc + curr))
     }
     return signature
@@ -1430,8 +1432,9 @@ function tribonacci(signature,n){
 //     return indices[0] + 1
 // }
 
-function iqTest(numbers){
-    let ieven = [], iodd = []
+function iqTest(numbers) {
+    let ieven = [],
+        iodd = []
     const even = numbers.split(' ').filter((v, i) => v % 2 === 0 && ieven.push(i))
     const odd = numbers.split(' ').filter((v, i) => v % 2 !== 0 && iodd.push(i))
 
@@ -1460,13 +1463,11 @@ function iqTest(numbers){
 function list(names) {
     return names.reduce((prev, curr, index, array) => {
         debugger
-        if(index === 0){
+        if (index === 0) {
             return curr.name
-        }
-        else if(index === array.length -1) {
+        } else if (index === array.length - 1) {
             return prev + " & " + curr.name
-        }
-        else {
+        } else {
             return prev + ", " + curr.name
         }
     }, '')
@@ -1484,18 +1485,18 @@ function list(names) {
 //     }, '') : ''
 // } 
 
-function toCamelCase(str){
-    var regExp=/[-_]\w/ig;
-    return str.replace(regExp,function(match){
-          return match.charAt(1).toUpperCase();
-     });
+function toCamelCase(str) {
+    var regExp = /[-_]\w/ig;
+    return str.replace(regExp, function (match) {
+        return match.charAt(1).toUpperCase();
+    });
 }
 
 console.log(toCamelCase('the_stealth-warrior'))
 
-function dirReduc(arr){
+function dirReduc(arr) {
 
-    if(arr.length === 4 &&
+    if (arr.length === 4 &&
         arr.includes("SOUTH") &&
         arr.includes("NORTH") &&
         arr.includes("WEST") &&
@@ -1505,16 +1506,16 @@ function dirReduc(arr){
 
     function count(d, od) {
         const length = arr.filter(v => v === d).length;
-        for(let i = 0; i < length; i++) {
+        for (let i = 0; i < length; i++) {
             arr.splice(arr.indexOf(d), 1);
             arr.splice(arr.indexOf(od), 1);
         }
     }
-    
-    for(let i = 0; i < arr.length; i++) {
+
+    for (let i = 0; i < arr.length; i++) {
         // const current = arr[i]
         // if(current === arr[0])
-        switch(arr[0]) {
+        switch (arr[0]) {
             case "NORTH":
                 count("SOUTH", "NORTH");
                 break;
@@ -1531,12 +1532,12 @@ function dirReduc(arr){
     }
 
     return arr;
-  }
+}
 
-  console.log(dirReduc(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"]))
-  console.log(dirReduc(["NORTH", "SOUTH", "EAST", "WEST"]))
-  console.log(dirReduc(["NORTH", "WEST", "SOUTH", "EAST"]))
-  console.log(dirReduc(["NORTH", "SOUTH", "EAST", "WEST", "EAST", "WEST"]))
+console.log(dirReduc(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"]))
+console.log(dirReduc(["NORTH", "SOUTH", "EAST", "WEST"]))
+console.log(dirReduc(["NORTH", "WEST", "SOUTH", "EAST"]))
+console.log(dirReduc(["NORTH", "SOUTH", "EAST", "WEST", "EAST", "WEST"]))
 
 
 //   function high(x){
@@ -1561,10 +1562,10 @@ function dirReduc(arr){
 //     return arr[numbers.indexOf(v => v === Math.max(...numbers))]
 // }
 
-function high(s){
-    let as = s.split(' ').map(s=>[...s].reduce((a,b)=>a+b.charCodeAt(0)-96,0));
+function high(s) {
+    let as = s.split(' ').map(s => [...s].reduce((a, b) => a + b.charCodeAt(0) - 96, 0));
     return s.split(' ')[as.indexOf(Math.max(...as))];
-  }
+}
 
 // console.log(high('experience i need'))
 
