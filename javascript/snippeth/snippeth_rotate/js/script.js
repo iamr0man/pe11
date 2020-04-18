@@ -12,8 +12,8 @@ function startRotate(event) { //rotates card item
     const halfWidth = cardItem.offsetWidth / 2;
 
     cardItem.style.transform = 'rotateX(' + -(event.offsetY -
-        halfHeight) / 6 +'deg) rotateY(' +
-        (event.offsetX - halfWidth) / 6 + 'deg'; //add css style elements .card
+        halfHeight) / 5 +'deg) rotateY(' +
+        (event.offsetX - halfWidth) / 5 + 'deg'; //add css style elements .card
 }
 
 function stopRotate(event) { //rotates card item

@@ -1150,80 +1150,83 @@ console.log(createPhoneNumber([1, 1, 1, 1, 1, 1, 1, 1, 1, 1]))
 
 
 
-function longestSubstringWithoutDiblication(string){
+function longestSubstringWithoutDiblication(string) {
     string = string.split('')
     let lastSeen = {}
-    const longest = [[], []]
+    const longest = [
+        [],
+        []
+    ]
     let startIdx = 0;
 
-//     for(const char, i in string){
-//         if(char in lastSeen)
-//             startIdx = Math.max(startIdx, lastSeen[char + 1])
-//         if(longest[1] - longest[0] < i + 1 - startIdx)
-//             longest = [startIdx, i+1]
-//         lastSeen[char] = 1;
-//     }
-//     // return string[longest[0]:longest[1]]
-// }
+    //     for(const char, i in string){
+    //         if(char in lastSeen)
+    //             startIdx = Math.max(startIdx, lastSeen[char + 1])
+    //         if(longest[1] - longest[0] < i + 1 - startIdx)
+    //             longest = [startIdx, i+1]
+    //         lastSeen[char] = 1;
+    //     }
+    //     // return string[longest[0]:longest[1]]
+    // }
 
 
-// const tmp = [
-//     {
-//       filters: [
-//         {
-//             filter:{
-//                 type:"Color"
-//             },
-//             subFilter: {
-//                 name: "Black"
-//             }
-//         },
-//         {
-//             filter:{
-//                 type:"Sizes"
-//             },
-//             subFilter: {
-//                 name: "43"
-//             }
-//         },
-//       ]
-//     },
-//     {
-//       filters: [
-//         {
-//             filter:{
-//                 type:"Sizes"
-//             },
-//             subFilter: {
-//                 name: "43"
-//             }
-//         },
-//         {
-//             filter:{
-//                 type:"Color"
-//             },
-//             subFilter: {
-//                 name: "Teal"
-//             }
-//         },
-//       ]
-//     },
-//   ]
+    // const tmp = [
+    //     {
+    //       filters: [
+    //         {
+    //             filter:{
+    //                 type:"Color"
+    //             },
+    //             subFilter: {
+    //                 name: "Black"
+    //             }
+    //         },
+    //         {
+    //             filter:{
+    //                 type:"Sizes"
+    //             },
+    //             subFilter: {
+    //                 name: "43"
+    //             }
+    //         },
+    //       ]
+    //     },
+    //     {
+    //       filters: [
+    //         {
+    //             filter:{
+    //                 type:"Sizes"
+    //             },
+    //             subFilter: {
+    //                 name: "43"
+    //             }
+    //         },
+    //         {
+    //             filter:{
+    //                 type:"Color"
+    //             },
+    //             subFilter: {
+    //                 name: "Teal"
+    //             }
+    //         },
+    //       ]
+    //     },
+    //   ]
 
-// for(let i = 0; i < tmp.length; i++){
-//     const log = _.get(tmp, `tmp[${i}].filters[${i}].subFilter.name`)
-//     console.log(log)
-// }
+    // for(let i = 0; i < tmp.length; i++){
+    //     const log = _.get(tmp, `tmp[${i}].filters[${i}].subFilter.name`)
+    //     console.log(log)
+    // }
 
 
-// function isValidWalk(walk) {
-//     const tmp = {}
-//     if(walk.length !== 10) {
-//         return false;
-//     }
-//     walk.forEach(v => tmp[v] === undefined ? tmp[v]=0 : tmp[v]+=1 )
+    // function isValidWalk(walk) {
+    //     const tmp = {}
+    //     if(walk.length !== 10) {
+    //         return false;
+    //     }
+    //     walk.forEach(v => tmp[v] === undefined ? tmp[v]=0 : tmp[v]+=1 )
 
-//     return tmp.n === tmp.s && tmp.w === tmp.e
+    //     return tmp.n === tmp.s && tmp.w === tmp.e
 }
 
 function isValidWalk(walk) {
@@ -1602,74 +1605,75 @@ function solution(str) {
 }
 
 function solution(str) {
-    return (str.length % 2 ? str + "_" : str).match(/../g) 
+    return (str.length % 2 ? str + "_" : str).match(/../g)
 }
 
 function isPrime(num) {
-    if(num <= 0) return false;
-    let counter = 0; 
+    if (num <= 0) return false;
+    let counter = 0;
     const allowed = 2;
-    for(let i = 0; i <= num; i++){
-        if(num % i === 0) counter++
+    for (let i = 0; i <= num; i++) {
+        if (num % i === 0) counter++
     }
     return counter === allowed ? true : false
 }
 
 function isPrime(num) {
     if (num < 2) {
-      return false;
+        return false;
     }
     let m = Math.ceil(Math.sqrt(num));
-    for (let i = 2; i <= m; i++){
-      if (num % i === 0){
-        return false;
-      }
-    }
-    return true;
-}
-
-function same(arr1, arr2){
-    const freq1 = {}, freq2 = {};
-
-    for(let key of arr1){
-        freq1[key] = (freq1[key] || 0)+1
-    }
-
-    for(let key of arr2){
-        freq2[key] = (freq2[key] || 0)+1
-    }
-
-    for(let key in freq1){
-        if(!(key ** 2 in freq2)){
-            return false;
-        }
-
-        if(freq1[key] !== freq2[key ** 2]){
+    for (let i = 2; i <= m; i++) {
+        if (num % i === 0) {
             return false;
         }
     }
     return true;
 }
 
-same([1,2,3], [1,4,9])
+function same(arr1, arr2) {
+    const freq1 = {},
+        freq2 = {};
 
-function anagram(first, second){
-    if(first.length !== second.length){
+    for (let key of arr1) {
+        freq1[key] = (freq1[key] || 0) + 1
+    }
+
+    for (let key of arr2) {
+        freq2[key] = (freq2[key] || 0) + 1
+    }
+
+    for (let key in freq1) {
+        if (!(key ** 2 in freq2)) {
+            return false;
+        }
+
+        if (freq1[key] !== freq2[key ** 2]) {
+            return false;
+        }
+    }
+    return true;
+}
+
+same([1, 2, 3], [1, 4, 9])
+
+function anagram(first, second) {
+    if (first.length !== second.length) {
         return false;
     }
 
     const freq = [];
-    for(let i = 0; i < first.length; i++){
+    for (let i = 0; i < first.length; i++) {
         const letter = first[i];
-        freq[letter] = (freq[letter] || 0) + 1; 
+        freq[letter] = (freq[letter] || 0) + 1;
     }
 
-    for(let i = 0; i < second.length; i++){
+    for (let i = 0; i < second.length; i++) {
         const letter = second[i];
-        if(!freq[letter]){
+        if (!freq[letter]) {
             return false
         } else {
-          freq[letter]--;  
+            freq[letter]--;
         }
 
     }
@@ -1678,24 +1682,25 @@ function anagram(first, second){
 
 // console.log(anagram('iceman', 'cinema'))
 
-function sumZero(arr){
-    return arr.reduce((prev, acc) => prev + acc ,0) === 0 ? [arr[0], arr[arr.length-1]] : undefined
+function sumZero(arr) {
+    return arr.reduce((prev, acc) => prev + acc, 0) === 0 ? [arr[0], arr[arr.length - 1]] : undefined
 }
 
 // console.log(sumZero([-2,-1,0,1,2]))
 
-function duplicateCount(text){
-    const arr = text.toLowerCase().split('').sort((a,b) => a.charCodeAt()-b.charCodeAt())
-    let i = 0, res = [];
-    for(let j = 1; j < arr.length; j++){
-        if(arr[i] === arr[j]){
+function duplicateCount(text) {
+    const arr = text.toLowerCase().split('').sort((a, b) => a.charCodeAt() - b.charCodeAt())
+    let i = 0,
+        res = [];
+    for (let j = 1; j < arr.length; j++) {
+        if (arr[i] === arr[j]) {
             res.push(arr[i])
         } else {
             i = j
         }
     }
     return new Set(res).size
- }
+}
 
 // console.log(duplicateCount('aabbcde'))
 // console.log(duplicateCount('aabBcde'))
@@ -1716,3 +1721,75 @@ function duplicateCount(text){
 
 //     return maxSum
 // }
+
+// function inArray(array1,array2){
+//     const parsedArr = array2.join(' ')
+//     return array1.filter(v => parsedArr.match(v)).sort((a,b) => a.localeCompare(b))
+// }
+
+function inArray(arr1, arr2) {
+    return arr1.filter(function (needle) {
+        return arr2.some(function (haystack) {
+            return haystack.indexOf(needle) > -1;
+        });
+    }).sort();
+}
+// console.log(inArray(["live", "strong", "arp"],["lively", "alive", "harp", "sharp", "armstrong"]))
+
+function expandedForm(num) {
+    num = String(num)
+    let res = []
+    for(let i = 0; i < num.length; i++){
+        if(num[i] !== '0') res.push(num[i] + '0'.repeat(num.length - i - 1))
+    }
+    return res.join(" + ")
+}
+
+// const expandedForm = n => n.toString()
+//                             .split("")
+//                             .reverse()
+//                             .map( (a, i) => a * Math.pow(10, i))
+//                             .filter(a => a > 0)
+//                             .reverse()
+//                             .join(" + ");
+
+// console.log(expandedForm(12))
+
+function count (string) {  
+    const res = {}
+    for(let i = 0; i < string.length; i++) { 
+      const current = string[i]
+      res[current] = (res[current] || 0 ) + 1
+    }
+    return res
+}
+
+function count(string) {
+    const res = {}
+    string.split('').forEach(v => res[v] = (res[v] || 0) + 1)
+    return res
+}   
+
+// console.log(count('chapter'))
+
+// function wave(str) {
+//     const improve = (v, i) => str.substring(0,i) + v.toUpperCase() + str.substring(i+1)
+
+//     return str.split('').map((v, i) => improve(v, i)).filter(v => v !== str)
+// }
+
+function wave(str){
+    let result = [];
+    
+    str.split("").forEach((char, index) => {
+        if (/[a-z]/.test(char)) {
+            result.push(str.slice(0, index) + char.toUpperCase() + str.slice(index + 1));
+        }
+    });
+    
+    return result;
+}
+
+console.log(wave(' gel lo '))
+  
+  
