@@ -1791,5 +1791,86 @@ function wave(str){
 }
 
 console.log(wave(' gel lo '))
-  
+
+function toWeirdCase(string){
+    let res = '';
+    const arr = string.split(' ')
+    for(let i = 0; i < arr.length; i++){
+      for(let j = 0; j < arr[i].length; j++){
+        res += j % 2 ? arr[i][j].toLowerCase() : arr[i][j].toUpperCase()
+      }
+      res += ' '
+    }
+    return res.trim();
+}
+
+console.log(toWeirdCase('This is macbook pro 2016 year'))
+
+function findMissing(list) {  
+    //1 3 5 9 11
+    //-5 -3 1 -1 3
+    //-11 -9 -5 -3 -1
+    if(list.length === 2) return -228;
+
+    const isPositive = list.every(v => v >= 0)
+    if(isPositive){
+
+    }
+}
+
+function findMissing(list) {  
+    let seq = {}, length = {}, biggestDiff = -1;
+    list.forEach((v, i, arr) => seq[i] = v - arr[i-1]);
+    delete seq[0];
+
+    for(key in seq) {
+        length[seq[key]] = (length[seq[key]] || 0) + 1
+    }
+
+    if(list.length === 3) {
+        debugger
+        let step, diffBetween;
+        if(list.every(v => v > 0)){
+            step = Math.min(...Object.values(seq));
+            diffBetween = Math.max(...Object.values(seq));
+        } else {
+            step = Math.max(...Object.values(seq));
+            diffBetween = Math.min(...Object.values(seq));
+        }
+        for(key in seq){
+            if(seq[key] === diffBetween){
+                return list[+key]-step;
+            }
+        }
+
+    } else {
+        biggestDiff = Math.min(...Object.values(length));
+    }
+
+    
+
+    for(key in length){
+        if(length[key] === biggestDiff){
+            for(number in seq){
+                if(seq[number] === +key) {
+                    if(+number >= 2) {
+                        return list[+number] - (list[+number-1] - list[+number-2])
+                    } else {
+                        return list[+number] - (list[list.length-1] - list[list.length-2])
+                    }
+                }
+            }
+        }
+    }
+}
+
+function findMissing(list){
+    const step = (list[list.length -1] - list[0]) / list.length;
+    return list.filter((v, i) => v !== (list[0] + i * step))[0] - step;
+}
+
+// console.log(findMissing([1,3,5,9,11]))
+// console.log(findMissing([-3, -1, 1, 3, 5, 9]))
+// console.log(findMissing([-10, -5, 0, 10]))
+console.log(findMissing([ -41, -69, -125 ]))
   
