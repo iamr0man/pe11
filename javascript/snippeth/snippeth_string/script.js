@@ -2058,9 +2058,6 @@ function mazeRunner(directions) {
 
         const current = maze[currentRow][currentColumn];
         if(i < directions.length - 1) {
-            if(current === 0) {
-                return 'Lost'
-            }
             if(current === 1){
                 return 'Dead'
             }
@@ -2072,6 +2069,8 @@ function mazeRunner(directions) {
                 return 'Lost'
             } else if(current === 1){
                 return 'Dead'
+            } else if(current === 2) {
+                return 'Lost'
             }
             else if(current === 3){
                 return 'Finish'
@@ -2081,5 +2080,33 @@ function mazeRunner(directions) {
     return arr.filter(v => v)[0]
 }
 
-console.log(mazeRunner(["N","E","E","E","E"]))
+// console.log(mazeRunner(["N","E","E","E","E"]))
+
+function averageString(str) {
+    const convert = {
+      'zero': 0,
+      'one': 1,
+      'two': 2,
+      'three': 3,
+      'four': 4,
+      'five': 5,
+      'six': 6,
+      'seven': 7,
+      'eight': 8,
+      'nine': 9,
+    }
+    const digitArr = str.split(' ');
+    const average = Math.floor(digitArr.map(v => convert[v]).reduce((acc, curr) => acc + curr,0) / digitArr.length);
+    if(isNaN(average)) return 'n/a'
+    for(key in convert){
+      if(convert[key] === average) return key;
+    }
+  }
+
+//   console.log(averageString('zero ninbulmae five two'))
+
+function reverse(str){
+    if([...str].every(v => v==- " ")) return ''
+    return str.split(' ').map((v, i) => i % 2 === 0 ? v : v.split('').reverse().join('')).join(' ')
+}
 
