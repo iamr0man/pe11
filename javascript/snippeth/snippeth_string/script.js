@@ -1874,77 +1874,212 @@ function findMissing(list){
 // console.log(findMissing([-10, -5, 0, 10]))
 console.log(findMissing([ -41, -69, -125 ]))
 
-window.onload = function() {
-    const canvas = document.getElementById('canvas'),
-        context = canvas.getContext('2d'),
-        balls = [],
-        bounce = -1,
-        spring = .1,
-        numBalls = 10;
+// window.onload = function() {
+//     const canvas = document.getElementById('canvas'),
+//         context = canvas.getContext('2d'),
+//         balls = [],
+//         bounce = -1,
+//         spring = .1,
+//         numBalls = 10;
 
-    for(let i = 0; i < numBalls; i++) {
-        const ball = new Ball(Math.random() * 20 + 5);
-        ball.x = Math.random() * canvas.width / 2;
-        ball.y = Math.random() * canvas.height / 2;
-        ball.vx = Math.random() * 6 - 3;
-        ball.vy = Math.random() * 6 - 3;
-        balls.push(ball)
-    }
+//     for(let i = 0; i < numBalls; i++) {
+//         const ball = new Ball(Math.random() * 20 + 5);
+//         ball.x = Math.random() * canvas.width / 2;
+//         ball.y = Math.random() * canvas.height / 2;
+//         ball.vx = Math.random() * 6 - 3;
+//         ball.vy = Math.random() * 6 - 3;
+//         balls.push(ball)
+//     }
 
-    function checkCollision(ballA, i){
-        let ballB, dx, dy, dist, min_dist;
-        for(let j = i + 1; j < numBalls; j++){
-            ballB = balls[j];
-            dx = ballB.x - ballA.x;
-            dy = ballB.y - ballA.y;
-            dist = Math.sqrt(dx * dx + dy* dy);
-            min_dist = ballA.radius + ballB.radius;
+//     function checkCollision(ballA, i){
+//         let ballB, dx, dy, dist, min_dist;
+//         for(let j = i + 1; j < numBalls; j++){
+//             ballB = balls[j];
+//             dx = ballB.x - ballA.x;
+//             dy = ballB.y - ballA.y;
+//             dist = Math.sqrt(dx * dx + dy* dy);
+//             min_dist = ballA.radius + ballB.radius;
 
-            if(min_dist > dist) {
-                const tx = ballA.x + dx / dist * min_dist,
-                    ty = ballA.y + dy / dist * min_dist,
-                    ax = (tx - ballB.x) * spring,
-                    ay = (ty - ballB.y) * spring;
+//             if(min_dist > dist) {
+//                 const tx = ballA.x + dx / dist * min_dist,
+//                     ty = ballA.y + dy / dist * min_dist,
+//                     ax = (tx - ballB.x) * spring,
+//                     ay = (ty - ballB.y) * spring;
                 
-                ballA.vx -= ax;
-                ballA.vy -= ay;
-                ballB.vx += ax;
-                ballB.vy += ay;
+//                 ballA.vx -= ax;
+//                 ballA.vy -= ay;
+//                 ballB.vx += ax;
+//                 ballB.vy += ay;
+//             }
+//         }
+//     }
+
+//     function move(ball){
+//         ball.x += ball.vx;
+//         ball.y += ball.vy;
+//         if(ball.x + ball.radius > canvas.width){
+//             ball.x = canvas.width - ball.radius;
+//             ball.vx *= bounce;
+//         } else if(ball.x - ball.radius < 0) {
+//             ball.x = ball.radius;
+//             ball.vx *= bounce;
+//         }
+
+//         if(ball.y + ball.radius > canvas.height){
+//             ball.y = canvas.height - ball.radius;
+//             ball.vy *= bounce;
+//         } else if(ball.y - ball.radius < 0) {
+//             ball.y = ball.radius;
+//             ball.vy *= bounce;
+//         }
+//     }
+
+//     function draw(ball){
+//         ball.draw(context);
+//     }
+
+//     (function drawFrame () {
+//         window.requestAnimationFrame(drawFrame, canvas);
+//         context.clearRect(0, 0, canvas.width, canvas.height);
+
+//         balls.forEach(checkCollision);
+//         balls.forEach(move);
+//         balls.forEach(draw);
+//       }());
+// }
+
+// function longest_palindrome(string) {
+//     let maxLength = 0, tempLength = 0;
+//     debugger;
+//     for (let i = 1; i < string.length; i++) {
+//         for(let j = 0; j < i; j++){
+//             maxLength+=string.charCodeAt(j)
+//         }
+//         tempLength = maxLength;
+//         for(let k = i; k < string.length; k++){
+//             tempLength = tempLength - string.charCodeAt(i-1) + string.charCodeAt(k);
+//             maxLength = Math.max(maxLength, tempLength)
+//         }  
+//     }
+
+//     return maxLength
+// }
+
+// function longest_palindrome(string){
+//     let maxLength = 0;
+//     for(let i = 2; i <= string.length; i++){
+//         debugger
+//         for(let j = i; j <= string.length; j++){
+//             const curr = string.slice(j-i, j);
+//             if(isPalindrom(curr) && curr.length > maxLength) {
+//                 maxLength = curr.length;
+//             } 
+//         }
+//     }
+//     return maxLength
+// }
+
+function ongest_palindrome(s){
+    if (!s) return 0;
+    for (let c = s.length; c > 0; c--) {
+      for (let i = 0; i <= s.length - c; i++) {
+        var check = s.substr(i, c);
+        if (check === check.split("").reverse().join("")) return c;
+      }
+    }
+  }
+
+function isPalindrom(string){
+    return string && string === string.split('').reverse().join('')
+}
+// console.log(longest_palindrome('mm'))
+
+// String.prototype.camelCase=function(){
+//     return this.length ? this.trim().split(" ").map(v => v[0].toUpperCase() + v.slice(1)).join('') : ""
+// }
+//CONGRATALATIONS WITH 2K LINE OF CODE! YOU AWESOME AND AMAZING, BRILLIANT AND INSANE!
+
+
+String.prototype.camelCase=function(){
+    return this.split(' ').map(function(word){
+     return word.charAt(0).toUpperCase() + word.slice(1);
+   }).join('');
+}
+
+// function foldArray(array, runs){
+//   this.newArray= []
+//   for(let i = 0; i < runs; i++){
+//     let currArray = this.newArray.length > 0 ? this.newArray : array;
+//     const middle = Math.round(currArray.length / 2);
+//     let leftArr = currArray.slice(0, middle);
+//     let rightArr = currArray.slice(middle).reverse();
+//     this.newArray = leftArr.map((v, i) => v + (rightArr[i] || 0))
+//   }
+//   return this.newArray;
+// }
+
+function foldArray(arr, nums) {
+    const result = [], copy = arr.slice();
+    while (copy.length) result.push(copy.pop() + (copy.shift() || 0));
+    return nums - 1 ? foldArray(result, nums - 1) : result;
+}
+
+// console.log(foldArray([1,2,3,4,5], 2))
+ 
+
+var maze = [[1,1,1,1,1,1,1],
+            [1,0,0,0,0,0,3],
+            [1,0,1,0,1,0,1],
+            [0,0,1,0,0,0,1],
+            [1,0,1,0,1,0,1],
+            [1,0,0,0,0,0,1],
+            [1,2,1,0,1,0,1]];
+
+function mazeRunner(directions) {
+    let currentRow = maze.indexOf(maze.find(v => v.includes(2)));
+    let currentColumn = maze[currentRow].indexOf(2);
+
+    const arr = directions.map((v, i) => {
+    switch(v) {
+            case "S":
+                currentRow+=1;
+                break
+            case "N":
+                currentRow-=1;
+                break
+            case "E":
+                currentColumn+=1;
+                break
+            case "W":
+                currentColumn-=1;
+                break
+        }
+        if(currentRow > maze.length-1 || currentColumn > maze.length -1 || currentRow < 0 || currentColumn < 0) return 'Dead'
+
+        const current = maze[currentRow][currentColumn];
+        if(i < directions.length - 1) {
+            if(current === 0) {
+                return 'Lost'
+            }
+            if(current === 1){
+                return 'Dead'
+            }
+            else if(current === 3){
+                return 'Finish'
+            }
+        } else {
+            if(current === 0) {
+                return 'Lost'
+            } else if(current === 1){
+                return 'Dead'
+            }
+            else if(current === 3){
+                return 'Finish'
             }
         }
-    }
-
-    function move(ball){
-        ball.x += ball.vx;
-        ball.y += ball.vy;
-        if(ball.x + ball.radius > canvas.width){
-            ball.x = canvas.width - ball.radius;
-            ball.vx *= bounce;
-        } else if(ball.x - ball.radius < 0) {
-            ball.x = ball.radius;
-            ball.vx *= bounce;
-        }
-
-        if(ball.y + ball.radius > canvas.height){
-            ball.y = canvas.height - ball.radius;
-            ball.vy *= bounce;
-        } else if(ball.y - ball.radius < 0) {
-            ball.y = ball.radius;
-            ball.vy *= bounce;
-        }
-    }
-
-    function draw(ball){
-        ball.draw(context);
-    }
-
-    (function drawFrame () {
-        window.requestAnimationFrame(drawFrame, canvas);
-        context.clearRect(0, 0, canvas.width, canvas.height);
-
-        balls.forEach(checkCollision);
-        balls.forEach(move);
-        balls.forEach(draw);
-      }());
+    })
+    return arr.filter(v => v)[0]
 }
-  
+
+console.log(mazeRunner(["N","E","E","E","E"]))
+

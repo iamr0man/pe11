@@ -14,7 +14,6 @@ function Ball (radius, color) {
 }
 
 Ball.prototype.draw = function (context) {
-  debugger;
   context.save();
   context.translate(this.x, this.y);
   context.rotate(this.rotation);
