@@ -1150,80 +1150,83 @@ console.log(createPhoneNumber([1, 1, 1, 1, 1, 1, 1, 1, 1, 1]))
 
 
 
-function longestSubstringWithoutDiblication(string){
+function longestSubstringWithoutDiblication(string) {
     string = string.split('')
     let lastSeen = {}
-    const longest = [[], []]
+    const longest = [
+        [],
+        []
+    ]
     let startIdx = 0;
 
-//     for(const char, i in string){
-//         if(char in lastSeen)
-//             startIdx = Math.max(startIdx, lastSeen[char + 1])
-//         if(longest[1] - longest[0] < i + 1 - startIdx)
-//             longest = [startIdx, i+1]
-//         lastSeen[char] = 1;
-//     }
-//     // return string[longest[0]:longest[1]]
-// }
+    //     for(const char, i in string){
+    //         if(char in lastSeen)
+    //             startIdx = Math.max(startIdx, lastSeen[char + 1])
+    //         if(longest[1] - longest[0] < i + 1 - startIdx)
+    //             longest = [startIdx, i+1]
+    //         lastSeen[char] = 1;
+    //     }
+    //     // return string[longest[0]:longest[1]]
+    // }
 
 
-// const tmp = [
-//     {
-//       filters: [
-//         {
-//             filter:{
-//                 type:"Color"
-//             },
-//             subFilter: {
-//                 name: "Black"
-//             }
-//         },
-//         {
-//             filter:{
-//                 type:"Sizes"
-//             },
-//             subFilter: {
-//                 name: "43"
-//             }
-//         },
-//       ]
-//     },
-//     {
-//       filters: [
-//         {
-//             filter:{
-//                 type:"Sizes"
-//             },
-//             subFilter: {
-//                 name: "43"
-//             }
-//         },
-//         {
-//             filter:{
-//                 type:"Color"
-//             },
-//             subFilter: {
-//                 name: "Teal"
-//             }
-//         },
-//       ]
-//     },
-//   ]
+    // const tmp = [
+    //     {
+    //       filters: [
+    //         {
+    //             filter:{
+    //                 type:"Color"
+    //             },
+    //             subFilter: {
+    //                 name: "Black"
+    //             }
+    //         },
+    //         {
+    //             filter:{
+    //                 type:"Sizes"
+    //             },
+    //             subFilter: {
+    //                 name: "43"
+    //             }
+    //         },
+    //       ]
+    //     },
+    //     {
+    //       filters: [
+    //         {
+    //             filter:{
+    //                 type:"Sizes"
+    //             },
+    //             subFilter: {
+    //                 name: "43"
+    //             }
+    //         },
+    //         {
+    //             filter:{
+    //                 type:"Color"
+    //             },
+    //             subFilter: {
+    //                 name: "Teal"
+    //             }
+    //         },
+    //       ]
+    //     },
+    //   ]
 
-// for(let i = 0; i < tmp.length; i++){
-//     const log = _.get(tmp, `tmp[${i}].filters[${i}].subFilter.name`)
-//     console.log(log)
-// }
+    // for(let i = 0; i < tmp.length; i++){
+    //     const log = _.get(tmp, `tmp[${i}].filters[${i}].subFilter.name`)
+    //     console.log(log)
+    // }
 
 
-// function isValidWalk(walk) {
-//     const tmp = {}
-//     if(walk.length !== 10) {
-//         return false;
-//     }
-//     walk.forEach(v => tmp[v] === undefined ? tmp[v]=0 : tmp[v]+=1 )
+    // function isValidWalk(walk) {
+    //     const tmp = {}
+    //     if(walk.length !== 10) {
+    //         return false;
+    //     }
+    //     walk.forEach(v => tmp[v] === undefined ? tmp[v]=0 : tmp[v]+=1 )
 
-//     return tmp.n === tmp.s && tmp.w === tmp.e
+    //     return tmp.n === tmp.s && tmp.w === tmp.e
 }
 
 function isValidWalk(walk) {
@@ -1602,74 +1605,75 @@ function solution(str) {
 }
 
 function solution(str) {
-    return (str.length % 2 ? str + "_" : str).match(/../g) 
+    return (str.length % 2 ? str + "_" : str).match(/../g)
 }
 
 function isPrime(num) {
-    if(num <= 0) return false;
-    let counter = 0; 
+    if (num <= 0) return false;
+    let counter = 0;
     const allowed = 2;
-    for(let i = 0; i <= num; i++){
-        if(num % i === 0) counter++
+    for (let i = 0; i <= num; i++) {
+        if (num % i === 0) counter++
     }
     return counter === allowed ? true : false
 }
 
 function isPrime(num) {
     if (num < 2) {
-      return false;
+        return false;
     }
     let m = Math.ceil(Math.sqrt(num));
-    for (let i = 2; i <= m; i++){
-      if (num % i === 0){
-        return false;
-      }
-    }
-    return true;
-}
-
-function same(arr1, arr2){
-    const freq1 = {}, freq2 = {};
-
-    for(let key of arr1){
-        freq1[key] = (freq1[key] || 0)+1
-    }
-
-    for(let key of arr2){
-        freq2[key] = (freq2[key] || 0)+1
-    }
-
-    for(let key in freq1){
-        if(!(key ** 2 in freq2)){
-            return false;
-        }
-
-        if(freq1[key] !== freq2[key ** 2]){
+    for (let i = 2; i <= m; i++) {
+        if (num % i === 0) {
             return false;
         }
     }
     return true;
 }
 
-same([1,2,3], [1,4,9])
+function same(arr1, arr2) {
+    const freq1 = {},
+        freq2 = {};
 
-function anagram(first, second){
-    if(first.length !== second.length){
+    for (let key of arr1) {
+        freq1[key] = (freq1[key] || 0) + 1
+    }
+
+    for (let key of arr2) {
+        freq2[key] = (freq2[key] || 0) + 1
+    }
+
+    for (let key in freq1) {
+        if (!(key ** 2 in freq2)) {
+            return false;
+        }
+
+        if (freq1[key] !== freq2[key ** 2]) {
+            return false;
+        }
+    }
+    return true;
+}
+
+same([1, 2, 3], [1, 4, 9])
+
+function anagram(first, second) {
+    if (first.length !== second.length) {
         return false;
     }
 
     const freq = [];
-    for(let i = 0; i < first.length; i++){
+    for (let i = 0; i < first.length; i++) {
         const letter = first[i];
-        freq[letter] = (freq[letter] || 0) + 1; 
+        freq[letter] = (freq[letter] || 0) + 1;
     }
 
-    for(let i = 0; i < second.length; i++){
+    for (let i = 0; i < second.length; i++) {
         const letter = second[i];
-        if(!freq[letter]){
+        if (!freq[letter]) {
             return false
         } else {
-          freq[letter]--;  
+            freq[letter]--;
         }
 
     }
@@ -1678,24 +1682,25 @@ function anagram(first, second){
 
 // console.log(anagram('iceman', 'cinema'))
 
-function sumZero(arr){
-    return arr.reduce((prev, acc) => prev + acc ,0) === 0 ? [arr[0], arr[arr.length-1]] : undefined
+function sumZero(arr) {
+    return arr.reduce((prev, acc) => prev + acc, 0) === 0 ? [arr[0], arr[arr.length - 1]] : undefined
 }
 
 // console.log(sumZero([-2,-1,0,1,2]))
 
-function duplicateCount(text){
-    const arr = text.toLowerCase().split('').sort((a,b) => a.charCodeAt()-b.charCodeAt())
-    let i = 0, res = [];
-    for(let j = 1; j < arr.length; j++){
-        if(arr[i] === arr[j]){
+function duplicateCount(text) {
+    const arr = text.toLowerCase().split('').sort((a, b) => a.charCodeAt() - b.charCodeAt())
+    let i = 0,
+        res = [];
+    for (let j = 1; j < arr.length; j++) {
+        if (arr[i] === arr[j]) {
             res.push(arr[i])
         } else {
             i = j
         }
     }
     return new Set(res).size
- }
+}
 
 // console.log(duplicateCount('aabbcde'))
 // console.log(duplicateCount('aabBcde'))
@@ -1716,3 +1721,392 @@ function duplicateCount(text){
 
 //     return maxSum
 // }
+
+// function inArray(array1,array2){
+//     const parsedArr = array2.join(' ')
+//     return array1.filter(v => parsedArr.match(v)).sort((a,b) => a.localeCompare(b))
+// }
+
+function inArray(arr1, arr2) {
+    return arr1.filter(function (needle) {
+        return arr2.some(function (haystack) {
+            return haystack.indexOf(needle) > -1;
+        });
+    }).sort();
+}
+// console.log(inArray(["live", "strong", "arp"],["lively", "alive", "harp", "sharp", "armstrong"]))
+
+function expandedForm(num) {
+    num = String(num)
+    let res = []
+    for(let i = 0; i < num.length; i++){
+        if(num[i] !== '0') res.push(num[i] + '0'.repeat(num.length - i - 1))
+    }
+    return res.join(" + ")
+}
+
+// const expandedForm = n => n.toString()
+//                             .split("")
+//                             .reverse()
+//                             .map( (a, i) => a * Math.pow(10, i))
+//                             .filter(a => a > 0)
+//                             .reverse()
+//                             .join(" + ");
+
+// console.log(expandedForm(12))
+
+function count (string) {  
+    const res = {}
+    for(let i = 0; i < string.length; i++) { 
+      const current = string[i]
+      res[current] = (res[current] || 0 ) + 1
+    }
+    return res
+}
+
+function count(string) {
+    const res = {}
+    string.split('').forEach(v => res[v] = (res[v] || 0) + 1)
+    return res
+}   
+
+// console.log(count('chapter'))
+
+// function wave(str) {
+//     const improve = (v, i) => str.substring(0,i) + v.toUpperCase() + str.substring(i+1)
+
+//     return str.split('').map((v, i) => improve(v, i)).filter(v => v !== str)
+// }
+
+function wave(str){
+    let result = [];
+    
+    str.split("").forEach((char, index) => {
+        if (/[a-z]/.test(char)) {
+            result.push(str.slice(0, index) + char.toUpperCase() + str.slice(index + 1));
+        }
+    });
+    
+    return result;
+}
+
+console.log(wave(' gel lo '))
+
+function toWeirdCase(string){
+    let res = '';
+    const arr = string.split(' ')
+    for(let i = 0; i < arr.length; i++){
+      for(let j = 0; j < arr[i].length; j++){
+        res += j % 2 ? arr[i][j].toLowerCase() : arr[i][j].toUpperCase()
+      }
+      res += ' '
+    }
+    return res.trim();
+}
+
+console.log(toWeirdCase('This is macbook pro 2016 year'))
+
+function findMissing(list) {  
+    //1 3 5 9 11
+    //-5 -3 1 -1 3
+    //-11 -9 -5 -3 -1
+    if(list.length === 2) return -228;
+
+    const isPositive = list.every(v => v >= 0)
+    if(isPositive){
+
+    }
+}
+
+function findMissing(list) {  
+    let seq = {}, length = {}, biggestDiff = -1;
+    list.forEach((v, i, arr) => seq[i] = v - arr[i-1]);
+    delete seq[0];
+
+    for(key in seq) {
+        length[seq[key]] = (length[seq[key]] || 0) + 1
+    }
+
+    if(list.length === 3) {
+        debugger
+        let step, diffBetween;
+        if(list.every(v => v > 0)){
+            step = Math.min(...Object.values(seq));
+            diffBetween = Math.max(...Object.values(seq));
+        } else {
+            step = Math.max(...Object.values(seq));
+            diffBetween = Math.min(...Object.values(seq));
+        }
+        for(key in seq){
+            if(seq[key] === diffBetween){
+                return list[+key]-step;
+            }
+        }
+
+    } else {
+        biggestDiff = Math.min(...Object.values(length));
+    }
+
+    
+
+    for(key in length){
+        if(length[key] === biggestDiff){
+            for(number in seq){
+                if(seq[number] === +key) {
+                    if(+number >= 2) {
+                        return list[+number] - (list[+number-1] - list[+number-2])
+                    } else {
+                        return list[+number] - (list[list.length-1] - list[list.length-2])
+                    }
+                }
+            }
+        }
+    }
+}
+
+function findMissing(list){
+    const step = (list[list.length -1] - list[0]) / list.length;
+    return list.filter((v, i) => v !== (list[0] + i * step))[0] - step;
+}
+
+// console.log(findMissing([1,3,5,9,11]))
+// console.log(findMissing([-3, -1, 1, 3, 5, 9]))
+// console.log(findMissing([-10, -5, 0, 10]))
+console.log(findMissing([ -41, -69, -125 ]))
+
+// window.onload = function() {
+//     const canvas = document.getElementById('canvas'),
+//         context = canvas.getContext('2d'),
+//         balls = [],
+//         bounce = -1,
+//         spring = .1,
+//         numBalls = 10;
+
+//     for(let i = 0; i < numBalls; i++) {
+//         const ball = new Ball(Math.random() * 20 + 5);
+//         ball.x = Math.random() * canvas.width / 2;
+//         ball.y = Math.random() * canvas.height / 2;
+//         ball.vx = Math.random() * 6 - 3;
+//         ball.vy = Math.random() * 6 - 3;
+//         balls.push(ball)
+//     }
+
+//     function checkCollision(ballA, i){
+//         let ballB, dx, dy, dist, min_dist;
+//         for(let j = i + 1; j < numBalls; j++){
+//             ballB = balls[j];
+//             dx = ballB.x - ballA.x;
+//             dy = ballB.y - ballA.y;
+//             dist = Math.sqrt(dx * dx + dy* dy);
+//             min_dist = ballA.radius + ballB.radius;
+
+//             if(min_dist > dist) {
+//                 const tx = ballA.x + dx / dist * min_dist,
+//                     ty = ballA.y + dy / dist * min_dist,
+//                     ax = (tx - ballB.x) * spring,
+//                     ay = (ty - ballB.y) * spring;
+                
+//                 ballA.vx -= ax;
+//                 ballA.vy -= ay;
+//                 ballB.vx += ax;
+//                 ballB.vy += ay;
+//             }
+//         }
+//     }
+
+//     function move(ball){
+//         ball.x += ball.vx;
+//         ball.y += ball.vy;
+//         if(ball.x + ball.radius > canvas.width){
+//             ball.x = canvas.width - ball.radius;
+//             ball.vx *= bounce;
+//         } else if(ball.x - ball.radius < 0) {
+//             ball.x = ball.radius;
+//             ball.vx *= bounce;
+//         }
+
+//         if(ball.y + ball.radius > canvas.height){
+//             ball.y = canvas.height - ball.radius;
+//             ball.vy *= bounce;
+//         } else if(ball.y - ball.radius < 0) {
+//             ball.y = ball.radius;
+//             ball.vy *= bounce;
+//         }
+//     }
+
+//     function draw(ball){
+//         ball.draw(context);
+//     }
+
+//     (function drawFrame () {
+//         window.requestAnimationFrame(drawFrame, canvas);
+//         context.clearRect(0, 0, canvas.width, canvas.height);
+
+//         balls.forEach(checkCollision);
+//         balls.forEach(move);
+//         balls.forEach(draw);
+//       }());
+// }
+
+// function longest_palindrome(string) {
+//     let maxLength = 0, tempLength = 0;
+//     debugger;
+//     for (let i = 1; i < string.length; i++) {
+//         for(let j = 0; j < i; j++){
+//             maxLength+=string.charCodeAt(j)
+//         }
+//         tempLength = maxLength;
+//         for(let k = i; k < string.length; k++){
+//             tempLength = tempLength - string.charCodeAt(i-1) + string.charCodeAt(k);
+//             maxLength = Math.max(maxLength, tempLength)
+//         }  
+//     }
+
+//     return maxLength
+// }
+
+// function longest_palindrome(string){
+//     let maxLength = 0;
+//     for(let i = 2; i <= string.length; i++){
+//         debugger
+//         for(let j = i; j <= string.length; j++){
+//             const curr = string.slice(j-i, j);
+//             if(isPalindrom(curr) && curr.length > maxLength) {
+//                 maxLength = curr.length;
+//             } 
+//         }
+//     }
+//     return maxLength
+// }
+
+function ongest_palindrome(s){
+    if (!s) return 0;
+    for (let c = s.length; c > 0; c--) {
+      for (let i = 0; i <= s.length - c; i++) {
+        var check = s.substr(i, c);
+        if (check === check.split("").reverse().join("")) return c;
+      }
+    }
+  }
+
+function isPalindrom(string){
+    return string && string === string.split('').reverse().join('')
+}
+// console.log(longest_palindrome('mm'))
+
+// String.prototype.camelCase=function(){
+//     return this.length ? this.trim().split(" ").map(v => v[0].toUpperCase() + v.slice(1)).join('') : ""
+// }
+//CONGRATALATIONS WITH 2K LINE OF CODE! YOU AWESOME AND AMAZING, BRILLIANT AND INSANE!
+
+
+String.prototype.camelCase=function(){
+    return this.split(' ').map(function(word){
+     return word.charAt(0).toUpperCase() + word.slice(1);
+   }).join('');
+}
+
+// function foldArray(array, runs){
+//   this.newArray= []
+//   for(let i = 0; i < runs; i++){
+//     let currArray = this.newArray.length > 0 ? this.newArray : array;
+//     const middle = Math.round(currArray.length / 2);
+//     let leftArr = currArray.slice(0, middle);
+//     let rightArr = currArray.slice(middle).reverse();
+//     this.newArray = leftArr.map((v, i) => v + (rightArr[i] || 0))
+//   }
+//   return this.newArray;
+// }
+
+function foldArray(arr, nums) {
+    const result = [], copy = arr.slice();
+    while (copy.length) result.push(copy.pop() + (copy.shift() || 0));
+    return nums - 1 ? foldArray(result, nums - 1) : result;
+}
+
+// console.log(foldArray([1,2,3,4,5], 2))
+ 
+
+var maze = [[1,1,1,1,1,1,1],
+            [1,0,0,0,0,0,3],
+            [1,0,1,0,1,0,1],
+            [0,0,1,0,0,0,1],
+            [1,0,1,0,1,0,1],
+            [1,0,0,0,0,0,1],
+            [1,2,1,0,1,0,1]];
+
+function mazeRunner(directions) {
+    let currentRow = maze.indexOf(maze.find(v => v.includes(2)));
+    let currentColumn = maze[currentRow].indexOf(2);
+
+    const arr = directions.map((v, i) => {
+    switch(v) {
+            case "S":
+                currentRow+=1;
+                break
+            case "N":
+                currentRow-=1;
+                break
+            case "E":
+                currentColumn+=1;
+                break
+            case "W":
+                currentColumn-=1;
+                break
+        }
+        if(currentRow > maze.length-1 || currentColumn > maze.length -1 || currentRow < 0 || currentColumn < 0) return 'Dead'
+
+        const current = maze[currentRow][currentColumn];
+        if(i < directions.length - 1) {
+            if(current === 1){
+                return 'Dead'
+            }
+            else if(current === 3){
+                return 'Finish'
+            }
+        } else {
+            if(current === 0) {
+                return 'Lost'
+            } else if(current === 1){
+                return 'Dead'
+            } else if(current === 2) {
+                return 'Lost'
+            }
+            else if(current === 3){
+                return 'Finish'
+            }
+        }
+    })
+    return arr.filter(v => v)[0]
+}
+
+// console.log(mazeRunner(["N","E","E","E","E"]))
+
+function averageString(str) {
+    const convert = {
+      'zero': 0,
+      'one': 1,
+      'two': 2,
+      'three': 3,
+      'four': 4,
+      'five': 5,
+      'six': 6,
+      'seven': 7,
+      'eight': 8,
+      'nine': 9,
+    }
+    const digitArr = str.split(' ');
+    const average = Math.floor(digitArr.map(v => convert[v]).reduce((acc, curr) => acc + curr,0) / digitArr.length);
+    if(isNaN(average)) return 'n/a'
+    for(key in convert){
+      if(convert[key] === average) return key;
+    }
+  }
+
+//   console.log(averageString('zero ninbulmae five two'))
+
+function reverse(str){
+    if([...str].every(v => v==- " ")) return ''
+    return str.split(' ').map((v, i) => i % 2 === 0 ? v : v.split('').reverse().join('')).join(' ')
+}
+
